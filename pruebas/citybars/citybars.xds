@@ -1,0 +1,79 @@
+{
+    "name": "citybars",
+    "settings": {
+        "urlPrefix": "",
+        "directAPI": "",
+        "spacesToIndent": 4,
+        "codeGenFormat": "Class",
+        "exportPath": "",
+        "extPath": "http://extjs.cachefly.net/touch/sencha-touch-2.0.0/",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "lineEnding": "CRLF",
+        "instantiateStore": true,
+        "genTimestamps": false,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "cssPath": ""
+    },
+    "xdsVersion": "2.0.0",
+    "xdsBuild": 355,
+    "framework": "touch20",
+    "topInstanceFileMap": {
+        "72849c4b-2b45-4563-8ee7-a5332c894498": {
+            "paths": [
+                "metadata/view/MainNav",
+                "app/view/override/MainNav.js",
+                "app/view/MainNav.js"
+            ],
+            "className": "MainNav"
+        },
+        "635d55ed-420d-437b-b129-82da22cf3c2e": {
+            "paths": [
+                "metadata/view/ListContainer",
+                "app/view/override/ListContainer.js",
+                "app/view/ListContainer.js"
+            ],
+            "className": "ListContainer"
+        },
+        "1300be7b-5291-4a20-9996-590297e15e4a": {
+            "paths": [
+                "metadata/view/DetailPanel",
+                "app/view/override/DetailPanel.js",
+                "app/view/DetailPanel.js"
+            ],
+            "className": "DetailPanel"
+        },
+        "54e424f1-fe8b-4652-984b-7c761f6c0fd0": {
+            "paths": [
+                "metadata/store/BusinessStore",
+                "app/store/override/BusinessStore.js",
+                "app/store/BusinessStore.js"
+            ],
+            "className": "BusinessStore"
+        },
+        "abcc1297-b9fe-4558-bd21-6f74307a2d25": {
+            "paths": [
+                "metadata/model/Business",
+                "app/model/override/Business.js",
+                "app/model/Business.js"
+            ],
+            "className": "Business"
+        },
+        "f20d0a0d-fe2b-4afa-b7c0-24926436b60b": {
+            "paths": [
+                "metadata/controller/Business",
+                "app/controller/override/Business.js",
+                "app/controller/Business.js"
+            ],
+            "className": "Business"
+        }
+    },
+    "expandedState": {
+        "data": true,
+        "model": false,
+        "component": true,
+        "controller": true
+    }
+}

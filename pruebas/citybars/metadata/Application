@@ -1,0 +1,30 @@
+{
+    "id": "ExtBox1-ext-gen2138",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Business"
+        ],
+        "stores": [
+            "BusinessStore"
+        ],
+        "views": [
+            "MainNav",
+            "ListContainer",
+            "DetailPanel"
+        ],
+        "name": "CityBars",
+        "controllers": [
+            "Business"
+        ]
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "expanded": true
+}
