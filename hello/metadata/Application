@@ -1,0 +1,19 @@
+{
+    "id": "ExtBox1-ext-gen4145",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "views": [
+            "MyTabPanel"
+        ],
+        "name": "hola"
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "expanded": true
+}

@@ -1,0 +1,57 @@
+{
+    "id": "ExtBox1-ext-gen17724",
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "Business",
+        "storeId": "BusinessStore",
+        "designer|userClassName": "BusinessStore"
+    },
+    "customConfigs": [],
+    "designerId": "54e424f1-fe8b-4652-984b-7c761f6c0fd0",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen17731",
+            "type": "jsonpproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyJsonPProxy"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen17738",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader",
+                        "root": "businesses"
+                    },
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "root",
+                            "type": "string"
+                        }
+                    ],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

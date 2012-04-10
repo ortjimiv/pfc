@@ -1,0 +1,37 @@
+{
+    "id": "ExtBox1-ext-gen2490",
+    "type": "navigationview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "MainNav",
+        "designer|userAlias": "mainnav"
+    },
+    "customConfigs": [],
+    "designerId": "72849c4b-2b45-4563-8ee7-a5332c894498",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen4633",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "listCard",
+                "title": "CityBars"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen2948"
+        }
+    ]
+}
