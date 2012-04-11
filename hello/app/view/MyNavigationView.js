@@ -20,36 +20,43 @@ Ext.define('hola.view.MyNavigationView', {
         items: [
             {
                 xtype: 'panel',
-                html: '<hr/><center>Benvingut</center>',
+                html: '<br/><hr/><center>Benvingut</center>',
                 id: 'mypanel',
-                layout: {
-                    type: 'vbox'
-                },
                 title: 'Registre d\'accés',
                 background: 'logo.jpg',
                 items: [
                     {
-                        xtype: 'label',
-                        cls: [
-                            ''
-                        ],
-                        html: '<center><h2>Gestió dels processos de treball</h2></center>',
-                        itemId: 'etiqueta'
-                    },
-                    {
-                        xtype: 'textfield',
-                        id: 'usuari',
-                        label: 'Usuari:'
-                    },
-                    {
-                        xtype: 'passwordfield',
-                        id: 'clau',
-                        label: 'Clau:'
-                    },
-                    {
-                        xtype: 'button',
-                        id: 'acces',
-                        text: 'Accedir'
+                        xtype: 'container',
+                        padding: 15,
+                        items: [
+                            {
+                                xtype: 'label',
+                                html: '<center><h2>Gestió dels processos de treball</h2></center><br/>',
+                                itemId: 'etiqueta'
+                            },
+                            {
+                                xtype: 'textfield',
+                                id: 'usuari',
+                                itemId: 'usuari',
+                                label: 'Usuari:',
+                                name: 'usuari',
+                                required: true
+                            },
+                            {
+                                xtype: 'passwordfield',
+                                id: 'clau',
+                                label: 'Clau:',
+                                name: 'clau',
+                                required: true
+                            },
+                            {
+                                xtype: 'button',
+                                docked: 'bottom',
+                                id: 'acces',
+                                ui: 'forward',
+                                text: 'Accedir'
+                            }
+                        ]
                     }
                 ]
             }

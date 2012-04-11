@@ -15,5 +15,6 @@
     "customConfigs": [],
     "designerId": "application",
     "$viewOrder": 0,
+    "iconCls": "icon-application",
     "expanded": true
 }

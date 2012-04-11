@@ -25,9 +25,9 @@
             "codeClass": null,
             "userConfig": {
                 "designer|initialView": false,
-                "html": "<hr/><center>Benvingut</center>",
+                "docked": null,
+                "html": "<br/><hr/><center>Benvingut</center>",
                 "id": "mypanel",
-                "layout": "vbox",
                 "designer|userClassName": "MyPanel",
                 "title": "Registre d'accés",
                 "background": "logo.jpg"
@@ -47,71 +47,96 @@
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen18404",
-                    "type": "label",
+                    "id": "ExtBox1-ext-gen9897",
+                    "type": "container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "cls": [
-                            ""
-                        ],
-                        "html": "<center><h2>Gestió dels processos de treball</h2></center>",
-                        "itemId": "etiqueta",
-                        "designer|userClassName": "MyLabel"
+                        "docked": null,
+                        "height": null,
+                        "padding": 15,
+                        "layout": null,
+                        "designer|userClassName": "MyContainer3"
                     },
                     "customConfigs": [],
-                    "expanded": true
-                },
-                {
-                    "id": "ExtBox1-ext-gen4959",
-                    "type": "textfield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "usuari",
-                        "label": "Usuari:",
-                        "designer|userClassName": "MyTextField"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                },
-                {
-                    "id": "ExtBox1-ext-gen7020",
-                    "type": "passwordfield",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "clau",
-                        "label": "Clau:",
-                        "designer|userClassName": "MyPasswordField"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                },
-                {
-                    "id": "ExtBox1-ext-gen8794",
-                    "type": "button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "acces",
-                        "text": "Accedir",
-                        "designer|userClassName": "MyButton"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen18404",
+                            "type": "label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "<center><h2>Gestió dels processos de treball</h2></center><br/>",
+                                "itemId": "etiqueta",
+                                "designer|userClassName": "MyLabel"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen4959",
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "usuari",
+                                "itemId": "usuari",
+                                "padding": null,
+                                "label": "Usuari:",
+                                "name": "usuari",
+                                "required": true,
+                                "designer|userClassName": "MyTextField"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen7020",
+                            "type": "passwordfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "clau",
+                                "label": "Clau:",
+                                "name": "clau",
+                                "required": true,
+                                "designer|userClassName": "MyPasswordField"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen8794",
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": "bottom",
+                                "id": "acces",
+                                "ui": "forward",
+                                "text": "Accedir",
+                                "designer|userClassName": "MyButton"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
                 }
             ]
         }
