@@ -24,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|initialView": false,
                 "docked": null,
                 "html": "<br/><hr/><center>Benvingut</center>",
                 "id": "mypanel",

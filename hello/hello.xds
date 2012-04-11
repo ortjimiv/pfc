@@ -5,7 +5,7 @@
         "directAPI": "",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
-        "exportPath": "",
+        "exportPath": "C:/inetpub/wwwroot/hello",
         "extPath": "http://extjs.cachefly.net/touch/sencha-touch-2.0.0/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
@@ -19,7 +19,7 @@
         "cssPath": ""
     },
     "xdsVersion": "2.0.0",
-    "xdsBuild": "363",
+    "xdsBuild": "374",
     "framework": "touch20",
     "topInstanceFileMap": {
         "91ed13be-2771-41a9-b0e8-b89fdac7fba0": {
