@@ -64,15 +64,15 @@ Ext.define('hola.view.MyNavigationView', {
         ],
         listeners: [
             {
-                fn: 'onAccesHide',
+                fn: 'onFormpanelHide',
                 event: 'hide',
                 delegate: '#acces'
             }
         ]
     },
 
-    onAccesHide: function(component, options) {
-        alert("You tapped me");
+    onFormpanelHide: function(component, options) {
+
     }
 
 });

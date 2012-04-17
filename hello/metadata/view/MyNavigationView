@@ -137,18 +137,19 @@
                             "expanded": true,
                             "cn": [
                                 {
-                                    "id": "ExtBox1-ext-gen5430",
-                                    "type": "basiceventbinding",
+                                    "id": "ExtBox1-ext-gen6913",
+                                    "type": "delegateeventbinding",
                                     "reference": {
                                         "name": "listeners",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onAccesHide",
-                                        "implHandler": "alert(\"You tapped me\");",
+                                        "fn": "onFormpanelHide",
+                                        "implHandler": "",
                                         "name": "hide",
-                                        "designer|userClassName": "onAccesHide"
+                                        "designer|targetType": "Ext.form.Panel",
+                                        "designer|userClassName": "onFormpanelHide"
                                     },
                                     "customConfigs": [],
                                     "expanded": true
