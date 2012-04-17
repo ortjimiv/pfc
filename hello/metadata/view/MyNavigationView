@@ -128,12 +128,31 @@
                             "userConfig": {
                                 "docked": "bottom",
                                 "id": "acces",
+                                "itemId": "mybutton",
                                 "ui": "forward",
                                 "text": "Accedir",
                                 "designer|userClassName": "MyButton"
                             },
                             "customConfigs": [],
-                            "expanded": true
+                            "expanded": true,
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen3450",
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onAccesLeftChange",
+                                        "name": "leftchange",
+                                        "designer|userClassName": "onAccesLeftChange"
+                                    },
+                                    "customConfigs": [],
+                                    "expanded": true
+                                }
+                            ]
                         }
                     ]
                 }
