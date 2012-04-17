@@ -150,6 +150,7 @@
                 "designer|userClassName": "launch"
             },
             "customConfigs": [],
+            "iconCls": "icon-basic-function",
             "expanded": true
         }
     ]

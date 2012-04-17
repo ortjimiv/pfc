@@ -23,19 +23,19 @@
     "topInstanceFileMap": {
         "91ed13be-2771-41a9-b0e8-b89fdac7fba0": {
             "paths": [
-                "metadata/view/MyNavigationView",
-                "app/view/override/MyNavigationView.js",
-                "app/view/MyNavigationView.js"
+                "metadata/view/acces",
+                "app/view/override/acces.js",
+                "app/view/acces.js"
             ],
-            "className": "MyNavigationView"
+            "className": "acces"
         },
         "788d0398-dc48-48ce-99bb-02ec4f4b32e3": {
             "paths": [
-                "metadata/view/MyTabPanel",
-                "app/view/override/MyTabPanel.js",
-                "app/view/MyTabPanel.js"
+                "metadata/view/usuariPanel",
+                "app/view/override/usuariPanel.js",
+                "app/view/usuariPanel.js"
             ],
-            "className": "MyTabPanel"
+            "className": "usuariPanel"
         }
     },
     "expandedState": {

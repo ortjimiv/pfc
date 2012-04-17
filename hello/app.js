@@ -19,13 +19,13 @@ Ext.Loader.setConfig({
 
 Ext.application({
     views: [
-        'MyTabPanel'
+        'usuariPanel'
     ],
     name: 'hola',
 
     launch: function() {
 
-        Ext.create('hola.view.MyNavigationView', {fullscreen: true});
+        Ext.create('hola.view.acces', {fullscreen: true});
     }
 
 });

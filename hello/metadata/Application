@@ -8,7 +8,7 @@
     "codeClass": null,
     "userConfig": {
         "views": [
-            "MyTabPanel"
+            "usuariPanel"
         ],
         "name": "hola"
     },

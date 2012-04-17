@@ -7,7 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MyTabPanel"
+        "designer|userClassName": "usuariPanel"
     },
     "customConfigs": [],
     "designerId": "788d0398-dc48-48ce-99bb-02ec4f4b32e3",
@@ -24,7 +24,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyContainer",
-                "title": "Tab 1"
+                "title": "Processos"
             },
             "customConfigs": [],
             "expanded": true
@@ -39,7 +39,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyContainer1",
-                "title": "Tab 2"
+                "title": "Cerca"
             },
             "customConfigs": [],
             "expanded": true
@@ -54,7 +54,7 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyContainer2",
-                "title": "Tab 3"
+                "title": "Filtre"
             },
             "customConfigs": [],
             "expanded": true
