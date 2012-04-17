@@ -64,14 +64,14 @@ Ext.define('hola.view.MyNavigationView', {
         ],
         listeners: [
             {
-                fn: 'onAccesLeftChange',
-                event: 'leftchange',
+                fn: 'onAccesHide',
+                event: 'hide',
                 delegate: '#acces'
             }
         ]
     },
 
-    onAccesLeftChange: function(component, value, oldValue, options) {
+    onAccesHide: function(component, options) {
 
     }
 

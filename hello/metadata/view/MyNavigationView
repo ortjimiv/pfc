@@ -137,7 +137,7 @@
                             "expanded": true,
                             "cn": [
                                 {
-                                    "id": "ExtBox1-ext-gen3450",
+                                    "id": "ExtBox1-ext-gen5430",
                                     "type": "basiceventbinding",
                                     "reference": {
                                         "name": "listeners",
@@ -145,9 +145,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "onAccesLeftChange",
-                                        "name": "leftchange",
-                                        "designer|userClassName": "onAccesLeftChange"
+                                        "fn": "onAccesHide",
+                                        "name": "hide",
+                                        "designer|userClassName": "onAccesHide"
                                     },
                                     "customConfigs": [],
                                     "expanded": true
