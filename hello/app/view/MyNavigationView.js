@@ -72,7 +72,7 @@ Ext.define('hola.view.MyNavigationView', {
     },
 
     onAccesHide: function(component, options) {
-
+        alert("You tapped me");
     }
 
 });

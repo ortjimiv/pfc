@@ -146,6 +146,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "fn": "onAccesHide",
+                                        "implHandler": "alert(\"You tapped me\");",
                                         "name": "hide",
                                         "designer|userClassName": "onAccesHide"
                                     },
