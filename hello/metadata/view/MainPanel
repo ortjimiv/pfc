@@ -1,0 +1,123 @@
+{
+    "id": "ExtBox1-ext-gen3986",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "layout": "card",
+        "designer|userClassName": "MainPanel",
+        "designer|userAlias": "mainpanel",
+        "container|animation": "slide"
+    },
+    "customConfigs": [],
+    "designerId": "6de3dc15-8a5d-487f-8b9c-f2b245f8bb95",
+    "$viewOrder": 3,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen4663",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "designer|userClassName": "MyToolbar1"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen4961",
+                    "type": "component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "[email@example.com]",
+                        "itemId": "loggedInUserName",
+                        "style": "color:#FFF; padding:0 .5em; font-size: 0.8em;",
+                        "designer|userClassName": "MyComponent",
+                        "layout|flex": 1
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen5533",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "logout",
+                        "text": "Sortir",
+                        "designer|userClassName": "MyButton4"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen18454",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLogoutTap",
+                                "implHandler": "var top = button.up('topview');\r\ntop.down('#loginForm').reset();\r\ntop.setActiveItem(0);",
+                                "name": "tap",
+                                "designer|userClassName": "onLogoutTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen8236",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "listPanel"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen6677"
+        },
+        {
+            "id": "ExtBox1-ext-gen5861",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "afegirProcesForm"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen8930"
+        }
+    ]
+}

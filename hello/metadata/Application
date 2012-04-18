@@ -8,9 +8,14 @@
     "codeClass": null,
     "userConfig": {
         "views": [
-            "usuariPanel"
+            "usuariPanel",
+            "LoginForm",
+            "AddProcesForm",
+            "MainPanel",
+            "ListPanel",
+            "Viewport"
         ],
-        "name": "hola"
+        "name": "PFC"
     },
     "customConfigs": [],
     "designerId": "application",

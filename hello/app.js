@@ -19,13 +19,18 @@ Ext.Loader.setConfig({
 
 Ext.application({
     views: [
-        'usuariPanel'
+        'usuariPanel',
+        'LoginForm',
+        'AddProcesForm',
+        'MainPanel',
+        'ListPanel',
+        'Viewport'
     ],
-    name: 'hola',
+    name: 'PFC',
 
     launch: function() {
 
-        Ext.create('hola.view.acces', {fullscreen: true});
+        Ext.create('PFC.view.Viewport', {fullscreen: true});
     }
 
 });

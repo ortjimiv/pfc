@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('hola.view.usuariPanel', {
+Ext.define('PFC.view.usuariPanel', {
     extend: 'Ext.tab.Panel',
 
     config: {
@@ -29,6 +29,18 @@ Ext.define('hola.view.usuariPanel', {
             {
                 xtype: 'container',
                 title: 'Filtre'
+            },
+            {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                items: [
+                    {
+                        xtype: 'button',
+                        ui: 'action-round',
+                        text: 'Nou Procés',
+                        flex: 1
+                    }
+                ]
             }
         ]
     }

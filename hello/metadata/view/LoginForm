@@ -1,0 +1,169 @@
+{
+    "id": "ExtBox1-ext-gen19978",
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": null,
+        "padding": 15,
+        "ui": "",
+        "layout": "vbox",
+        "url": null,
+        "designer|userClassName": "LoginForm",
+        "designer|userAlias": "loginform",
+        "container|pack": "center"
+    },
+    "customConfigs": [],
+    "designerId": "d147aeef-2a26-4da7-bf4b-b0ebb1a9144b",
+    "$viewOrder": 2,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen18404",
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<center><h2>Gestió dels processos de treball</h2></center><br/>",
+                "itemId": "etiqueta0",
+                "designer|userClassName": "MyLabel"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen40683",
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "etiqueta1",
+                "designer|userClassName": "MyLabel2"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3328",
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "MyFieldSet",
+                "designer|userClassName": "MyFieldSet"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen4959",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": null,
+                        "itemId": null,
+                        "padding": null,
+                        "label": "Usuari:",
+                        "name": "username",
+                        "required": true,
+                        "designer|userClassName": "MyTextField"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen7020",
+                    "type": "passwordfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": null,
+                        "label": "Clau:",
+                        "name": "password",
+                        "required": true,
+                        "designer|userClassName": "MyPasswordField"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen23412",
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<br/><hr/><center>Benvingut</center><br/>",
+                "id": null,
+                "itemId": "etiqueta2",
+                "designer|userClassName": "MyLabel1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8794",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "id": null,
+                "itemId": "login",
+                "ui": "forward",
+                "iconCls": "action",
+                "iconMask": true,
+                "text": "Accedir",
+                "designer|userClassName": "MyButton"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen17630",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onLoginTap",
+                        "implHandler": "var top = button.up('topview');\r\nPFC.username = button.up('formpanel').getValues().username;\r\ntop.down('#loggedInUserName').setHtml(PFC.username);\r\ntop.setActiveItem(1);",
+                        "name": "tap",
+                        "designer|userClassName": "onLoginTap"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

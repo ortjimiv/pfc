@@ -11,7 +11,7 @@
     },
     "customConfigs": [],
     "designerId": "788d0398-dc48-48ce-99bb-02ec4f4b32e3",
-    "$viewOrder": 1,
+    "$viewOrder": 4,
     "expanded": true,
     "cn": [
         {
@@ -58,6 +58,40 @@
             },
             "customConfigs": [],
             "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8041",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom",
+                "designer|userClassName": "MyToolbar"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen8343",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ui": "action-round",
+                        "text": "Nou Procés",
+                        "designer|userClassName": "MyButton1",
+                        "layout|flex": 1
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
         }
     ]
 }

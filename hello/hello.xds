@@ -1,7 +1,7 @@
 {
     "name": "hello",
     "settings": {
-        "urlPrefix": "",
+        "urlPrefix": "localhost",
         "directAPI": "",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
@@ -21,14 +21,6 @@
     "xdsBuild": "410",
     "framework": "touch20",
     "topInstanceFileMap": {
-        "91ed13be-2771-41a9-b0e8-b89fdac7fba0": {
-            "paths": [
-                "metadata/view/acces",
-                "app/view/override/acces.js",
-                "app/view/acces.js"
-            ],
-            "className": "acces"
-        },
         "788d0398-dc48-48ce-99bb-02ec4f4b32e3": {
             "paths": [
                 "metadata/view/usuariPanel",
@@ -36,6 +28,46 @@
                 "app/view/usuariPanel.js"
             ],
             "className": "usuariPanel"
+        },
+        "d147aeef-2a26-4da7-bf4b-b0ebb1a9144b": {
+            "paths": [
+                "metadata/view/LoginForm",
+                "app/view/override/LoginForm.js",
+                "app/view/LoginForm.js"
+            ],
+            "className": "LoginForm"
+        },
+        "cfa52486-82e7-42b6-afd8-525d2ae1749c": {
+            "paths": [
+                "metadata/view/AddProcesForm",
+                "app/view/override/AddProcesForm.js",
+                "app/view/AddProcesForm.js"
+            ],
+            "className": "AddProcesForm"
+        },
+        "bce333bd-18d6-44b1-88a3-a47cd6013f12": {
+            "paths": [
+                "metadata/view/ListPanel",
+                "app/view/override/ListPanel.js",
+                "app/view/ListPanel.js"
+            ],
+            "className": "ListPanel"
+        },
+        "6de3dc15-8a5d-487f-8b9c-f2b245f8bb95": {
+            "paths": [
+                "metadata/view/MainPanel",
+                "app/view/override/MainPanel.js",
+                "app/view/MainPanel.js"
+            ],
+            "className": "MainPanel"
+        },
+        "f0444d2e-811d-488e-9192-ae02745aa41e": {
+            "paths": [
+                "metadata/view/Viewport",
+                "app/view/override/Viewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "Viewport"
         }
     },
     "expandedState": {
