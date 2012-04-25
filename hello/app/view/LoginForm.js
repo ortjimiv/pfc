@@ -36,7 +36,7 @@ Ext.define('PFC.view.LoginForm', {
             },
             {
                 xtype: 'fieldset',
-                title: 'MyFieldSet',
+                title: 'Dades de registre:',
                 items: [
                     {
                         xtype: 'textfield',
@@ -78,8 +78,14 @@ Ext.define('PFC.view.LoginForm', {
     onLoginTap: function(button, e, options) {
         var top = button.up('topview');
         PFC.username = button.up('formpanel').getValues().username;
-        top.down('#loggedInUserName').setHtml(PFC.username);
-        top.setActiveItem(1);
+
+
+        if (PFC.username!==""){
+            top.down('#loggedInUserName').setHtml(PFC.username);
+            top.setActiveItem(1);
+        }else{
+            button.up('formpanel').down('#etiqueta1').setHtml("<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>");
+        }
     }
 
 });

@@ -26,7 +26,7 @@ Ext.define('PFC.view.ListPanel', {
                 xtype: 'list',
                 itemId: 'procesosList',
                 itemTpl: [
-                    '<div class="merchant">{merchant}</div><div class="category">{category}</div><div class="amount">{amount}</div>'
+                    '<div class="nom">{nom}</div><div class="descripcio">{descripcio}</div>'
                 ]
             },
             {
@@ -59,25 +59,24 @@ Ext.define('PFC.view.ListPanel', {
 
     onProcesosListPainted: function(component, options) {
         // Create Model
-        Ext.define('Expense', {
+        Ext.define('Proces', {
             extend: "Ext.data.Model",
             fields: [
             {name: 'username', type: 'string'},
-            {name: 'merchant', type: 'string'},
-            {name: 'category', type: 'string'},
-            {name: 'amount', type: 'int'},
+            {name: 'nom', type: 'string'},
+            {name: 'descripcio', type: 'string'},
             {name: 'timestamp',type: 'date'}
             ],
             proxy: {
-                id: 'expenseDB', //Uses new user/timestamp
+                id: 'procesDB', //Uses new user/timestamp
                 type: 'syncstorage',
-                key: 'expense'
+                key: 'proces'
             }
         });
 
         // Create store and assign to List
         var store = Ext.create('Ext.data.Store', {
-            model: 'Expense',
+            model: 'Proces',
             sorters: [ {
                 property: 'timestamp',
                 direction: 'DESC'
@@ -87,7 +86,7 @@ Ext.define('PFC.view.ListPanel', {
         component.setStore(store);
 
         // Sync IO Setup
-        Ext.io.setup({key: "expense"});
+        Ext.io.setup({key: "proces"});
         Ext.io.init();
 
         // Sync data from localstorage

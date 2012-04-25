@@ -14,7 +14,7 @@
     "customConfigs": [],
     "designerId": "bce333bd-18d6-44b1-88a3-a47cd6013f12",
     "$viewOrder": 1,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen7029",
@@ -26,7 +26,7 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "procesosList",
-                "itemTpl": "<div class=\"merchant\">{merchant}</div><div class=\"category\">{category}</div><div class=\"amount\">{amount}</div>",
+                "itemTpl": "<div class=\"nom\">{nom}</div><div class=\"descripcio\">{descripcio}</div>",
                 "designer|userClassName": "MyList"
             },
             "customConfigs": [],
@@ -42,7 +42,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "fn": "onProcesosListPainted",
-                        "implHandler": "// Create Model\r\nExt.define('Expense', {\r\n    extend: \"Ext.data.Model\",\r\n    fields: [\r\n    {name: 'username', type: 'string'},\r\n    {name: 'merchant', type: 'string'},\r\n    {name: 'category', type: 'string'},\r\n    {name: 'amount', type: 'int'},\r\n    {name: 'timestamp',type: 'date'}\r\n    ],\r\n    proxy: {\r\n        id: 'expenseDB', //Uses new user/timestamp\r\n        type: 'syncstorage',\r\n        key: 'expense'\r\n    }\r\n});\r\n\r\n// Create store and assign to List\r\nvar store = Ext.create('Ext.data.Store', {\r\n    model: 'Expense',\r\n    sorters: [ {\r\n        property: 'timestamp',\r\n        direction: 'DESC'\r\n    } ],\r\n    autoLoad: true\r\n});\r\ncomponent.setStore(store);\r\n\r\n// Sync IO Setup\r\nExt.io.setup({key: \"expense\"});\r\nExt.io.init();\r\n\r\n// Sync data from localstorage\r\nstore.sync();",
+                        "implHandler": "// Create Model\r\nExt.define('Proces', {\r\n    extend: \"Ext.data.Model\",\r\n    fields: [\r\n    {name: 'username', type: 'string'},\r\n    {name: 'nom', type: 'string'},\r\n    {name: 'descripcio', type: 'string'},\r\n    {name: 'timestamp',type: 'date'}\r\n    ],\r\n    proxy: {\r\n        id: 'procesDB', //Uses new user/timestamp\r\n        type: 'syncstorage',\r\n        key: 'proces'\r\n    }\r\n});\r\n\r\n// Create store and assign to List\r\nvar store = Ext.create('Ext.data.Store', {\r\n    model: 'Proces',\r\n    sorters: [ {\r\n        property: 'timestamp',\r\n        direction: 'DESC'\r\n    } ],\r\n    autoLoad: true\r\n});\r\ncomponent.setStore(store);\r\n\r\n// Sync IO Setup\r\nExt.io.setup({key: \"proces\"});\r\nExt.io.init();\r\n\r\n// Sync data from localstorage\r\nstore.sync();",
                         "name": "painted",
                         "designer|userClassName": "onProcesosListPainted"
                     },

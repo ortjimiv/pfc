@@ -42,23 +42,18 @@ Ext.define('PFC.view.AddProcesForm', {
             },
             {
                 xtype: 'button',
-                itemId: 'crea',
                 ui: 'confirm',
                 text: 'Crea'
             },
             {
                 xtype: 'button',
                 itemId: 'cancel',
+                style: 'margin-top:1em;',
                 ui: 'decline',
                 text: 'Cancel·la'
             }
         ],
         listeners: [
-            {
-                fn: 'onSubmitTap',
-                event: 'tap',
-                delegate: '#crea'
-            },
             {
                 fn: 'onCancelTap',
                 event: 'tap',
@@ -70,31 +65,30 @@ Ext.define('PFC.view.AddProcesForm', {
     onSubmitTap: function(button, e, options) {
         var form = button.up('formpanel'),
         mainPanel = form.up('#mainPanel'),
-        store = mainPanel.down('#expenseList').getStore(),
+        store = mainPanel.down('#procesosList').getStore(),
         ts = new Date(),
-        expenseRecord = form.getValues();
+        procesRecord = form.getValues();
 
         // Add additional data
-        expenseRecord.username = PFC.username;
-        expenseRecord.timestamp = ts;
+        procesRecord.username = PFC.username;
+        proces.timestamp = ts;
 
         // Send message to the queue - no relation to the store
-        Ext.io.send('queue/expense', { 
-            'type': 'newexpense',
-            'storeid': 'expenseDB',
-            'username': expenseRecord.username,
-            'merchant': expenseRecord.merchant,
-            'category': expenseRecord.category,
-            'amount': expenseRecord.amount,
+        Ext.io.send('queue/proces', { 
+            'type': 'newproces',
+            'storeid': 'procesDB',
+            'username': procesRecord.username,
+            'nom': procesRecord.nom,
+            'descripcio': procesRecord.descripcio,
             'timestamp': Ext.Date.format(ts, 'Y-m-d g.i')
         });
 
         //Store to local storage and sync to remote syncstorage
-        store.add(expenseRecord);
+        store.add(procesRecord);
         store.sync();
 
         //Confirmation
-        Ext.Msg.alert(null, "Expense Added Successfully", function() {
+        Ext.Msg.alert(null, "Procés afegit satisfactoriament", function() {
             //Back to list
             form.reset();
             mainPanel.setActiveItem(0);

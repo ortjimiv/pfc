@@ -62,11 +62,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "MyFieldSet",
+                "style": null,
+                "title": "Dades de registre:",
                 "designer|userClassName": "MyFieldSet"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen4959",
@@ -156,7 +157,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "fn": "onLoginTap",
-                        "implHandler": "var top = button.up('topview');\r\nPFC.username = button.up('formpanel').getValues().username;\r\ntop.down('#loggedInUserName').setHtml(PFC.username);\r\ntop.setActiveItem(1);",
+                        "implHandler": "var top = button.up('topview');\r\nPFC.username = button.up('formpanel').getValues().username;\r\n\r\n\r\nif (PFC.username!==\"\"){\r\n    top.down('#loggedInUserName').setHtml(PFC.username);\r\n    top.setActiveItem(1);\r\n}else{\r\n    button.up('formpanel').down('#etiqueta1').setHtml(\"<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>\");\r\n}",
                         "name": "tap",
                         "designer|userClassName": "onLoginTap"
                     },
