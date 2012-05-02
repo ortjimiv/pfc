@@ -1,0 +1,145 @@
+{
+    "id": "ExtBox1-ext-gen8930",
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "tpl": null,
+        "layout": "vbox",
+        "designer|userClassName": "AddProcesForm",
+        "designer|userAlias": "addprocesform",
+        "container|pack": "center"
+    },
+    "customConfigs": [],
+    "designerId": "cfa52486-82e7-42b6-afd8-525d2ae1749c",
+    "$viewOrder": 0,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen9429",
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Afegir un nou procés",
+                "designer|userClassName": "MyFieldSet1"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen9439",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Nom",
+                        "name": "nom",
+                        "required": true,
+                        "designer|userClassName": "MyTextField1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen9446",
+                    "type": "textareafield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Descripció",
+                        "name": "descripcio",
+                        "designer|userClassName": "MyTextArea"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen3136",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": null,
+                "ui": "confirm",
+                "text": "Crea",
+                "designer|userClassName": "MyButton2"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen14535",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onSubmitTap",
+                        "implHandler": "var form = button.up('formpanel'),\r\nmainPanel = form.up('#mainPanel'),\r\nstore = mainPanel.down('#procesosList').getStore(),\r\nts = new Date(),\r\nprocesRecord = form.getValues();\r\n\r\n// Add additional data\r\nprocesRecord.username = PFC.username;\r\nproces.timestamp = ts;\r\n\r\n// Send message to the queue - no relation to the store\r\nExt.io.send('queue/proces', { \r\n    'type': 'newproces',\r\n    'storeid': 'procesDB',\r\n    'username': procesRecord.username,\r\n    'nom': procesRecord.nom,\r\n    'descripcio': procesRecord.descripcio,\r\n    'timestamp': Ext.Date.format(ts, 'Y-m-d g.i')\r\n});\r\n\r\n//Store to local storage and sync to remote syncstorage\r\nstore.add(procesRecord);\r\nstore.sync();\r\n\r\n//Confirmation\r\nExt.Msg.alert(null, \"Procés afegit satisfactoriament\", function() {\r\n    //Back to list\r\n    form.reset();\r\n    mainPanel.setActiveItem(0);\r\n});",
+                        "name": "tap",
+                        "designer|userClassName": "onSubmitTap"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen3258",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "cancel",
+                "style": "margin-top:1em;",
+                "ui": "decline",
+                "text": "Cancel·la",
+                "designer|userClassName": "MyButton3"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen15329",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onCancelTap",
+                        "implHandler": "button.up('formpanel').reset();\r\nbutton.up('#mainPanel').setActiveItem(0);",
+                        "name": "tap",
+                        "designer|userClassName": "onCancelTap"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

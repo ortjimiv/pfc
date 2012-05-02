@@ -1,0 +1,40 @@
+{
+    "id": "ExtBox1-ext-gen2067",
+    "type": "navigationview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "useTitleForBackButtonText": true,
+        "designer|userClassName": "MyNavigationView",
+        "designer|userAlias": "navview"
+    },
+    "customConfigs": [],
+    "designerId": "f1f7b959-02ad-4f3f-9010-f972db719cb4",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen2295",
+            "type": "list",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "list",
+                "itemId": null,
+                "itemTpl": "<div>List Item {name}</div>",
+                "store": "MyArrayStore",
+                "designer|userClassName": "MyList",
+                "title": "List"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

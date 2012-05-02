@@ -1,11 +1,11 @@
 {
     "name": "hello",
     "settings": {
-        "urlPrefix": "localhost",
+        "urlPrefix": "http://localhost/",
         "directAPI": "",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
-        "exportPath": "C:/inetpub/wwwroot/hello",
+        "exportPath": "C:/Users/casa/pfc/hello",
         "extPath": "http://extjs.cachefly.net/touch/sencha-touch-2.0.0/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
@@ -31,19 +31,19 @@
         },
         "d147aeef-2a26-4da7-bf4b-b0ebb1a9144b": {
             "paths": [
-                "metadata/view/LoginForm",
-                "app/view/override/LoginForm.js",
-                "app/view/LoginForm.js"
+                "metadata/view/loginForm",
+                "app/view/override/loginForm.js",
+                "app/view/loginForm.js"
             ],
-            "className": "LoginForm"
+            "className": "loginForm"
         },
         "cfa52486-82e7-42b6-afd8-525d2ae1749c": {
             "paths": [
-                "metadata/view/AddProcesForm",
-                "app/view/override/AddProcesForm.js",
-                "app/view/AddProcesForm.js"
+                "metadata/view/addProcesForm",
+                "app/view/override/addProcesForm.js",
+                "app/view/addProcesForm.js"
             ],
-            "className": "AddProcesForm"
+            "className": "addProcesForm"
         },
         "bce333bd-18d6-44b1-88a3-a47cd6013f12": {
             "paths": [
@@ -53,21 +53,53 @@
             ],
             "className": "ListPanel"
         },
-        "6de3dc15-8a5d-487f-8b9c-f2b245f8bb95": {
-            "paths": [
-                "metadata/view/MainPanel",
-                "app/view/override/MainPanel.js",
-                "app/view/MainPanel.js"
-            ],
-            "className": "MainPanel"
-        },
         "f0444d2e-811d-488e-9192-ae02745aa41e": {
             "paths": [
-                "metadata/view/Viewport",
-                "app/view/override/Viewport.js",
-                "app/view/Viewport.js"
+                "metadata/view/viewport",
+                "app/view/override/viewport.js",
+                "app/view/viewport.js"
             ],
-            "className": "Viewport"
+            "className": "viewport"
+        },
+        "2faacd5e-dbff-4290-967e-8bf98062a706": {
+            "paths": [
+                "metadata/store/procesJson",
+                "app/store/override/procesJson.js",
+                "app/store/procesJson.js"
+            ],
+            "className": "procesJson"
+        },
+        "54995b40-2914-4e29-8f02-e169cbd14cf3": {
+            "paths": [
+                "metadata/model/procesModel",
+                "app/model/override/procesModel.js",
+                "app/model/procesModel.js"
+            ],
+            "className": "procesModel"
+        },
+        "b7d747e1-ef06-49f5-b7de-e9d9856fb719": {
+            "paths": [
+                "metadata/view/detailPanel",
+                "app/view/override/detailPanel.js",
+                "app/view/detailPanel.js"
+            ],
+            "className": "detailPanel"
+        },
+        "2f4f49f8-57a0-472c-a783-cf92b2b33ba2": {
+            "paths": [
+                "metadata/controller/MyController",
+                "app/controller/override/MyController.js",
+                "app/controller/MyController.js"
+            ],
+            "className": "MyController"
+        },
+        "d395ec42-2786-4203-a256-315ff5d63735": {
+            "paths": [
+                "metadata/view/mainPanel",
+                "app/view/override/mainPanel.js",
+                "app/view/mainPanel.js"
+            ],
+            "className": "mainPanel"
         }
     },
     "expandedState": {

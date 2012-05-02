@@ -9,31 +9,15 @@
     "userConfig": {
         "designer|initialView": true,
         "layout": "card",
-        "designer|userClassName": "Viewport",
-        "designer|userAlias": "topview",
+        "designer|userClassName": "viewport",
+        "designer|userAlias": "viewport",
         "container|animation": "fade"
     },
     "customConfigs": [],
     "designerId": "f0444d2e-811d-488e-9192-ae02745aa41e",
-    "$viewOrder": 5,
-    "expanded": true,
+    "$viewOrder": 6,
+    "expanded": false,
     "cn": [
-        {
-            "id": "ExtBox1-ext-gen11097",
-            "type": "toolbar",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "docked": "top",
-                "title": "Processos de treball",
-                "designer|userClassName": "MyToolbar3"
-            },
-            "customConfigs": [],
-            "expanded": true
-        },
         {
             "id": "ExtBox1-ext-gen11425",
             "type": "linkedinstance",
@@ -43,7 +27,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "loginForm"
+                "cls": null,
+                "itemId": "loginForm",
+                "styleHtmlCls": null,
+                "layout": null
             },
             "customConfigs": [],
             "iconCls": "icon-linkedinstance",
@@ -51,7 +38,7 @@
             "masterInstanceId": "ExtBox1-ext-gen19978"
         },
         {
-            "id": "ExtBox1-ext-gen12589",
+            "id": "ExtBox1-ext-gen10465",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -64,7 +51,7 @@
             "customConfigs": [],
             "iconCls": "icon-linkedinstance",
             "expanded": true,
-            "masterInstanceId": "ExtBox1-ext-gen3986"
+            "masterInstanceId": "ExtBox1-ext-gen7203"
         }
     ]
 }

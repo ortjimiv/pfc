@@ -1,0 +1,37 @@
+{
+    "id": "ExtBox1-ext-gen15805",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "height": 750,
+        "width": 400,
+        "title": "My Panel",
+        "designer|userClassName": "MyPanel"
+    },
+    "customConfigs": [],
+    "designerId": "605d93aa-fa13-4270-9788-157297491811",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen16170",
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Probando",
+                "designer|userClassName": "MyLabel"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

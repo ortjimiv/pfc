@@ -1,0 +1,33 @@
+{
+    "id": "ExtBox1-ext-gen5439",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DetailsView"
+    },
+    "customConfigs": [],
+    "designerId": "7b2365b4-c285-4317-b685-7464ca3ba810",
+    "$viewOrder": 1,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen5663",
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "This is the details view",
+                "designer|userClassName": "MyLabel"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

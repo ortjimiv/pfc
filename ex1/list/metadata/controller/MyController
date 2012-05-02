@@ -1,0 +1,92 @@
+{
+    "id": "ExtBox1-ext-gen3911",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController"
+    },
+    "customConfigs": [],
+    "designerId": "f784763e-b424-4d96-a0a0-a235d3d42265",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen4033",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "navView",
+                "selector": "navview",
+                "designer|userClassName": "navView"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen4248",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "createDetailsView",
+                "designer|params": [
+                    "item"
+                ],
+                "implHandler": "var details = Ext.create('MyApp.view.DetailsView', {\n    title: item\n});\n\nthis.getNavView().push(details);",
+                "designer|userClassName": "createDetailsView"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen4562",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListItemTap",
+                "implHandler": "this.createDetailsView(record.get('name'));\n\n// Uncomment this line to redirect the url\n//this.redirectTo('item/' + (index + 1));",
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "#list",
+                "designer|userClassName": "onListItemTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6000",
+            "type": "controllerroute",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "viewItem",
+                "designer|params": [
+                    "index"
+                ],
+                "implHandler": "var store = Ext.getStore('MyArrayStore'),\n    record = store.getAt(index - 1);\n\nif (record) {\n    this.getNavView().reset();\n\n    this.createDetailsView(record.get('name'));   \n}",
+                "url": "item/:index",
+                "designer|userClassName": "viewItem"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

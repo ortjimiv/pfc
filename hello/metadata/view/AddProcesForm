@@ -9,14 +9,14 @@
     "userConfig": {
         "tpl": null,
         "layout": "vbox",
-        "designer|userClassName": "AddProcesForm",
+        "designer|userClassName": "addProcesForm",
         "designer|userAlias": "addprocesform",
         "container|pack": "center"
     },
     "customConfigs": [],
     "designerId": "cfa52486-82e7-42b6-afd8-525d2ae1749c",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen9429",
@@ -132,7 +132,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "fn": "onCancelTap",
-                        "implHandler": "button.up('formpanel').reset();\r\nbutton.up('#mainPanel').setActiveItem(0);",
+                        "implHandler": "button.up('formpanel').reset();\r\nbutton.up('#mainPanel').setActiveItem(1);",
                         "name": "tap",
                         "designer|userClassName": "onCancelTap"
                     },

@@ -7,15 +7,25 @@
     },
     "codeClass": null,
     "userConfig": {
+        "models": [
+            "procesModel"
+        ],
+        "stores": [
+            "procesJson"
+        ],
         "views": [
             "usuariPanel",
-            "LoginForm",
-            "AddProcesForm",
-            "MainPanel",
+            "loginForm",
+            "addProcesForm",
             "ListPanel",
-            "Viewport"
+            "viewport",
+            "detailPanel",
+            "mainPanel"
         ],
-        "name": "PFC"
+        "name": "PFC",
+        "controllers": [
+            "MyController"
+        ]
     },
     "customConfigs": [],
     "designerId": "application",

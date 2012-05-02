@@ -1,0 +1,73 @@
+{
+    "id": "ExtBox1-ext-gen8207",
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": "[\n            { firstName: \"George\", lastName: \"Washington\" },\n            { firstName: \"John\", lastName: \"Adams\" },\n            { firstName: \"Thomas\", lastName: \"Jefferson\" },\n            { firstName: \"James\", lastName: \"Madison\" },\n            { firstName: \"James\", lastName: \"Monroe\" },\n            { firstName: \"John\", lastName: \"Quincy Adams\" },\n            { firstName: \"Andrew\", lastName: \"Jackson\" },\n            { firstName: \"Martin\", lastName: \"Van Buren\" },\n            { firstName: \"William\", lastName: \"Henry Harrison\" },\n            { firstName: \"John\", lastName: \"Tyler\" },\n            { firstName: \"James\", middleInitial: \"K\", lastName: \"Polk\" },\n            { firstName: \"Zachary\", lastName: \"Taylor\" },\n            { firstName: \"Millard\", lastName: \"Fillmore\" },\n            { firstName: \"Franklin\", lastName: \"Pierce\" },\n            { firstName: \"James\", lastName: \"Buchanan\" },\n            { firstName: \"Abraham\", lastName: \"Lincoln\" },\n            { firstName: \"Andrew\", lastName: \"Johnson\" },\n            { firstName: \"Ulysses\", middleInitial: \"S\", lastName: \"Grant\" },\n            { firstName: \"Rutherford\", middleInitial: \"B\", lastName: \"Hayes\" },\n            { firstName: \"James\", middleInitial: \"A\", lastName: \"Garfield\" },\n            { firstName: \"Chester\", lastName: \"Arthur\" },\n            { firstName: \"Grover\", lastName: \"Cleveland\" },\n            { firstName: \"Benjamin\", lastName: \"Harrison\" },\n            { firstName: \"William\", lastName: \"McKinley\" },\n            { firstName: \"Theodore\", lastName: \"Roosevelt\" },\n            { firstName: \"William\", lastName: \"Howard Taft\" },\n            { firstName: \"Woodrow\", lastName: \"Wilson\" },\n            { firstName: \"Warren\", middleInitial: \"G\", lastName: \"Harding\" },\n            { firstName: \"Calvin\", lastName: \"Coolidge\" },\n            { firstName: \"Herbert\", lastName: \"Hoover\" },\n            { firstName: \"Franklin\", middleInitial: \"D\", lastName: \"Roosevelt\" },\n            { firstName: \"Harry\", middleInitial: \"S\", lastName: \"Truman\" },\n            { firstName: \"Dwight\", middleInitial: \"D\", lastName: \"Eisenhower\" },\n            { firstName: \"John\", middleInitial: \"F\", lastName: \"Kennedy\" },\n            { firstName: \"Lyndon\", middleInitial: \"B\", lastName: \"Johnson\" },\n            { firstName: \"Richard\", lastName: \"Nixon\" },\n            { firstName: \"Gerald\", lastName: \"Ford\" },\n            { firstName: \"Jimmy\", lastName: \"Carter\" },\n            { firstName: \"Ronald\", lastName: \"Reagan\" },\n            { firstName: \"George\", lastName: \"Bush\" },\n            { firstName: \"Bill\", lastName: \"Clinton\" },\n            { firstName: \"George\", middleInitial: \"W\", lastName: \"Bush\" },\n            { firstName: \"Barack\", lastName: \"Obama\" }\n        ]\n",
+        "model": "presidiario",
+        "storeId": "presidiariosStore",
+        "designer|userClassName": "presidiariosStore",
+        "designer|userAlias": "presidiariosstore"
+    },
+    "customConfigs": [],
+    "designerId": "c6aff10e-488a-45d8-bd1e-535c075c33fc",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen10422",
+            "type": "grouper",
+            "reference": {
+                "name": "grouper",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGrouper"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen10561",
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "groupFn",
+                        "designer|params": [
+                            "record"
+                        ],
+                        "implHandler": "return record.get('firstName')[0];",
+                        "designer|userClassName": "groupFn"
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-basic-function",
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen11265",
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "lastName",
+                "designer|userClassName": "MySorter"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

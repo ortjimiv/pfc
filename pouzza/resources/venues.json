@@ -1,0 +1,56 @@
+[
+	{
+		"id": "1",
+		"name": "L'Absynthe",
+		"address":"1738 Saint-Denis Street",
+		"phone":"(514) 285-1738",
+		"price": "15",
+		"latitude": "45.51574",
+		"longitude": "-73.56489"
+	},
+	{
+		"id": "2",
+		"name": "Foufounes Electriques",
+		"address":"87 Sainte-Catherine Street East",
+		"phone":"(514) 844-5539",
+		"price": "30",
+		"latitude": "45.51092",
+		"longitude": "-73.56304"
+	},
+	{
+		"id": "3",
+		"name": "Underworld",
+		"address":"251 Sainte-Catherine Street East",
+		"phone":"(514) 284-0667",
+		"price": "25",
+		"latitude": "45.51228",
+		"longitude": "-73.56185"
+	},
+	{
+		"id": "4",
+		"name": "Katacombe",
+		"address":"1635 Saint-Laurent Boulevard",
+		"phone":"(514) 861-6151",
+		"price": "25",
+		"latitude": "45.51125",
+		"longitude": "-73.56658"
+	},
+	{
+		"id": "5",
+		"name": "Theatre Ste-Catherine",
+		"address":"264 Sainte-Catherine Street East",
+		"phone":"(514) 284-3939",
+		"price": "15",
+		"latitude": "45.51236",
+		"longitude": "-73.56160"
+	},
+	{
+		"id": "6",
+		"name": "Club Soda",
+		"address":"1225 Saint-Laurent Boulevard",
+		"phone":"(514) 286-1010",
+		"price": "30",
+		"latitude": "45.50977",
+		"longitude": "-73.56331"
+	}
+]

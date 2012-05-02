@@ -9,18 +9,35 @@
     "userConfig": {
         "id": null,
         "padding": 15,
+        "style": null,
         "ui": "",
         "layout": "vbox",
         "url": null,
-        "designer|userClassName": "LoginForm",
+        "designer|userClassName": "loginForm",
         "designer|userAlias": "loginform",
         "container|pack": "center"
     },
     "customConfigs": [],
     "designerId": "d147aeef-2a26-4da7-bf4b-b0ebb1a9144b",
-    "$viewOrder": 2,
-    "expanded": true,
+    "$viewOrder": 3,
+    "expanded": false,
     "cn": [
+        {
+            "id": "ExtBox1-ext-gen19834",
+            "type": "titlebar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "Processos de treball",
+                "designer|userClassName": "MyTitleBar"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
         {
             "id": "ExtBox1-ext-gen18404",
             "type": "label",
@@ -157,7 +174,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "fn": "onLoginTap",
-                        "implHandler": "var top = button.up('topview');\r\nPFC.username = button.up('formpanel').getValues().username;\r\n\r\n\r\nif (PFC.username!==\"\"){\r\n    top.down('#loggedInUserName').setHtml(PFC.username);\r\n    top.setActiveItem(1);\r\n}else{\r\n    button.up('formpanel').down('#etiqueta1').setHtml(\"<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>\");\r\n}",
+                        "implHandler": "button.up('formpanel').down('#etiqueta1').setHtml(\"\");\r\nvar top = button.up('viewport');\r\nPFC.username = button.up('formpanel').getValues().username;\r\n\r\n\r\nif (PFC.username!==\"\"){\r\n    top.down('#loggedInUserName').setHtml(PFC.username);\r\n    top.setActiveItem(1);\r\n}else{\r\n    button.up('formpanel').down('#etiqueta1').setHtml(\"<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>\");\r\n}",
                         "name": "tap",
                         "designer|userClassName": "onLoginTap"
                     },

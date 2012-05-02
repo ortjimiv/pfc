@@ -1,0 +1,106 @@
+{
+    "id": "ExtBox1-ext-gen19288",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainController",
+        "designer|userAlias": "MainController"
+    },
+    "customConfigs": [],
+    "designerId": "7d039809-a42f-4711-bec1-68a6d3699099",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen20458",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onBandButtonTap",
+                "implHandler": "\n//this.getNavigation().push(this.getBandList());\n\nalert('This is nav: ' + this.getNavigation());\nalert('This is bands: ' + this.getBandList());",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "BandsButton",
+                "designer|userClassName": "onBandButtonTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen19506",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "Navigation",
+                "selector": "#Navigation",
+                "designer|userClassName": "Navigation"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen19932",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "BandsButton",
+                "selector": "#BandsButton",
+                "designer|userClassName": "BandsButton"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen19723",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "BandList",
+                "selector": "#BandList",
+                "designer|userClassName": "BandList"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen2645",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": "",
+                "designer|userClassName": "init"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-basic-function",
+            "expanded": true
+        }
+    ]
+}

@@ -18,6 +18,7 @@ Ext.define('PFC.view.ListPanel', {
     alias: 'widget.listpanel',
 
     config: {
+        id: 'listPanel',
         layout: {
             type: 'fit'
         },
@@ -26,12 +27,15 @@ Ext.define('PFC.view.ListPanel', {
                 xtype: 'list',
                 itemId: 'procesosList',
                 itemTpl: [
-                    '<div class="nom">{nom}</div><div class="descripcio">{descripcio}</div>'
-                ]
+                    '<div class="nom">{nom}</div>'
+                ],
+                store: 'procesJson',
+                onItemDisclosure: false
             },
             {
                 xtype: 'toolbar',
                 docked: 'bottom',
+                visibility: 'hidden',
                 items: [
                     {
                         xtype: 'button',
@@ -45,11 +49,6 @@ Ext.define('PFC.view.ListPanel', {
         ],
         listeners: [
             {
-                fn: 'onProcesosListPainted',
-                event: 'painted',
-                delegate: '#procesosList'
-            },
-            {
                 fn: 'onNouProcesTap',
                 event: 'tap',
                 delegate: '#nouProces'
@@ -57,44 +56,8 @@ Ext.define('PFC.view.ListPanel', {
         ]
     },
 
-    onProcesosListPainted: function(component, options) {
-        // Create Model
-        Ext.define('Proces', {
-            extend: "Ext.data.Model",
-            fields: [
-            {name: 'username', type: 'string'},
-            {name: 'nom', type: 'string'},
-            {name: 'descripcio', type: 'string'},
-            {name: 'timestamp',type: 'date'}
-            ],
-            proxy: {
-                id: 'procesDB', //Uses new user/timestamp
-                type: 'syncstorage',
-                key: 'proces'
-            }
-        });
-
-        // Create store and assign to List
-        var store = Ext.create('Ext.data.Store', {
-            model: 'Proces',
-            sorters: [ {
-                property: 'timestamp',
-                direction: 'DESC'
-            } ],
-            autoLoad: true
-        });
-        component.setStore(store);
-
-        // Sync IO Setup
-        Ext.io.setup({key: "proces"});
-        Ext.io.init();
-
-        // Sync data from localstorage
-        store.sync();
-    },
-
     onNouProcesTap: function(button, e, options) {
-        button.up('#mainPanel').setActiveItem(1);
+        button.up('#mainPanel').setActiveItem(0);
     }
 
 });

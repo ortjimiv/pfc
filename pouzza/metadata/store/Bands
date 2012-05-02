@@ -1,0 +1,70 @@
+{
+    "id": "ExtBox1-ext-gen14247",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "groupField": null,
+        "model": "Band",
+        "storeId": "Bands",
+        "designer|userClassName": "Bands",
+        "designer|userAlias": "Bands"
+    },
+    "customConfigs": [],
+    "designerId": "7759c4f1-842e-42be-a87d-2a0a64a7cb50",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen14253",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "resources/bands.json",
+                "designer|userClassName": "MyAjaxProxy"
+            },
+            "customConfigs": [],
+            "expanded": false,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen14260",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen12981",
+            "type": "grouper",
+            "reference": {
+                "name": "grouper",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "GroupBySort",
+                "property": "sort",
+                "designer|userClassName": "MyGrouper"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

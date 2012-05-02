@@ -7,13 +7,14 @@
     },
     "codeClass": null,
     "userConfig": {
+        "id": "listPanel",
         "layout": "fit",
         "designer|userClassName": "ListPanel",
         "designer|userAlias": "listpanel"
     },
     "customConfigs": [],
     "designerId": "bce333bd-18d6-44b1-88a3-a47cd6013f12",
-    "$viewOrder": 1,
+    "$viewOrder": 2,
     "expanded": true,
     "cn": [
         {
@@ -25,31 +26,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": null,
                 "itemId": "procesosList",
-                "itemTpl": "<div class=\"nom\">{nom}</div><div class=\"descripcio\">{descripcio}</div>",
+                "itemTpl": "<div class=\"nom\">{nom}</div>",
+                "store": "procesJson",
+                "onItemDisclosure": false,
                 "designer|userClassName": "MyList"
             },
             "customConfigs": [],
-            "expanded": true,
-            "cn": [
-                {
-                    "id": "ExtBox1-ext-gen16222",
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onProcesosListPainted",
-                        "implHandler": "// Create Model\r\nExt.define('Proces', {\r\n    extend: \"Ext.data.Model\",\r\n    fields: [\r\n    {name: 'username', type: 'string'},\r\n    {name: 'nom', type: 'string'},\r\n    {name: 'descripcio', type: 'string'},\r\n    {name: 'timestamp',type: 'date'}\r\n    ],\r\n    proxy: {\r\n        id: 'procesDB', //Uses new user/timestamp\r\n        type: 'syncstorage',\r\n        key: 'proces'\r\n    }\r\n});\r\n\r\n// Create store and assign to List\r\nvar store = Ext.create('Ext.data.Store', {\r\n    model: 'Proces',\r\n    sorters: [ {\r\n        property: 'timestamp',\r\n        direction: 'DESC'\r\n    } ],\r\n    autoLoad: true\r\n});\r\ncomponent.setStore(store);\r\n\r\n// Sync IO Setup\r\nExt.io.setup({key: \"proces\"});\r\nExt.io.init();\r\n\r\n// Sync data from localstorage\r\nstore.sync();",
-                        "name": "painted",
-                        "designer|userClassName": "onProcesosListPainted"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                }
-            ]
+            "expanded": true
         },
         {
             "id": "ExtBox1-ext-gen7328",
@@ -61,9 +46,16 @@
             "codeClass": null,
             "userConfig": {
                 "docked": "bottom",
-                "designer|userClassName": "MyToolbar2"
+                "designer|userClassName": "MyToolbar2",
+                "visibility": "hidden"
             },
-            "customConfigs": [],
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "visibility",
+                    "type": "string"
+                }
+            ],
             "expanded": true,
             "cn": [
                 {
@@ -94,7 +86,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onNouProcesTap",
-                                "implHandler": "button.up('#mainPanel').setActiveItem(1);",
+                                "implHandler": "button.up('#mainPanel').setActiveItem(0);",
                                 "name": "tap",
                                 "designer|userClassName": "onNouProcesTap"
                             },

@@ -18,19 +18,29 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
+    models: [
+        'procesModel'
+    ],
+    stores: [
+        'procesJson'
+    ],
     views: [
         'usuariPanel',
-        'LoginForm',
-        'AddProcesForm',
-        'MainPanel',
+        'loginForm',
+        'addProcesForm',
         'ListPanel',
-        'Viewport'
+        'viewport',
+        'detailPanel',
+        'mainPanel'
     ],
     name: 'PFC',
+    controllers: [
+        'MyController'
+    ],
 
     launch: function() {
 
-        Ext.create('PFC.view.Viewport', {fullscreen: true});
+        Ext.create('PFC.view.viewport', {fullscreen: true});
     }
 
 });

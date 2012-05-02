@@ -1,0 +1,150 @@
+{
+    "id": "ExtBox1-ext-gen6677",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "listPanel",
+        "layout": "fit",
+        "designer|userClassName": "ListPanel",
+        "designer|userAlias": "listpanel"
+    },
+    "customConfigs": [],
+    "designerId": "bce333bd-18d6-44b1-88a3-a47cd6013f12",
+    "$viewOrder": 2,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen7029",
+            "type": "list",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "procesosList",
+                "itemTpl": "<div class=\"nom\">{nom}</div><div class=\"descripcio\">{descripcio}</div>",
+                "store": "procesJson",
+                "onItemDisclosure": true,
+                "designer|userClassName": "MyList"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen13867",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onProcesosListItemTap",
+                        "implHandler": "this.setActiveItem(1);\r\nthis.down(\"#back\").show();\r\nthis.down(\"#detailPreview\").setData(record.data);",
+                        "name": "itemtap",
+                        "designer|userClassName": "onProcesosListItemTap"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen7328",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom",
+                "designer|userClassName": "MyToolbar2"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen8278",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "back",
+                        "ui": "back",
+                        "text": "back",
+                        "designer|userClassName": "MyButton5"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen10538",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBackTap",
+                                "implHandler": "button.hide();\r\nthis.setActiveItem(0);\r\nthis.down(\"#procesosList\").deselectAll();",
+                                "name": "tap",
+                                "designer|userClassName": "onBackTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen7815",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "nouProces",
+                        "ui": "action-round",
+                        "text": "Nou procés",
+                        "designer|userClassName": "MyButton5",
+                        "layout|flex": 1
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen17062",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNouProcesTap",
+                                "implHandler": "button.up('#mainPanel').setActiveItem(1);",
+                                "name": "tap",
+                                "designer|userClassName": "onNouProcesTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

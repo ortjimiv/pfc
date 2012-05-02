@@ -1,0 +1,53 @@
+{
+    "id": "ExtBox1-ext-gen13641",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController"
+    },
+    "customConfigs": [],
+    "designerId": "d1d85397-0e11-4496-a76c-36b0539f2ad0",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen13788",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "navegador",
+                "selector": "contenedor",
+                "designer|userClassName": "navegador"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14075",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListDisclose",
+                "implHandler": "    this.getNavegador().push({\r\n        xtype: 'presidiariodetalle',\r\n        title: 'holaaaa',\r\n        data: record.getData()\r\n    })",
+                "name": "disclose",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "list",
+                "designer|userClassName": "onListDisclose"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}
