@@ -17,11 +17,11 @@ Ext.define('PFC.view.mainPanel', {
     extend: 'Ext.navigation.View',
     alias: 'widget.mainpanel',
     requires: [
-        'PFC.view.addProcesForm',
         'PFC.view.ListPanel'
     ],
 
     config: {
+        defaultBackButtonText: 'Torna',
         layout: {
             animation: 'slide',
             type: 'card'
@@ -40,10 +40,6 @@ Ext.define('PFC.view.mainPanel', {
         },
         items: [
             {
-                xtype: 'addprocesform',
-                itemId: 'addProcesForm'
-            },
-            {
                 xtype: 'listpanel',
                 itemId: 'listPanel'
             }
@@ -53,6 +49,11 @@ Ext.define('PFC.view.mainPanel', {
                 fn: 'onLogoutTap',
                 event: 'tap',
                 delegate: '#logout'
+            },
+            {
+                fn: 'onLoggedInUserNameBack',
+                event: 'back',
+                delegate: '#loggedInUserName'
             }
         ]
     },
@@ -60,7 +61,12 @@ Ext.define('PFC.view.mainPanel', {
     onLogoutTap: function(button, e, options) {
         var top = button.up('viewport');
         top.down('#loginForm').reset();
+        top.down('#procesosList').deselectAll();
         top.setActiveItem(0);
+    },
+
+    onLoggedInUserNameBack: function(bar, eOpts) {
+        //bar.down('#logout').show();
     }
 
 });

@@ -44,20 +44,6 @@ Ext.define('PFC.view.addProcesForm', {
                 xtype: 'button',
                 ui: 'confirm',
                 text: 'Crea'
-            },
-            {
-                xtype: 'button',
-                itemId: 'cancel',
-                style: 'margin-top:1em;',
-                ui: 'decline',
-                text: 'Cancel·la'
-            }
-        ],
-        listeners: [
-            {
-                fn: 'onCancelTap',
-                event: 'tap',
-                delegate: '#cancel'
             }
         ]
     },
@@ -93,11 +79,6 @@ Ext.define('PFC.view.addProcesForm', {
             form.reset();
             mainPanel.setActiveItem(0);
         });
-    },
-
-    onCancelTap: function(button, e, options) {
-        button.up('formpanel').reset();
-        button.up('#mainPanel').setActiveItem(1);
     }
 
 });

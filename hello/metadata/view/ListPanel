@@ -86,7 +86,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onNouProcesTap",
-                                "implHandler": "button.up('#mainPanel').setActiveItem(0);",
+                                "implHandler": "//button.up('#mainPanel').setActiveItem(0);\r\nbutton.up('#mainPanel').push({\r\n    xtype: 'addprocesform',\r\n    title: 'Afegir procés'\r\n});",
                                 "name": "tap",
                                 "designer|userClassName": "onNouProcesTap"
                             },

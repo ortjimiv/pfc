@@ -9,7 +9,7 @@
     "userConfig": {
         "autoLoad": true,
         "model": "usuari",
-        "remoteFilter": true,
+        "remoteFilter": false,
         "storeId": "usuariJson",
         "designer|userClassName": "usuariJson",
         "designer|userAlias": null

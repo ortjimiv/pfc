@@ -22,7 +22,7 @@ Ext.define('PFC.store.usuariJson', {
     config: {
         autoLoad: true,
         model: 'PFC.model.usuari',
-        remoteFilter: true,
+        remoteFilter: false,
         storeId: 'usuariJson',
         proxy: {
             type: 'ajax',

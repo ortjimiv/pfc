@@ -40,7 +40,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onListItemTap",
-                "implHandler": "this.getMainpanel().push({\r\n    xtype: 'detailpanel',\r\n    title: 'holaaaa',\r\n    data: record.getData()\r\n});",
+                "implHandler": "var top = dataview.up('mainpanel');\r\n//top.down('#logout').hide();\r\n\r\nthis.getMainpanel().push({\r\n    xtype: 'detailpanel',\r\n    title: 'holaaaa',\r\n    data: record.getData()\r\n});",
                 "name": "itemtap",
                 "designer|targetType": "Ext.dataview.List",
                 "designer|controlQuery": "list",

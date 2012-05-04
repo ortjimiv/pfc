@@ -103,43 +103,6 @@
                     "expanded": true
                 }
             ]
-        },
-        {
-            "id": "ExtBox1-ext-gen3258",
-            "type": "button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "itemId": "cancel",
-                "style": "margin-top:1em;",
-                "ui": "decline",
-                "text": "Cancel·la",
-                "designer|userClassName": "MyButton3"
-            },
-            "customConfigs": [],
-            "expanded": true,
-            "cn": [
-                {
-                    "id": "ExtBox1-ext-gen15329",
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onCancelTap",
-                        "implHandler": "button.up('formpanel').reset();\r\nbutton.up('#mainPanel').setActiveItem(1);",
-                        "name": "tap",
-                        "designer|userClassName": "onCancelTap"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                }
-            ]
         }
     ]
 }

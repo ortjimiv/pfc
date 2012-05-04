@@ -86,38 +86,15 @@ Ext.define('PFC.view.loginForm', {
         button.up('formpanel').down('#etiqueta1').setHtml("");
         var top = button.up('viewport');
 
-        /*
         PFC.username = button.up('formpanel').getValues().username;
 
-
         if (PFC.username!==""){
-        top.down('#loggedInUserName').setHtml(PFC.username);
-        top.setActiveItem(1);
+            var x = Ext.getStore('usuariJson').find("username",PFC.username);
+            top.down('#loggedInUserName').setHtml(PFC.username);
+            top.setActiveItem(1);
         }else{
-        button.up('formpanel').down('#etiqueta1').setHtml("<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>");
+            button.up('formpanel').down('#etiqueta1').setHtml("<DIV style='color:red'>Necessita omplenar les dades de usuari.<br/>Els usuaris disponibles son ivan, usuari, admin i edit.</div>");
         }
-        */
-
-
-
-
-        /*
-        if (PFC.store.usuariJson.filter("usernameFilter",button.up('formpanel').getValues().username).anyMatch){
-        alert ("Trobat");
-        }else{
-        alert ("NO Trobat");
-        }
-        */
-        /*
-        if (PFC.store.usuariJson.comprovaUsuari(button.up('formpanel').getValues().username)){
-        alert ("trobat");
-        }else{
-        alert ("NO trobat");
-        }
-        */
-
-        var x = PFC.store.usuariJson.find("username",button.up('formpanel').getValues().username);
-        alert (x);
     }
 
 });

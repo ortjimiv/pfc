@@ -57,7 +57,11 @@ Ext.define('PFC.view.ListPanel', {
     },
 
     onNouProcesTap: function(button, e, options) {
-        button.up('#mainPanel').setActiveItem(0);
+        //button.up('#mainPanel').setActiveItem(0);
+        button.up('#mainPanel').push({
+            xtype: 'addprocesform',
+            title: 'Afegir procés'
+        });
     }
 
 });

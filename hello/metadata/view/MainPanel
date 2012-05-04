@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "defaultBackButtonText": "Torna",
         "designer|userClassName": "mainPanel",
         "designer|userAlias": "mainpanel",
         "container|animation": "slide"
@@ -14,7 +15,7 @@
     "customConfigs": [],
     "designerId": "d395ec42-2786-4203-a256-315ff5d63735",
     "$viewOrder": 4,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen6183",
@@ -50,7 +51,7 @@
                         "align": "left"
                     },
                     "customConfigs": [],
-                    "expanded": true,
+                    "expanded": false,
                     "cn": [
                         {
                             "id": "ExtBox1-ext-gen18454",
@@ -62,7 +63,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onLogoutTap",
-                                "implHandler": "var top = button.up('viewport');\r\ntop.down('#loginForm').reset();\r\ntop.setActiveItem(0);",
+                                "implHandler": "var top = button.up('viewport');\r\ntop.down('#loginForm').reset();\r\ntop.down('#procesosList').deselectAll();\r\ntop.setActiveItem(0);",
                                 "name": "tap",
                                 "designer|userClassName": "onLogoutTap"
                             },
@@ -70,24 +71,25 @@
                             "expanded": true
                         }
                     ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen47573",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onLoggedInUserNameBack",
+                        "implHandler": "//bar.down('#logout').show();",
+                        "name": "back",
+                        "designer|userClassName": "onLoggedInUserNameBack"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
                 }
             ]
-        },
-        {
-            "id": "ExtBox1-ext-gen19754",
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "itemId": "addProcesForm"
-            },
-            "customConfigs": [],
-            "iconCls": "icon-linkedinstance",
-            "expanded": true,
-            "masterInstanceId": "ExtBox1-ext-gen8930"
         },
         {
             "id": "ExtBox1-ext-gen20596",
