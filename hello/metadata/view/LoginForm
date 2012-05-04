@@ -20,7 +20,7 @@
     "customConfigs": [],
     "designerId": "d147aeef-2a26-4da7-bf4b-b0ebb1a9144b",
     "$viewOrder": 3,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen19834",
@@ -84,7 +84,7 @@
                 "designer|userClassName": "MyFieldSet"
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen4959",
@@ -101,6 +101,7 @@
                         "label": "Usuari:",
                         "name": "username",
                         "required": true,
+                        "placeHolder": "Nom d'usuari",
                         "designer|userClassName": "MyTextField"
                     },
                     "customConfigs": [],
@@ -119,6 +120,7 @@
                         "label": "Clau:",
                         "name": "password",
                         "required": true,
+                        "placeHolder": "Clau d'usuari",
                         "designer|userClassName": "MyPasswordField"
                     },
                     "customConfigs": [],
@@ -174,7 +176,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "fn": "onLoginTap",
-                        "implHandler": "button.up('formpanel').down('#etiqueta1').setHtml(\"\");\r\nvar top = button.up('viewport');\r\nPFC.username = button.up('formpanel').getValues().username;\r\n\r\n\r\nif (PFC.username!==\"\"){\r\n    top.down('#loggedInUserName').setHtml(PFC.username);\r\n    top.setActiveItem(1);\r\n}else{\r\n    button.up('formpanel').down('#etiqueta1').setHtml(\"<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>\");\r\n}",
+                        "implHandler": "button.up('formpanel').down('#etiqueta1').setHtml(\"\");\r\nvar top = button.up('viewport');\r\n\r\n/*\r\nPFC.username = button.up('formpanel').getValues().username;\r\n\r\n\r\nif (PFC.username!==\"\"){\r\n    top.down('#loggedInUserName').setHtml(PFC.username);\r\n    top.setActiveItem(1);\r\n}else{\r\n    button.up('formpanel').down('#etiqueta1').setHtml(\"<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>\");\r\n}\r\n*/\r\n\r\n\r\n\r\n\r\n/*\r\nif (PFC.store.usuariJson.filter(\"usernameFilter\",button.up('formpanel').getValues().username).anyMatch){\r\n    alert (\"Trobat\");\r\n}else{\r\n    alert (\"NO Trobat\");\r\n}\r\n*/\r\n/*\r\nif (PFC.store.usuariJson.comprovaUsuari(button.up('formpanel').getValues().username)){\r\n    alert (\"trobat\");\r\n}else{\r\n    alert (\"NO trobat\");\r\n}\r\n*/\r\n\r\nvar x = PFC.store.usuariJson.find(\"username\",button.up('formpanel').getValues().username);\r\nalert (x);",
                         "name": "tap",
                         "designer|userClassName": "onLoginTap"
                     },

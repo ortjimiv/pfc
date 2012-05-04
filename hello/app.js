@@ -19,10 +19,12 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'procesModel'
+        'procesModel',
+        'usuari'
     ],
     stores: [
-        'procesJson'
+        'procesJson',
+        'usuariJson'
     ],
     views: [
         'usuariPanel',

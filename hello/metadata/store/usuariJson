@@ -1,5 +1,5 @@
 {
-    "id": "ExtBox1-ext-gen6123",
+    "id": "ExtBox1-ext-gen8247",
     "type": "jsonstore",
     "reference": {
         "name": "items",
@@ -8,17 +8,19 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
-        "model": "procesModel",
-        "storeId": "procesJson",
-        "designer|userClassName": "procesJson"
+        "model": "usuari",
+        "remoteFilter": true,
+        "storeId": "usuariJson",
+        "designer|userClassName": "usuariJson",
+        "designer|userAlias": null
     },
     "customConfigs": [],
-    "designerId": "2faacd5e-dbff-4290-967e-8bf98062a706",
-    "$viewOrder": 0,
-    "expanded": false,
+    "designerId": "e5de5532-a011-4c90-89c9-b32387fa61e1",
+    "$viewOrder": 1,
+    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen6130",
+            "id": "ExtBox1-ext-gen8254",
             "type": "ajaxproxy",
             "reference": {
                 "name": "proxy",
@@ -26,14 +28,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/proces.json",
-                "designer|userClassName": "MyAjaxProxy"
+                "url": "data/usuari.json",
+                "designer|userClassName": "MyAjaxProxy1"
             },
             "customConfigs": [],
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen6137",
+                    "id": "ExtBox1-ext-gen8261",
                     "type": "jsonreader",
                     "reference": {
                         "name": "reader",
@@ -41,8 +43,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "rootProperty": "data",
-                        "designer|userClassName": "MyJsonReader"
+                        "rootProperty": "usuari",
+                        "designer|userClassName": "MyJsonReader1"
                     },
                     "customConfigs": [],
                     "expanded": true

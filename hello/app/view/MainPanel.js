@@ -41,10 +41,7 @@ Ext.define('PFC.view.mainPanel', {
         items: [
             {
                 xtype: 'addprocesform',
-                itemId: 'addProcesForm',
-                layout: {
-                    type: 'default'
-                }
+                itemId: 'addProcesForm'
             },
             {
                 xtype: 'listpanel',

@@ -100,11 +100,27 @@
                 "app/view/mainPanel.js"
             ],
             "className": "mainPanel"
+        },
+        "e5de5532-a011-4c90-89c9-b32387fa61e1": {
+            "paths": [
+                "metadata/store/usuariJson",
+                "app/store/override/usuariJson.js",
+                "app/store/usuariJson.js"
+            ],
+            "className": "usuariJson"
+        },
+        "2aa25367-5882-480b-85e4-baa63f17db8d": {
+            "paths": [
+                "metadata/model/usuari",
+                "app/model/override/usuari.js",
+                "app/model/usuari.js"
+            ],
+            "className": "usuari"
         }
     },
     "expandedState": {
         "data": true,
-        "model": true,
+        "model": false,
         "component": true,
         "controller": true,
         "resource": false

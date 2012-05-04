@@ -14,7 +14,7 @@
     "customConfigs": [],
     "designerId": "d395ec42-2786-4203-a256-315ff5d63735",
     "$viewOrder": 4,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen6183",
@@ -82,8 +82,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "addProcesForm",
-                "layout": "default"
+                "itemId": "addProcesForm"
             },
             "customConfigs": [],
             "iconCls": "icon-linkedinstance",

@@ -47,13 +47,15 @@ Ext.define('PFC.view.loginForm', {
                         xtype: 'textfield',
                         label: 'Usuari:',
                         name: 'username',
-                        required: true
+                        required: true,
+                        placeHolder: 'Nom d\'usuari'
                     },
                     {
                         xtype: 'passwordfield',
                         label: 'Clau:',
                         name: 'password',
-                        required: true
+                        required: true,
+                        placeHolder: 'Clau d\'usuari'
                     }
                 ]
             },
@@ -83,15 +85,39 @@ Ext.define('PFC.view.loginForm', {
     onLoginTap: function(button, e, options) {
         button.up('formpanel').down('#etiqueta1').setHtml("");
         var top = button.up('viewport');
+
+        /*
         PFC.username = button.up('formpanel').getValues().username;
 
 
         if (PFC.username!==""){
-            top.down('#loggedInUserName').setHtml(PFC.username);
-            top.setActiveItem(1);
+        top.down('#loggedInUserName').setHtml(PFC.username);
+        top.setActiveItem(1);
         }else{
-            button.up('formpanel').down('#etiqueta1').setHtml("<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>");
+        button.up('formpanel').down('#etiqueta1').setHtml("<DIV style='color:red'>Necessita omplenar les dades de usuari.</div>");
         }
+        */
+
+
+
+
+        /*
+        if (PFC.store.usuariJson.filter("usernameFilter",button.up('formpanel').getValues().username).anyMatch){
+        alert ("Trobat");
+        }else{
+        alert ("NO Trobat");
+        }
+        */
+        /*
+        if (PFC.store.usuariJson.comprovaUsuari(button.up('formpanel').getValues().username)){
+        alert ("trobat");
+        }else{
+        alert ("NO trobat");
+        }
+        */
+
+        var x = PFC.store.usuariJson.find("username",button.up('formpanel').getValues().username);
+        alert (x);
     }
 
 });

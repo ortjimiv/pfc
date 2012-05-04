@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "cls": null,
                 "itemId": "loginForm",
                 "styleHtmlCls": null,
                 "layout": null

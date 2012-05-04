@@ -8,10 +8,12 @@
     "codeClass": null,
     "userConfig": {
         "models": [
-            "procesModel"
+            "procesModel",
+            "usuari"
         ],
         "stores": [
-            "procesJson"
+            "procesJson",
+            "usuariJson"
         ],
         "views": [
             "usuariPanel",
