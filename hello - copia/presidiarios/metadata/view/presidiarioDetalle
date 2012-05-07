@@ -1,0 +1,26 @@
+{
+    "id": "ExtBox1-ext-gen11761",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "html": "Holaaaa",
+        "tpl": "'hola! {firstName}'",
+        "designer|userClassName": "presidiarioDetalle",
+        "designer|userAlias": "presidiariodetalle",
+        "title": "Este es el título"
+    },
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        }
+    ],
+    "designerId": "b761ef5f-b314-42d6-9b83-eaf523b5ce55",
+    "$viewOrder": 1,
+    "expanded": true
+}

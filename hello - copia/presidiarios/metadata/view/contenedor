@@ -1,0 +1,34 @@
+{
+    "id": "ExtBox1-ext-gen12181",
+    "type": "navigationview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userClassName": "contenedor",
+        "designer|userAlias": "contenedor"
+    },
+    "customConfigs": [],
+    "designerId": "c1cae50f-f2e2-4952-9c38-80892c02063a",
+    "$viewOrder": 2,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen12508",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {},
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen7831"
+        }
+    ]
+}

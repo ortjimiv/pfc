@@ -15,7 +15,7 @@
     "customConfigs": [],
     "designerId": "d395ec42-2786-4203-a256-315ff5d63735",
     "$viewOrder": 4,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen6183",
@@ -71,28 +71,11 @@
                             "expanded": true
                         }
                     ]
-                },
-                {
-                    "id": "ExtBox1-ext-gen47573",
-                    "type": "basiceventbinding",
-                    "reference": {
-                        "name": "listeners",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "fn": "onLoggedInUserNameBack",
-                        "implHandler": "//bar.down('#logout').show();",
-                        "name": "back",
-                        "designer|userClassName": "onLoggedInUserNameBack"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen20596",
+            "id": "ExtBox1-ext-gen23557",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -100,12 +83,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "listPanel"
+                "itemId": "usuariPanel"
             },
             "customConfigs": [],
             "iconCls": "icon-linkedinstance",
             "expanded": true,
-            "masterInstanceId": "ExtBox1-ext-gen6677"
+            "masterInstanceId": "ExtBox1-ext-gen22122"
         }
     ]
 }

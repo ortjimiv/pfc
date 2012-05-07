@@ -12,7 +12,7 @@
     "customConfigs": [],
     "designerId": "2f4f49f8-57a0-472c-a783-cf92b2b33ba2",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen8586",
@@ -40,7 +40,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onListItemTap",
-                "implHandler": "var top = dataview.up('mainpanel');\r\n//top.down('#logout').hide();\r\n\r\nthis.getMainpanel().push({\r\n    xtype: 'detailpanel',\r\n    title: 'holaaaa',\r\n    data: record.getData()\r\n});",
+                "implHandler": "this.getMainpanel().push({\r\n    xtype: 'detailpanel',\r\n    data: record.getData()\r\n});",
                 "name": "itemtap",
                 "designer|targetType": "Ext.dataview.List",
                 "designer|controlQuery": "list",

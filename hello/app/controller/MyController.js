@@ -28,12 +28,8 @@ Ext.define('PFC.controller.MyController', {
     },
 
     onListItemTap: function(dataview, index, target, record, e, options) {
-        var top = dataview.up('mainpanel');
-        //top.down('#logout').hide();
-
         this.getMainpanel().push({
             xtype: 'detailpanel',
-            title: 'holaaaa',
             data: record.getData()
         });
     }

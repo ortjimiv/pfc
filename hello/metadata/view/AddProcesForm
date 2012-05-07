@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "itemId": "addProcesForm",
         "tpl": null,
         "layout": "vbox",
         "designer|userClassName": "addProcesForm",
@@ -16,7 +17,7 @@
     "customConfigs": [],
     "designerId": "cfa52486-82e7-42b6-afd8-525d2ae1749c",
     "$viewOrder": 0,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen9429",
@@ -77,10 +78,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": null,
-                "ui": "confirm",
+                "itemId": "submit",
+                "ui": "confirm-round",
                 "text": "Crea",
-                "designer|userClassName": "MyButton2"
+                "designer|userClassName": "MyButton2",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true,
@@ -95,7 +97,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "fn": "onSubmitTap",
-                        "implHandler": "var form = button.up('formpanel'),\r\nmainPanel = form.up('#mainPanel'),\r\nstore = mainPanel.down('#procesosList').getStore(),\r\nts = new Date(),\r\nprocesRecord = form.getValues();\r\n\r\n// Add additional data\r\nprocesRecord.username = PFC.username;\r\nproces.timestamp = ts;\r\n\r\n// Send message to the queue - no relation to the store\r\nExt.io.send('queue/proces', { \r\n    'type': 'newproces',\r\n    'storeid': 'procesDB',\r\n    'username': procesRecord.username,\r\n    'nom': procesRecord.nom,\r\n    'descripcio': procesRecord.descripcio,\r\n    'timestamp': Ext.Date.format(ts, 'Y-m-d g.i')\r\n});\r\n\r\n//Store to local storage and sync to remote syncstorage\r\nstore.add(procesRecord);\r\nstore.sync();\r\n\r\n//Confirmation\r\nExt.Msg.alert(null, \"Procés afegit satisfactoriament\", function() {\r\n    //Back to list\r\n    form.reset();\r\n    mainPanel.setActiveItem(0);\r\n});",
+                        "implHandler": "var form = button.up('addprocesform'),\r\nmainPanel = form.up('#mainPanel'),\r\nstore = mainPanel.down('#procesosList').getStore(),\r\nts = new Date(),\r\nprocesRecord = form.getValues();\r\n\r\n// Add additional data\r\n//procesRecord.username = PFC.username;\r\n//proces.timestamp = ts;\r\n\r\n// Send message to the queue - no relation to the store\r\n/*Ext.io.send('queue/proces', { \r\n    'type': 'newproces',\r\n    'storeid': 'procesDB',\r\n    //'username': procesRecord.username,\r\n    'nom': procesRecord.nom,\r\n    'descripcio': procesRecord.descripcio\r\n    //'timestamp': Ext.Date.format(ts, 'Y-m-d g.i')\r\n});\r\n*/\r\n\r\n//Store to local storage and sync to remote syncstorage\r\nstore.add(procesRecord);\r\nstore.sync();\r\n\r\n//Confirmation\r\n//alert (\"Procés afegit satisfactoriament\");\r\nform.reset();\r\nmainPanel.pop();\r\n//mainPanel.setActiveItem(0);\r\n\r\n/*\r\nExt.Msg.alert(null, \"Procés afegit satisfactoriament\", function() {\r\n    //Back to list\r\n    form.reset();\r\n    mainPanel.setActiveItem(0);\r\n});\r\n*/",
                         "name": "tap",
                         "designer|userClassName": "onSubmitTap"
                     },

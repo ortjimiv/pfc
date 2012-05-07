@@ -24,6 +24,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout": "fit",
                 "designer|userClassName": "MyContainer",
                 "title": "Processos"
             },
@@ -78,8 +79,8 @@
                     ]
                 },
                 {
-                    "id": "ExtBox1-ext-gen9711",
-                    "type": "container",
+                    "id": "ExtBox1-ext-gen6910",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -87,32 +88,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "docked": null,
-                        "itemId": "processos",
-                        "ui": "",
-                        "layout": "hbox",
-                        "designer|userClassName": "MyContainer4"
+                        "itemId": "listPanel",
+                        "layout": "card"
                     },
                     "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
                     "expanded": true,
-                    "cn": [
-                        {
-                            "id": "ExtBox1-ext-gen12176",
-                            "type": "list",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout": "fit",
-                                "itemTpl": "<div>{nom}</div>",
-                                "store": "procesJson",
-                                "designer|userClassName": "MyList1"
-                            },
-                            "customConfigs": [],
-                            "expanded": true
-                        }
-                    ]
+                    "masterInstanceId": "ExtBox1-ext-gen6677"
                 }
             ]
         },

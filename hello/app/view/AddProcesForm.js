@@ -18,6 +18,7 @@ Ext.define('PFC.view.addProcesForm', {
     alias: 'widget.addprocesform',
 
     config: {
+        itemId: 'addProcesForm',
         layout: {
             pack: 'center',
             type: 'vbox'
@@ -42,43 +43,59 @@ Ext.define('PFC.view.addProcesForm', {
             },
             {
                 xtype: 'button',
-                ui: 'confirm',
+                itemId: 'submit',
+                ui: 'confirm-round',
                 text: 'Crea'
+            }
+        ],
+        listeners: [
+            {
+                fn: 'onSubmitTap',
+                event: 'tap',
+                delegate: '#submit'
             }
         ]
     },
 
     onSubmitTap: function(button, e, options) {
-        var form = button.up('formpanel'),
+        var form = button.up('addprocesform'),
         mainPanel = form.up('#mainPanel'),
         store = mainPanel.down('#procesosList').getStore(),
         ts = new Date(),
         procesRecord = form.getValues();
 
         // Add additional data
-        procesRecord.username = PFC.username;
-        proces.timestamp = ts;
+        //procesRecord.username = PFC.username;
+        //proces.timestamp = ts;
 
         // Send message to the queue - no relation to the store
-        Ext.io.send('queue/proces', { 
-            'type': 'newproces',
-            'storeid': 'procesDB',
-            'username': procesRecord.username,
-            'nom': procesRecord.nom,
-            'descripcio': procesRecord.descripcio,
-            'timestamp': Ext.Date.format(ts, 'Y-m-d g.i')
-        });
+        /*Ext.io.send('queue/proces', { 
+        'type': 'newproces',
+        'storeid': 'procesDB',
+        //'username': procesRecord.username,
+        'nom': procesRecord.nom,
+        'descripcio': procesRecord.descripcio
+        //'timestamp': Ext.Date.format(ts, 'Y-m-d g.i')
+    });
+    */
 
-        //Store to local storage and sync to remote syncstorage
-        store.add(procesRecord);
-        store.sync();
+    //Store to local storage and sync to remote syncstorage
+    store.add(procesRecord);
+    store.sync();
 
-        //Confirmation
-        Ext.Msg.alert(null, "Procés afegit satisfactoriament", function() {
-            //Back to list
-            form.reset();
-            mainPanel.setActiveItem(0);
+    //Confirmation
+    //alert ("Procés afegit satisfactoriament");
+    form.reset();
+    mainPanel.pop();
+    //mainPanel.setActiveItem(0);
+
+    /*
+    Ext.Msg.alert(null, "Procés afegit satisfactoriament", function() {
+    //Back to list
+    form.reset();
+    mainPanel.setActiveItem(0);
         });
+        */
     }
 
 });

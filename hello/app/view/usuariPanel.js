@@ -16,11 +16,17 @@
 Ext.define('PFC.view.usuariPanel', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.usuaripanel',
+    requires: [
+        'PFC.view.ListPanel'
+    ],
 
     config: {
         items: [
             {
                 xtype: 'container',
+                layout: {
+                    type: 'fit'
+                },
                 title: 'Processos',
                 items: [
                     {
@@ -40,24 +46,11 @@ Ext.define('PFC.view.usuariPanel', {
                         ]
                     },
                     {
-                        xtype: 'container',
-                        itemId: 'processos',
-                        ui: '',
+                        xtype: 'listpanel',
+                        itemId: 'listPanel',
                         layout: {
-                            type: 'hbox'
-                        },
-                        items: [
-                            {
-                                xtype: 'list',
-                                layout: {
-                                    type: 'fit'
-                                },
-                                itemTpl: [
-                                    '<div>{nom}</div>'
-                                ],
-                                store: 'procesJson'
-                            }
-                        ]
+                            type: 'card'
+                        }
                     }
                 ]
             },
