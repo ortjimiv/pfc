@@ -1,0 +1,159 @@
+{
+    "id": "ExtBox1-ext-gen13941",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "layout": "hbox",
+        "scrollable": "horizontal",
+        "designer|userClassName": "etiquetes",
+        "designer|userAlias": "etiquetes",
+        "container|align": "center",
+        "container|pack": "center"
+    },
+    "customConfigs": [],
+    "designerId": "fe43221d-dfc3-47a7-a711-415aa3f6ecac",
+    "$viewOrder": 7,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen25027",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "item 1",
+                "padding": 10,
+                "layout": "hbox",
+                "designer|userClassName": "MyPanel7"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen25284",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "item 2",
+                "padding": 10,
+                "layout": "hbox",
+                "designer|userClassName": "MyPanel8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8777",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "item 3",
+                "padding": 10,
+                "layout": "hbox",
+                "designer|userClassName": "MyPanel8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8906",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "item 4",
+                "padding": 10,
+                "layout": "hbox",
+                "designer|userClassName": "MyPanel8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9036",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "item 5",
+                "padding": 10,
+                "layout": "hbox",
+                "designer|userClassName": "MyPanel8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9167",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "item 6",
+                "padding": 10,
+                "layout": "hbox",
+                "designer|userClassName": "MyPanel8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9299",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "item 7",
+                "padding": 10,
+                "layout": "hbox",
+                "designer|userClassName": "MyPanel8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen10440",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "item 8",
+                "padding": 10,
+                "layout": "hbox",
+                "designer|userClassName": "MyPanel8"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

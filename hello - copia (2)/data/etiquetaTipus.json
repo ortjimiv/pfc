@@ -1,0 +1,12 @@
+{
+    etiquetaTipus: [{
+        id: 1,
+	nom: 'Tipus 1'
+    }, {
+        id: 2,
+	nom: 'Tipus 2'
+    }, {
+        id: 3,
+	nom: 'Clients'
+    }]
+}

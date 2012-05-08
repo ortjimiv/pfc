@@ -17,6 +17,7 @@ Ext.define('PFC.view.usuariPanel', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.usuaripanel',
     requires: [
+        'PFC.view.etiquetes',
         'PFC.view.ListPanel'
     ],
 
@@ -25,38 +26,45 @@ Ext.define('PFC.view.usuariPanel', {
             {
                 xtype: 'container',
                 layout: {
-                    type: 'fit'
+                    type: 'vbox'
                 },
                 title: 'Processos',
                 items: [
                     {
-                        xtype: 'container',
-                        itemId: 'filtre',
-                        layout: {
-                            type: 'hbox'
-                        },
-                        items: [
-                            {
-                                xtype: 'carousel',
-                                scrollable: false
-                            },
-                            {
-                                xtype: 'carousel'
-                            }
-                        ]
+                        xtype: 'etiquetes',
+                        height: 100
                     },
                     {
                         xtype: 'listpanel',
-                        itemId: 'listPanel',
-                        layout: {
-                            type: 'card'
-                        }
+                        height: 250,
+                        itemId: 'listPanel'
                     }
                 ]
             },
             {
                 xtype: 'container',
-                title: 'Cerca'
+                layout: {
+                    type: 'fit'
+                },
+                title: 'Cerca',
+                items: [
+                    {
+                        xtype: 'listpanel',
+                        layout: {
+                            type: 'card'
+                        }
+                    },
+                    {
+                        xtype: 'toolbar',
+                        docked: 'top',
+                        items: [
+                            {
+                                xtype: 'searchfield',
+                                label: 'Proces:'
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 xtype: 'container',

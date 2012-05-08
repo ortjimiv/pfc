@@ -24,7 +24,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout": "fit",
+                "layout": "vbox",
                 "designer|userClassName": "MyContainer",
                 "title": "Processos"
             },
@@ -32,51 +32,20 @@
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen9393",
-                    "type": "container",
+                    "id": "ExtBox1-ext-gen18554",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "filtre",
-                        "layout": "hbox",
-                        "designer|userClassName": "MyContainer3"
+                        "height": 100
                     },
                     "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
                     "expanded": true,
-                    "cn": [
-                        {
-                            "id": "ExtBox1-ext-gen11090",
-                            "type": "carousel",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "scrollable": false,
-                                "designer|userClassName": "MyCarousel"
-                            },
-                            "customConfigs": [],
-                            "expanded": true
-                        },
-                        {
-                            "id": "ExtBox1-ext-gen11377",
-                            "type": "carousel",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyCarousel1"
-                            },
-                            "customConfigs": [],
-                            "expanded": true
-                        }
-                    ]
+                    "masterInstanceId": "ExtBox1-ext-gen13941"
                 },
                 {
                     "id": "ExtBox1-ext-gen6910",
@@ -88,8 +57,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "docked": null,
-                        "itemId": "listPanel",
-                        "layout": "card"
+                        "height": 250,
+                        "itemId": "listPanel"
                     },
                     "customConfigs": [],
                     "iconCls": "icon-linkedinstance",
@@ -107,11 +76,62 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout": "fit",
                 "designer|userClassName": "MyContainer1",
                 "title": "Cerca"
             },
             "customConfigs": [],
-            "expanded": true
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen10317",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "card"
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
+                    "expanded": true,
+                    "masterInstanceId": "ExtBox1-ext-gen6677"
+                },
+                {
+                    "id": "ExtBox1-ext-gen9508",
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "designer|userClassName": "MyToolbar1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen9741",
+                            "type": "searchfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Proces:",
+                                "designer|userClassName": "MySearchField"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "ExtBox1-ext-gen22145",

@@ -9,11 +9,15 @@
     "userConfig": {
         "models": [
             "procesModel",
-            "usuari"
+            "usuari",
+            "etiqueta",
+            "tipusEtiqueta",
+            "associat"
         ],
         "stores": [
             "procesJson",
-            "usuariJson"
+            "usuariJson",
+            "etiquetaJson"
         ],
         "views": [
             "usuariPanel",
@@ -22,7 +26,8 @@
             "ListPanel",
             "viewport",
             "detailPanel",
-            "mainPanel"
+            "mainPanel",
+            "etiquetes"
         ],
         "name": "PFC",
         "controllers": [

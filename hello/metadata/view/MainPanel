@@ -46,12 +46,14 @@
                     "userConfig": {
                         "itemId": "logout",
                         "ui": "action",
+                        "iconCls": null,
+                        "iconMask": true,
                         "text": "Sortir",
                         "designer|userClassName": "MyButton4",
                         "align": "left"
                     },
                     "customConfigs": [],
-                    "expanded": false,
+                    "expanded": true,
                     "cn": [
                         {
                             "id": "ExtBox1-ext-gen18454",
@@ -63,7 +65,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "fn": "onLogoutTap",
-                                "implHandler": "var top = button.up('viewport');\r\ntop.down('#loginForm').reset();\r\ntop.down('#procesosList').deselectAll();\r\ntop.setActiveItem(0);",
+                                "implHandler": "//splashToolbar = Ext.getCmp('splashToolbar');\r\nvar top = button.up('viewport');\r\ntop.down('#loginForm').reset();\r\ntop.down('#procesosList').deselectAll();\r\ntop.setActiveItem(0);",
                                 "name": "tap",
                                 "designer|userClassName": "onLogoutTap"
                             },

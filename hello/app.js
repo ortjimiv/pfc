@@ -20,11 +20,15 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'procesModel',
-        'usuari'
+        'usuari',
+        'etiqueta',
+        'tipusEtiqueta',
+        'associat'
     ],
     stores: [
         'procesJson',
-        'usuariJson'
+        'usuariJson',
+        'etiquetaJson'
     ],
     views: [
         'usuariPanel',
@@ -33,7 +37,8 @@ Ext.application({
         'ListPanel',
         'viewport',
         'detailPanel',
-        'mainPanel'
+        'mainPanel',
+        'etiquetes'
     ],
     name: 'PFC',
     controllers: [

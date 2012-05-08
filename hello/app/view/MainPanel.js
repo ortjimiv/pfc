@@ -33,6 +33,7 @@ Ext.define('PFC.view.mainPanel', {
                     xtype: 'button',
                     itemId: 'logout',
                     ui: 'action',
+                    iconMask: true,
                     text: 'Sortir',
                     align: 'left'
                 }
@@ -54,6 +55,7 @@ Ext.define('PFC.view.mainPanel', {
     },
 
     onLogoutTap: function(button, e, options) {
+        //splashToolbar = Ext.getCmp('splashToolbar');
         var top = button.up('viewport');
         top.down('#loginForm').reset();
         top.down('#procesosList').deselectAll();

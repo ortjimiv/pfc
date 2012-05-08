@@ -116,11 +116,51 @@
                 "app/model/usuari.js"
             ],
             "className": "usuari"
+        },
+        "1c54af96-b74c-40a4-a880-59f6cbb84d1b": {
+            "paths": [
+                "metadata/store/etiquetaJson",
+                "app/store/override/etiquetaJson.js",
+                "app/store/etiquetaJson.js"
+            ],
+            "className": "etiquetaJson"
+        },
+        "00fc0064-eeba-49d1-b587-fa74690bf4e8": {
+            "paths": [
+                "metadata/model/etiqueta",
+                "app/model/override/etiqueta.js",
+                "app/model/etiqueta.js"
+            ],
+            "className": "etiqueta"
+        },
+        "b64be57a-7538-40aa-bdc2-a6236089f205": {
+            "paths": [
+                "metadata/model/tipusEtiqueta",
+                "app/model/override/tipusEtiqueta.js",
+                "app/model/tipusEtiqueta.js"
+            ],
+            "className": "tipusEtiqueta"
+        },
+        "3ecff406-d76f-4937-8ea5-b79ea01c5096": {
+            "paths": [
+                "metadata/model/associat",
+                "app/model/override/associat.js",
+                "app/model/associat.js"
+            ],
+            "className": "associat"
+        },
+        "fe43221d-dfc3-47a7-a711-415aa3f6ecac": {
+            "paths": [
+                "metadata/view/etiquetes",
+                "app/view/override/etiquetes.js",
+                "app/view/etiquetes.js"
+            ],
+            "className": "etiquetes"
         }
     },
     "expandedState": {
         "data": true,
-        "model": true,
+        "model": false,
         "component": true,
         "controller": true,
         "resource": false

@@ -15,7 +15,7 @@
     "customConfigs": [],
     "designerId": "2faacd5e-dbff-4290-967e-8bf98062a706",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen6130",
@@ -48,6 +48,22 @@
                     "expanded": true
                 }
             ]
+        },
+        {
+            "id": "ExtBox1-ext-gen17160",
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "ordenaProces",
+                "property": "nom",
+                "designer|userClassName": "MySorter"
+            },
+            "customConfigs": [],
+            "expanded": true
         }
     ]
 }
