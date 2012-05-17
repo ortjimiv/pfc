@@ -7,17 +7,18 @@
     },
     "codeClass": null,
     "userConfig": {
+        "border": null,
         "layout": "hbox",
         "scrollable": "horizontal",
         "designer|userClassName": "etiquetes",
         "designer|userAlias": "etiquetes",
-        "container|align": "center",
-        "container|pack": "center"
+        "container|align": "middle",
+        "container|pack": null
     },
     "customConfigs": [],
     "designerId": "fe43221d-dfc3-47a7-a711-415aa3f6ecac",
     "$viewOrder": 7,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen25027",
@@ -30,8 +31,9 @@
             "userConfig": {
                 "html": "item 1",
                 "padding": 10,
-                "layout": "hbox",
-                "designer|userClassName": "MyPanel7"
+                "layout": null,
+                "designer|userClassName": "MyPanel7",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true
@@ -47,8 +49,9 @@
             "userConfig": {
                 "html": "item 2",
                 "padding": 10,
-                "layout": "hbox",
-                "designer|userClassName": "MyPanel8"
+                "layout": null,
+                "designer|userClassName": "MyPanel8",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true
@@ -64,8 +67,9 @@
             "userConfig": {
                 "html": "item 3",
                 "padding": 10,
-                "layout": "hbox",
-                "designer|userClassName": "MyPanel8"
+                "layout": null,
+                "designer|userClassName": "MyPanel8",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true
@@ -81,8 +85,9 @@
             "userConfig": {
                 "html": "item 4",
                 "padding": 10,
-                "layout": "hbox",
-                "designer|userClassName": "MyPanel8"
+                "layout": null,
+                "designer|userClassName": "MyPanel8",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true
@@ -98,8 +103,9 @@
             "userConfig": {
                 "html": "item 5",
                 "padding": 10,
-                "layout": "hbox",
-                "designer|userClassName": "MyPanel8"
+                "layout": null,
+                "designer|userClassName": "MyPanel8",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true
@@ -115,8 +121,9 @@
             "userConfig": {
                 "html": "item 6",
                 "padding": 10,
-                "layout": "hbox",
-                "designer|userClassName": "MyPanel8"
+                "layout": null,
+                "designer|userClassName": "MyPanel8",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true
@@ -132,8 +139,9 @@
             "userConfig": {
                 "html": "item 7",
                 "padding": 10,
-                "layout": "hbox",
-                "designer|userClassName": "MyPanel8"
+                "layout": null,
+                "designer|userClassName": "MyPanel8",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true
@@ -149,8 +157,9 @@
             "userConfig": {
                 "html": "item 8",
                 "padding": 10,
-                "layout": "hbox",
-                "designer|userClassName": "MyPanel8"
+                "layout": null,
+                "designer|userClassName": "MyPanel8",
+                "layout|flex": null
             },
             "customConfigs": [],
             "expanded": true

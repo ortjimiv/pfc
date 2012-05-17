@@ -28,6 +28,8 @@ Ext.define('PFC.view.loginForm', {
             {
                 xtype: 'titlebar',
                 docked: 'top',
+                style: '',
+                scrollable: false,
                 title: 'Processos de treball'
             },
             {
@@ -85,6 +87,7 @@ Ext.define('PFC.view.loginForm', {
     onLoginTap: function(button, e, options) {
         button.up('formpanel').down('#etiqueta1').setHtml("");
         var top = button.up('viewport');
+        var msgError ="<DIV style='color:red'>Necessita omplenar les dades de usuari.<br/>Els usuaris disponibles son ivan, usuari, admin i edit.</div>";
 
         //desem l'usuari que ha accedit
         PFC.username = button.up('formpanel').getValues().username;
@@ -108,10 +111,10 @@ Ext.define('PFC.view.loginForm', {
                     top.down('#barraEditor').setHidden(false);
                 }
             }else{
-                button.up('formpanel').down('#etiqueta1').setHtml("<DIV style='color:red'>Necessita omplenar les dades de usuari.<br/>Els usuaris disponibles son ivan, usuari, admin i edit.</div>");
+                button.up('formpanel').down('#etiqueta1').setHtml(msgError);
             }
         }else{
-            button.up('formpanel').down('#etiqueta1').setHtml("<DIV style='color:red'>Necessita omplenar les dades de usuari.<br/>Els usuaris disponibles son ivan, usuari, admin i edit.</div>");
+            button.up('formpanel').down('#etiqueta1').setHtml(msgError);
         }
 
     }

@@ -1,40 +1,66 @@
 {
-    "id": "ExtBox1-ext-gen7203",
-    "type": "navigationview",
+    "id": "ExtBox1-ext-gen11171",
+    "type": "panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "defaultBackButtonText": "Torna",
+        "id": "mainPanel",
+        "layout": "hbox",
         "designer|userClassName": "mainPanel",
-        "designer|userAlias": "mainpanel",
-        "container|animation": "slide"
+        "designer|userAlias": "mainpanel"
     },
     "customConfigs": [],
-    "designerId": "d395ec42-2786-4203-a256-315ff5d63735",
+    "designerId": "639da149-d10c-490d-83de-7c8c9ab97314",
     "$viewOrder": 4,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen6183",
-            "type": "navigationbar",
+            "id": "ExtBox1-ext-gen13952",
+            "type": "toolbar",
             "reference": {
-                "name": "navigationBar",
-                "type": "object"
+                "name": "items",
+                "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "height": null,
+                "border": null,
+                "docked": "top",
+                "height": 45,
+                "id": "loggedInUserName",
                 "itemId": "loggedInUserName",
-                "designer|userClassName": "MyNavigationBar",
-                "title": null
+                "margin": null,
+                "maxHeight": null,
+                "padding": null,
+                "style": "font-size:8px;",
+                "title": "Processos de treball",
+                "designer|userClassName": "MyToolbar2"
             },
             "customConfigs": [],
-            "iconCls": "icon-navbar",
             "expanded": true,
             "cn": [
+                {
+                    "id": "ExtBox1-ext-gen37401",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "id": "torna",
+                        "itemId": "torna",
+                        "style": "font-size:16px;",
+                        "ui": "back",
+                        "text": "Torna",
+                        "designer|userClassName": "MyButton4"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
                 {
                     "id": "ExtBox1-ext-gen5533",
                     "type": "button",
@@ -44,53 +70,103 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "docked": "right",
+                        "id": "logout",
                         "itemId": "logout",
+                        "style": "font-size:16px;",
                         "ui": "action",
                         "iconCls": null,
                         "iconMask": true,
                         "text": "Sortir",
-                        "designer|userClassName": "MyButton4",
-                        "align": "left"
+                        "designer|userClassName": "MyButton4"
                     },
                     "customConfigs": [],
-                    "expanded": true,
-                    "cn": [
-                        {
-                            "id": "ExtBox1-ext-gen18454",
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onLogoutTap",
-                                "implHandler": "//splashToolbar = Ext.getCmp('splashToolbar');\r\nvar top = button.up('viewport');\r\ntop.down('#loginForm').reset();\r\ntop.down('#procesosList').deselectAll();\r\ntop.setActiveItem(0);",
-                                "name": "tap",
-                                "designer|userClassName": "onLogoutTap"
-                            },
-                            "customConfigs": [],
-                            "expanded": true
-                        }
-                    ]
+                    "expanded": true
                 }
             ]
         },
         {
-            "id": "ExtBox1-ext-gen23557",
-            "type": "linkedinstance",
+            "id": "ExtBox1-ext-gen12832",
+            "type": "container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "usuariPanel"
+                "height": null,
+                "id": "finestra",
+                "width": "100%",
+                "layout": "fit",
+                "designer|userClassName": "MyContainer3"
             },
             "customConfigs": [],
-            "iconCls": "icon-linkedinstance",
             "expanded": true,
-            "masterInstanceId": "ExtBox1-ext-gen22122"
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen23557",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "height": 150,
+                        "itemId": "usuariPanel"
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
+                    "expanded": true,
+                    "masterInstanceId": "ExtBox1-ext-gen22122"
+                },
+                {
+                    "id": "ExtBox1-ext-gen4254",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": null,
+                        "height": null,
+                        "itemId": "listPanel",
+                        "width": "100%"
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
+                    "expanded": true,
+                    "masterInstanceId": "ExtBox1-ext-gen6677"
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen34538",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "animateTo",
+                "designer|params": [
+                    "dir"
+                ],
+                "implHandler": [
+                    "Ext.getCmp('viewport').getLayout().setAnimation({\r",
+                    "    duration: 500,\r",
+                    "    easing: 'ease-in-out',\r",
+                    "    type: 'slide',\r",
+                    "    direction: dir\r",
+                    "});"
+                ],
+                "designer|userClassName": "animateTo"
+            },
+            "customConfigs": [],
+            "expanded": true
         }
     ]
 }

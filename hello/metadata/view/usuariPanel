@@ -7,6 +7,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "id": "usuariPanel",
+        "modal": false,
         "designer|userClassName": "usuariPanel",
         "designer|userAlias": "usuaripanel"
     },
@@ -46,24 +48,6 @@
                     "iconCls": "icon-linkedinstance",
                     "expanded": true,
                     "masterInstanceId": "ExtBox1-ext-gen13941"
-                },
-                {
-                    "id": "ExtBox1-ext-gen6910",
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "docked": null,
-                        "height": 250,
-                        "itemId": "listPanel"
-                    },
-                    "customConfigs": [],
-                    "iconCls": "icon-linkedinstance",
-                    "expanded": true,
-                    "masterInstanceId": "ExtBox1-ext-gen6677"
                 }
             ]
         },
@@ -83,22 +67,6 @@
             "customConfigs": [],
             "expanded": true,
             "cn": [
-                {
-                    "id": "ExtBox1-ext-gen10317",
-                    "type": "linkedinstance",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout": "card"
-                    },
-                    "customConfigs": [],
-                    "iconCls": "icon-linkedinstance",
-                    "expanded": true,
-                    "masterInstanceId": "ExtBox1-ext-gen6677"
-                },
                 {
                     "id": "ExtBox1-ext-gen9508",
                     "type": "toolbar",

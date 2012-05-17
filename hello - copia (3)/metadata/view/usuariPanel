@@ -1,0 +1,136 @@
+{
+    "id": "ExtBox1-ext-gen22122",
+    "type": "tabpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "usuariPanel",
+        "designer|userAlias": "usuaripanel"
+    },
+    "customConfigs": [],
+    "designerId": "788d0398-dc48-48ce-99bb-02ec4f4b32e3",
+    "$viewOrder": 5,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen22129",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "vbox",
+                "designer|userClassName": "MyContainer",
+                "title": "Processos"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen18554",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 100
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
+                    "expanded": true,
+                    "masterInstanceId": "ExtBox1-ext-gen13941"
+                },
+                {
+                    "id": "ExtBox1-ext-gen6910",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": null,
+                        "height": 250,
+                        "itemId": null
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
+                    "expanded": true,
+                    "masterInstanceId": "ExtBox1-ext-gen6677"
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen22137",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "fit",
+                "designer|userClassName": "MyContainer1",
+                "title": "Cerca"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen9508",
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "top",
+                        "designer|userClassName": "MyToolbar1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen9741",
+                            "type": "searchfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Proces:",
+                                "designer|userClassName": "MySearchField"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen22145",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyContainer2",
+                "title": "Filtre"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

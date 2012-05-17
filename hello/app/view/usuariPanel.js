@@ -17,11 +17,12 @@ Ext.define('PFC.view.usuariPanel', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.usuaripanel',
     requires: [
-        'PFC.view.etiquetes',
-        'PFC.view.ListPanel'
+        'PFC.view.etiquetes'
     ],
 
     config: {
+        id: 'usuariPanel',
+        modal: false,
         items: [
             {
                 xtype: 'container',
@@ -33,11 +34,6 @@ Ext.define('PFC.view.usuariPanel', {
                     {
                         xtype: 'etiquetes',
                         height: 100
-                    },
-                    {
-                        xtype: 'listpanel',
-                        height: 250,
-                        itemId: 'listPanel'
                     }
                 ]
             },
@@ -48,12 +44,6 @@ Ext.define('PFC.view.usuariPanel', {
                 },
                 title: 'Cerca',
                 items: [
-                    {
-                        xtype: 'listpanel',
-                        layout: {
-                            type: 'card'
-                        }
-                    },
                     {
                         xtype: 'toolbar',
                         docked: 'top',

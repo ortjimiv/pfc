@@ -37,8 +37,8 @@ Ext.application({
         'ListPanel',
         'viewport',
         'detailPanel',
-        'mainPanel',
-        'etiquetes'
+        'etiquetes',
+        'mainPanel'
     ],
     name: 'PFC',
     controllers: [

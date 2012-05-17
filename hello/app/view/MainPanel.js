@@ -14,52 +14,80 @@
  */
 
 Ext.define('PFC.view.mainPanel', {
-    extend: 'Ext.navigation.View',
+    extend: 'Ext.Panel',
     alias: 'widget.mainpanel',
     requires: [
-        'PFC.view.usuariPanel'
+        'PFC.view.usuariPanel',
+        'PFC.view.ListPanel'
     ],
 
     config: {
-        defaultBackButtonText: 'Torna',
+        id: 'mainPanel',
         layout: {
-            animation: 'slide',
-            type: 'card'
-        },
-        navigationBar: {
-            itemId: 'loggedInUserName',
-            items: [
-                {
-                    xtype: 'button',
-                    itemId: 'logout',
-                    ui: 'action',
-                    iconMask: true,
-                    text: 'Sortir',
-                    align: 'left'
-                }
-            ]
+            type: 'hbox'
         },
         items: [
             {
-                xtype: 'usuaripanel',
-                itemId: 'usuariPanel'
-            }
-        ],
-        listeners: [
+                xtype: 'toolbar',
+                docked: 'top',
+                height: 45,
+                id: 'loggedInUserName',
+                itemId: 'loggedInUserName',
+                style: 'font-size:8px;',
+                title: 'Processos de treball',
+                items: [
+                    {
+                        xtype: 'button',
+                        hidden: true,
+                        id: 'torna',
+                        itemId: 'torna',
+                        style: 'font-size:16px;',
+                        ui: 'back',
+                        text: 'Torna'
+                    },
+                    {
+                        xtype: 'button',
+                        docked: 'right',
+                        id: 'logout',
+                        itemId: 'logout',
+                        style: 'font-size:16px;',
+                        ui: 'action',
+                        iconMask: true,
+                        text: 'Sortir'
+                    }
+                ]
+            },
             {
-                fn: 'onLogoutTap',
-                event: 'tap',
-                delegate: '#logout'
+                xtype: 'container',
+                id: 'finestra',
+                width: '100%',
+                layout: {
+                    type: 'fit'
+                },
+                items: [
+                    {
+                        xtype: 'usuaripanel',
+                        docked: 'top',
+                        height: 150,
+                        itemId: 'usuariPanel'
+                    },
+                    {
+                        xtype: 'listpanel',
+                        itemId: 'listPanel',
+                        width: '100%'
+                    }
+                ]
             }
         ]
     },
 
-    onLogoutTap: function(button, e, options) {
-        //splashToolbar = Ext.getCmp('splashToolbar');
-        var top = button.up('viewport');
-        top.down('#loginForm').reset();
-        top.down('#procesosList').deselectAll();
-        top.setActiveItem(0);
+    animateTo: function(dir) {
+        Ext.getCmp('viewport').getLayout().setAnimation({
+            duration: 500,
+            easing: 'ease-in-out',
+            type: 'slide',
+            direction: dir
+        });
     }
 
 });

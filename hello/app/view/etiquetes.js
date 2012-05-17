@@ -19,8 +19,7 @@ Ext.define('PFC.view.etiquetes', {
 
     config: {
         layout: {
-            align: 'center',
-            pack: 'center',
+            align: 'middle',
             type: 'hbox'
         },
         scrollable: 'horizontal',
@@ -28,66 +27,42 @@ Ext.define('PFC.view.etiquetes', {
             {
                 xtype: 'panel',
                 html: 'item 1',
-                padding: 10,
-                layout: {
-                    type: 'hbox'
-                }
+                padding: 10
             },
             {
                 xtype: 'panel',
                 html: 'item 2',
-                padding: 10,
-                layout: {
-                    type: 'hbox'
-                }
+                padding: 10
             },
             {
                 xtype: 'panel',
                 html: 'item 3',
-                padding: 10,
-                layout: {
-                    type: 'hbox'
-                }
+                padding: 10
             },
             {
                 xtype: 'panel',
                 html: 'item 4',
-                padding: 10,
-                layout: {
-                    type: 'hbox'
-                }
+                padding: 10
             },
             {
                 xtype: 'panel',
                 html: 'item 5',
-                padding: 10,
-                layout: {
-                    type: 'hbox'
-                }
+                padding: 10
             },
             {
                 xtype: 'panel',
                 html: 'item 6',
-                padding: 10,
-                layout: {
-                    type: 'hbox'
-                }
+                padding: 10
             },
             {
                 xtype: 'panel',
                 html: 'item 7',
-                padding: 10,
-                layout: {
-                    type: 'hbox'
-                }
+                padding: 10
             },
             {
                 xtype: 'panel',
                 html: 'item 8',
-                padding: 10,
-                layout: {
-                    type: 'hbox'
-                }
+                padding: 10
             }
         ]
     }

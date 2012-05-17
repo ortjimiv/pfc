@@ -2,11 +2,10 @@
     "name": "hello",
     "settings": {
         "urlPrefix": "http://localhost/",
-        "directAPI": "",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
         "exportPath": "C:/Users/casa/pfc/hello",
-        "extPath": "http://extjs.cachefly.net/touch/sencha-touch-2.0.0/",
+        "extPath": "http://extjs.cachefly.net/touch/sencha-touch-2.0.1/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
         "lineEnding": "CRLF",
@@ -18,7 +17,7 @@
         "cssPath": ""
     },
     "xdsVersion": "2.0.0",
-    "xdsBuild": "412",
+    "xdsBuild": "442",
     "framework": "touch20",
     "topInstanceFileMap": {
         "788d0398-dc48-48ce-99bb-02ec4f4b32e3": {
@@ -93,14 +92,6 @@
             ],
             "className": "MyController"
         },
-        "d395ec42-2786-4203-a256-315ff5d63735": {
-            "paths": [
-                "metadata/view/mainPanel",
-                "app/view/override/mainPanel.js",
-                "app/view/mainPanel.js"
-            ],
-            "className": "mainPanel"
-        },
         "e5de5532-a011-4c90-89c9-b32387fa61e1": {
             "paths": [
                 "metadata/store/usuariJson",
@@ -156,6 +147,14 @@
                 "app/view/etiquetes.js"
             ],
             "className": "etiquetes"
+        },
+        "639da149-d10c-490d-83de-7c8c9ab97314": {
+            "paths": [
+                "metadata/view/mainPanel",
+                "app/view/override/mainPanel.js",
+                "app/view/mainPanel.js"
+            ],
+            "className": "mainPanel"
         }
     },
     "expandedState": {

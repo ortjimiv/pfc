@@ -61,7 +61,7 @@ Ext.define('PFC.view.addProcesForm', {
         var form = button.up('addprocesform'),
         mainPanel = form.up('#mainPanel'),
         store = mainPanel.down('#procesosList').getStore(),
-        ts = new Date(),
+        //ts = new Date(),
         procesRecord = form.getValues();
 
         // Add additional data
@@ -81,12 +81,24 @@ Ext.define('PFC.view.addProcesForm', {
 
     //Store to local storage and sync to remote syncstorage
     store.add(procesRecord);
-    store.sync();
+    //----store.sync();
 
     //Confirmation
     //alert ("Procés afegit satisfactoriament");
     form.reset();
-    mainPanel.pop();
+    Ext.getCmp('procesosList').deselectAll();
+    //mainPanel.pop();
+
+    Ext.getCmp('mainPanel').animateTo('right');
+    Ext.getCmp('listPanel').setHidden(false);
+    Ext.getCmp('usuariPanel').setHidden(false);
+    Ext.getCmp('torna').setHidden(true);
+    Ext.getCmp('loggedInUserName').setTitle("Processos de treball");
+
+    Ext.getCmp('finestra').removeAt(2);
+
+
+
     //mainPanel.setActiveItem(0);
 
     /*

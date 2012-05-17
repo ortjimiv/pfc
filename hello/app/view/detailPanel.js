@@ -18,6 +18,7 @@ Ext.define('PFC.view.detailPanel', {
     alias: 'widget.detailpanel',
 
     config: {
+        id: 'detailPanel',
         itemId: 'detailPanel',
         ui: '',
         layout: {

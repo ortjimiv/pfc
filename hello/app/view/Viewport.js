@@ -22,6 +22,7 @@ Ext.define('PFC.view.viewport', {
     ],
 
     config: {
+        id: 'viewport',
         layout: {
             animation: 'fade',
             type: 'card'

@@ -1,0 +1,42 @@
+{
+    "id": "ExtBox1-ext-gen4145",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "procesModel",
+            "usuari",
+            "etiqueta",
+            "tipusEtiqueta",
+            "associat"
+        ],
+        "stores": [
+            "procesJson",
+            "usuariJson",
+            "etiquetaJson"
+        ],
+        "views": [
+            "usuariPanel",
+            "loginForm",
+            "addProcesForm",
+            "ListPanel",
+            "viewport",
+            "detailPanel",
+            "mainPanel",
+            "etiquetes"
+        ],
+        "name": "PFC",
+        "controllers": [
+            "MyController"
+        ]
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "iconCls": "icon-application",
+    "expanded": true
+}

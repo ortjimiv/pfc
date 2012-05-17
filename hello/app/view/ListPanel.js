@@ -25,7 +25,8 @@ Ext.define('PFC.view.ListPanel', {
         items: [
             {
                 xtype: 'list',
-                itemId: 'procesosList',
+                id: 'procesosList',
+                itemId: '',
                 itemTpl: [
                     '<div class="nom">{nom}</div>'
                 ],
@@ -39,27 +40,14 @@ Ext.define('PFC.view.ListPanel', {
                 items: [
                     {
                         xtype: 'button',
-                        itemId: 'nouProces',
+                        id: 'nouProces',
                         ui: 'action-round',
                         text: 'Nou procés',
                         flex: 1
                     }
                 ]
             }
-        ],
-        listeners: [
-            {
-                fn: 'onNouProcesTap',
-                event: 'tap',
-                delegate: '#nouProces'
-            }
         ]
-    },
-
-    onNouProcesTap: function(button, e, options) {
-        button.up('#mainPanel').push({
-            xtype: 'addprocesform'
-        });
     }
 
 });

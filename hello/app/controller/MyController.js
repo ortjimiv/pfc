@@ -16,22 +16,85 @@
 Ext.define('PFC.controller.MyController', {
     extend: 'Ext.app.Controller',
     config: {
-        refs: {
-            mainpanel: 'mainpanel'
-        },
-
         control: {
-            "list": {
-                itemtap: 'onListItemTap'
+            "#procesosList": {
+                itemtap: 'onListpanelTap'
+            },
+            "#nouProces": {
+                tap: 'onNouprocesTap'
+            },
+            "#torna": {
+                tap: 'onTornaTap'
+            },
+            "#logout": {
+                tap: 'onLogoutTap'
             }
         }
     },
 
-    onListItemTap: function(dataview, index, target, record, e, options) {
-        this.getMainpanel().push({
-            xtype: 'detailpanel',
-            data: record.getData()
+    onListpanelTap: function(dataview, index, target, record, e, options) {
+        Ext.getCmp('loggedInUserName').setTitle("Procés "+record.get('nom'));
+        var detall = Ext.getCmp('detailPanel');
+        Ext.getCmp('mainPanel').animateTo('left');
+        Ext.getCmp('listPanel').setHidden(true);
+        Ext.getCmp('usuariPanel').setHidden(true);
+        Ext.getCmp('torna').setHidden(false);
+
+        if (detall) {
+            detall.setData(record.data);
+            Ext.getCmp('finestra').setActiveItem(detall);
+        } else {
+            Ext.getCmp('finestra').setActiveItem({
+                xclass: 'PFC.view.detailPanel'
+            });
+        }
+        Ext.getCmp('detailPanel').setData(record.data);
+        /*
+        Ext.getCmp('mainPanel').push({
+        xtype: 'detailpanel',
+        data: record.getData()
         });
+        */
+    },
+
+    onNouprocesTap: function(button, e, options) {
+        /*
+        Ext.getCmp('mainPanel').push({
+        xtype: 'addprocesform'
+        });
+        */
+        var afegirProces = Ext.getCmp('addprocesform');
+        Ext.getCmp('mainPanel').animateTo('left');
+        Ext.getCmp('listPanel').setHidden(true);
+        Ext.getCmp('usuariPanel').setHidden(true);
+        Ext.getCmp('torna').setHidden(false);
+        Ext.getCmp('loggedInUserName').setTitle("Nou procés");
+
+        if (afegirProces) {
+            Ext.getCmp('finestra').setActiveItem(afegirProces);
+        } else {
+            Ext.getCmp('finestra').setActiveItem({
+                xclass: 'PFC.view.addProcesForm'
+            });
+        }
+    },
+
+    onTornaTap: function(button, e, options) {
+        Ext.getCmp('mainPanel').animateTo('right');
+        Ext.getCmp('listPanel').setHidden(false);
+        Ext.getCmp('usuariPanel').setHidden(false);
+        Ext.getCmp('torna').setHidden(true);
+        Ext.getCmp('loggedInUserName').setTitle("Processos de treball");
+
+        Ext.getCmp('finestra').removeAt(2);
+    },
+
+    onLogoutTap: function(button, e, options) {
+        Ext.getCmp('loggedInUserName').setTitle("");
+        var top = Ext.getCmp('viewport');
+        top.down('#loginForm').reset();
+        top.down('#procesosList').deselectAll();
+        top.setActiveItem(0);
     }
 
 });

@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "id": "detailPanel",
         "itemId": "detailPanel",
         "tpl": "ID: {id}</br>\nNom: {nom}</br>\nDescripció: {descripcio}",
         "ui": "",

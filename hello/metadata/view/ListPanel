@@ -26,8 +26,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": null,
-                "itemId": "procesosList",
+                "docked": null,
+                "id": "procesosList",
+                "itemId": "",
                 "itemTpl": "<div class=\"nom\">{nom}</div>",
                 "store": "procesJson",
                 "onItemDisclosure": false,
@@ -57,7 +58,7 @@
                     "type": "string"
                 }
             ],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen7815",
@@ -68,33 +69,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "nouProces",
+                        "id": "nouProces",
+                        "itemId": null,
                         "ui": "action-round",
                         "text": "Nou procés",
                         "designer|userClassName": "MyButton5",
                         "layout|flex": 1
                     },
                     "customConfigs": [],
-                    "expanded": true,
-                    "cn": [
-                        {
-                            "id": "ExtBox1-ext-gen17062",
-                            "type": "basiceventbinding",
-                            "reference": {
-                                "name": "listeners",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "fn": "onNouProcesTap",
-                                "implHandler": "button.up('#mainPanel').push({\r\n    xtype: 'addprocesform'\r\n});",
-                                "name": "tap",
-                                "designer|userClassName": "onNouProcesTap"
-                            },
-                            "customConfigs": [],
-                            "expanded": true
-                        }
-                    ]
+                    "expanded": true
                 }
             ]
         }
