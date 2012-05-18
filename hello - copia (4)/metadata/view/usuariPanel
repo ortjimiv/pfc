@@ -15,7 +15,7 @@
     "customConfigs": [],
     "designerId": "788d0398-dc48-48ce-99bb-02ec4f4b32e3",
     "$viewOrder": 5,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen22129",
@@ -65,7 +65,7 @@
                 "title": "Cerca"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen9508",
@@ -114,7 +114,42 @@
                 "title": "Filtre"
             },
             "customConfigs": [],
-            "expanded": true
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen14488",
+                    "type": "selectfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "filtre1",
+                        "label": "Filtre 1",
+                        "value": "id",
+                        "store": "etiquetaJson",
+                        "designer|userClassName": "MySelectField"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen14647",
+                    "type": "selectfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Filtre 2",
+                        "designer|userClassName": "MySelectField1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
         }
     ]
 }

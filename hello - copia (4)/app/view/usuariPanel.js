@@ -58,7 +58,20 @@ Ext.define('PFC.view.usuariPanel', {
             },
             {
                 xtype: 'container',
-                title: 'Filtre'
+                title: 'Filtre',
+                items: [
+                    {
+                        xtype: 'selectfield',
+                        id: 'filtre1',
+                        label: 'Filtre 1',
+                        value: 'id',
+                        store: 'etiquetaJson'
+                    },
+                    {
+                        xtype: 'selectfield',
+                        label: 'Filtre 2'
+                    }
+                ]
             }
         ]
     }

@@ -34,6 +34,7 @@ Ext.define('PFC.view.mainPanel', {
                 id: 'loggedInUserName',
                 itemId: 'loggedInUserName',
                 style: 'font-size:8px;',
+                scrollable: false,
                 title: 'Processos de treball',
                 items: [
                     {

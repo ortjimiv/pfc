@@ -35,6 +35,7 @@
                 "maxHeight": null,
                 "padding": null,
                 "style": "font-size:8px;",
+                "scrollable": false,
                 "title": "Processos de treball",
                 "designer|userClassName": "MyToolbar2"
             },
