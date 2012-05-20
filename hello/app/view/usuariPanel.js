@@ -17,7 +17,7 @@ Ext.define('PFC.view.usuariPanel', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.usuaripanel',
     requires: [
-        'PFC.view.etiquetes'
+        'PFC.view.etiquetesList'
     ],
 
     config: {
@@ -32,8 +32,11 @@ Ext.define('PFC.view.usuariPanel', {
                 title: 'Processos',
                 items: [
                     {
-                        xtype: 'etiquetes',
-                        height: 100
+                        xtype: 'etiqueteslist',
+                        border: 1,
+                        itemId: 'etiquetesList',
+                        modal: false,
+                        flex: 1
                     }
                 ]
             },

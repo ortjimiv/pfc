@@ -140,14 +140,6 @@
             ],
             "className": "associat"
         },
-        "fe43221d-dfc3-47a7-a711-415aa3f6ecac": {
-            "paths": [
-                "metadata/view/etiquetes",
-                "app/view/override/etiquetes.js",
-                "app/view/etiquetes.js"
-            ],
-            "className": "etiquetes"
-        },
         "639da149-d10c-490d-83de-7c8c9ab97314": {
             "paths": [
                 "metadata/view/mainPanel",
@@ -155,11 +147,27 @@
                 "app/view/mainPanel.js"
             ],
             "className": "mainPanel"
+        },
+        "673f84d7-6915-45b3-b4bc-af22eea4279d": {
+            "paths": [
+                "metadata/view/etiquetesList",
+                "app/view/override/etiquetesList.js",
+                "app/view/etiquetesList.js"
+            ],
+            "className": "etiquetesList"
+        },
+        "3c11e03e-fdc8-40cc-be38-0eb83c244e30": {
+            "paths": [
+                "metadata/store/etiquetaTipusJson",
+                "app/store/override/etiquetaTipusJson.js",
+                "app/store/etiquetaTipusJson.js"
+            ],
+            "className": "etiquetaTipusJson"
         }
     },
     "expandedState": {
         "data": true,
-        "model": false,
+        "model": true,
         "component": true,
         "controller": true,
         "resource": false

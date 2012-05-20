@@ -30,7 +30,7 @@ Ext.define('PFC.view.mainPanel', {
             {
                 xtype: 'toolbar',
                 docked: 'top',
-                height: 45,
+                height: 40,
                 id: 'loggedInUserName',
                 itemId: 'loggedInUserName',
                 style: 'font-size:8px;',
@@ -49,6 +49,7 @@ Ext.define('PFC.view.mainPanel', {
                     {
                         xtype: 'button',
                         docked: 'right',
+                        height: 20,
                         id: 'logout',
                         itemId: 'logout',
                         style: 'font-size:16px;',

@@ -34,7 +34,7 @@
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen18554",
+                    "id": "ExtBox1-ext-gen10700",
                     "type": "linkedinstance",
                     "reference": {
                         "name": "items",
@@ -42,12 +42,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 100
+                        "border": 1,
+                        "bottom": null,
+                        "height": null,
+                        "itemId": "etiquetesList",
+                        "modal": false,
+                        "layout|flex": 1
                     },
                     "customConfigs": [],
                     "iconCls": "icon-linkedinstance",
                     "expanded": true,
-                    "masterInstanceId": "ExtBox1-ext-gen13941"
+                    "masterInstanceId": "ExtBox1-ext-gen7347"
                 }
             ]
         },
@@ -114,7 +119,7 @@
                 "title": "Filtre"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen14488",

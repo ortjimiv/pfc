@@ -28,7 +28,8 @@ Ext.application({
     stores: [
         'procesJson',
         'usuariJson',
-        'etiquetaJson'
+        'etiquetaJson',
+        'etiquetaTipusJson'
     ],
     views: [
         'usuariPanel',
@@ -37,8 +38,8 @@ Ext.application({
         'ListPanel',
         'viewport',
         'detailPanel',
-        'etiquetes',
-        'mainPanel'
+        'mainPanel',
+        'etiquetesList'
     ],
     name: 'PFC',
     controllers: [

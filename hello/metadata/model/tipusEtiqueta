@@ -39,7 +39,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "tipus",
+                "name": "nom",
                 "type": "string",
                 "designer|userClassName": "MyField11"
             },

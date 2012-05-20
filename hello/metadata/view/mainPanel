@@ -15,7 +15,7 @@
     "customConfigs": [],
     "designerId": "639da149-d10c-490d-83de-7c8c9ab97314",
     "$viewOrder": 4,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen13952",
@@ -28,7 +28,7 @@
             "userConfig": {
                 "border": null,
                 "docked": "top",
-                "height": 45,
+                "height": 40,
                 "id": "loggedInUserName",
                 "itemId": "loggedInUserName",
                 "margin": null,
@@ -40,7 +40,7 @@
                 "designer|userClassName": "MyToolbar2"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen37401",
@@ -72,6 +72,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "docked": "right",
+                        "height": 20,
                         "id": "logout",
                         "itemId": "logout",
                         "style": "font-size:16px;",
@@ -102,7 +103,7 @@
                 "designer|userClassName": "MyContainer3"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen23557",

@@ -22,7 +22,7 @@ Ext.define('PFC.model.tipusEtiqueta', {
                 type: 'auto'
             },
             {
-                name: 'tipus',
+                name: 'nom',
                 type: 'string'
             }
         ]

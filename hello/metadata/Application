@@ -17,7 +17,8 @@
         "stores": [
             "procesJson",
             "usuariJson",
-            "etiquetaJson"
+            "etiquetaJson",
+            "etiquetaTipusJson"
         ],
         "views": [
             "usuariPanel",
@@ -26,8 +27,8 @@
             "ListPanel",
             "viewport",
             "detailPanel",
-            "etiquetes",
-            "mainPanel"
+            "mainPanel",
+            "etiquetesList"
         ],
         "name": "PFC",
         "controllers": [

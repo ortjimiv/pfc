@@ -1,0 +1,19 @@
+{
+    etiqueta: [{
+        id: 1,
+	nom: 'PC',
+	etiquetaTipus_id: 1
+    }, {
+        id: 2,
+	nom: 'Sistemes',
+	etiquetaTipus_id: 2
+    }, {
+        id: 3,
+	nom: 'Client 1',
+	etiquetaTipus_id: 3
+    }, {
+        id: 4,
+	nom: 'Client 2',
+	etiquetaTipus_id: 3
+    }]
+}
