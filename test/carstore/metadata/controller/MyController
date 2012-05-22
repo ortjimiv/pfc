@@ -24,7 +24,10 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onGridpanelSelectionChange",
-                "implHandler": "this.getCarListings().down('#detail').update(selections[0].data);\nthis.getCarListings().down('#myChart').store.loadData(selections[0].data.quality);",
+                "implHandler": [
+                    "this.getCarListings().down('#detail').update(selections[0].data);",
+                    "this.getCarListings().down('#myChart').store.loadData(selections[0].data.quality);"
+                ],
                 "name": "selectionchange",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",

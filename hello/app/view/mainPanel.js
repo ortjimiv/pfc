@@ -70,7 +70,7 @@ Ext.define('PFC.view.mainPanel', {
                     {
                         xtype: 'usuaripanel',
                         docked: 'top',
-                        height: 150,
+                        height: 170,
                         itemId: 'usuariPanel'
                     },
                     {

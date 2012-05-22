@@ -17,11 +17,13 @@ Ext.define('PFC.view.usuariPanel', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.usuaripanel',
     requires: [
-        'PFC.view.etiquetesList'
+        'PFC.view.etiquetesList',
+        'PFC.view.subetiquetesList'
     ],
 
     config: {
         id: 'usuariPanel',
+        ui: 'light',
         modal: false,
         items: [
             {
@@ -33,9 +35,13 @@ Ext.define('PFC.view.usuariPanel', {
                 items: [
                     {
                         xtype: 'etiqueteslist',
-                        border: 1,
+                        height: 65,
                         itemId: 'etiquetesList',
-                        modal: false,
+                        flex: 1
+                    },
+                    {
+                        xtype: 'subetiqueteslist',
+                        itemId: 'subetiquetesList',
                         flex: 1
                     }
                 ]

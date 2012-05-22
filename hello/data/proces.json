@@ -19,5 +19,9 @@
         id: 5,
 	nom: 'Bones pr&agrave;ctiques',
         descripcio: 'Que es pot fer i que no es pot fer per a que hi hagi un bon estat del material de treball i bona col&#183;laboraci&oacute; amb els companys.'
+    }, {
+        id: 6,
+	nom: 'Subscriure\'s a oferta de treball',
+        descripcio: 'Pasos a realitzar per subsriure\'s a una oferta de treball de l\'empresa.'
     }]
 }

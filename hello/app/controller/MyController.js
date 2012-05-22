@@ -28,6 +28,15 @@ Ext.define('PFC.controller.MyController', {
             },
             "#logout": {
                 tap: 'onLogoutTap'
+            },
+            "#etiquetesList": {
+                itemtap: 'onEtiqueteslistTap'
+            },
+            "#subetiquetesList": {
+                itemtap: 'onSubetiqueteslistTap'
+            },
+            "#usuariPanel": {
+                activeitemchange: 'onPanelActiveItemChange'
             }
         }
     },
@@ -95,6 +104,83 @@ Ext.define('PFC.controller.MyController', {
         top.down('#loginForm').reset();
         top.down('#procesosList').deselectAll();
         top.setActiveItem(0);
+    },
+
+    onEtiqueteslistTap: function(dataview, index, target, record, e, options) {
+        Ext.getCmp('subetiquetesList').deselectAll();
+        Ext.getCmp('procesosList').deselectAll();
+
+        Ext.getCmp('subetiquetesList').getStore().filter('etiquetaTipus_id',record.get("id"));
+
+        //desem els id's de les etiquetes
+        var j=[];
+        for (i=0;i<Ext.getStore('etiquetaJson').getCount();i++){
+            j[i]=Ext.getStore('etiquetaJson').getAt(i).get('id');
+        }
+
+        //cerquem aquelles etiquetes del tipus seleccionat
+        Ext.getStore('associatJson').clearFilter();
+        Ext.getStore('associatJson').filterBy(function(record) {
+            return (j.indexOf(record.get('etiqueta_id'))!=-1);
+        });
+
+        //cerquem a la taula associat les etiquetes segons el filtre principal
+        var k=[];
+        for (i=0;i<Ext.getStore('associatJson').getCount();i++){
+            k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');
+        }
+
+        //Ext.Msg.alert('ID\'s',k);
+
+        //filtrem pels processos que compleixen el filtre
+        Ext.getStore('procesJson').clearFilter();
+        Ext.getStore('procesJson').filterBy(function(record) {
+            return (k.indexOf(record.get('id'))!=-1);
+        });
+    },
+
+    onSubetiqueteslistTap: function(dataview, index, target, record, e, options) {
+        Ext.getCmp('procesosList').deselectAll();
+
+        var j=[];
+        j[0]=record.get("id");
+
+        //cerquem aquelles etiquetes del tipus seleccionat
+        Ext.getStore('associatJson').clearFilter();
+        Ext.getStore('associatJson').filterBy(function(record) {
+            return (j.indexOf(record.get('etiqueta_id'))!=-1);
+        });
+
+        //cerquem a la taula associat les etiquetes segons el filtre principal
+        var k=[];
+        for (i=0;i<Ext.getStore('associatJson').getCount();i++){
+            k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');
+        }
+
+        //Ext.Msg.alert('ID\'s',k);
+
+        //filtrem pels processos que compleixen el filtre
+        Ext.getStore('procesJson').clearFilter();
+        Ext.getStore('procesJson').filterBy(function(record) {
+            return (k.indexOf(record.get('id'))!=-1);
+        });
+    },
+
+    onPanelActiveItemChange: function(container, value, oldValue, options) {
+        /*
+        var finestra=container.getActiveItem().getId().substr(-1)-2;
+
+
+        if (finestra==1){
+        Ext.getCmp('usuariPanel').setHeight('170px');
+        }else if (finestra==2){
+        Ext.getCmp('usuariPanel').setHeight=('70px');
+        }else{
+        Ext.getCmp('usuariPanel').setHeight=('150px');
+        }
+
+        Ext.Msg.alert('Finestra',finestra + " tamany:" + Ext.getCmp('usuariPanel').getHeight() );
+        */
     }
 
 });

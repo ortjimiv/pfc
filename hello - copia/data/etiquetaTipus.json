@@ -1,0 +1,12 @@
+{
+    etiquetaTipus: [{
+        id: 1,
+	nom: 'Processos estrat&egrave;gics'
+    }, {
+        id: 2,
+	nom: 'Processos principal'
+    }, {
+        id: 3,
+	nom: 'Processos de suport'
+    }]
+}

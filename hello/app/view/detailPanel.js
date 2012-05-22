@@ -25,9 +25,9 @@ Ext.define('PFC.view.detailPanel', {
             type: 'card'
         },
         tpl: [
-            'ID: {id}</br>',
-            'Nom: {nom}</br>',
-            'Descripció: {descripcio}'
+            '</br>',
+            '<b>Nom:</b> {nom}</br>',
+            '<b>Descripció:</b> {descripcio}'
         ]
     }
 

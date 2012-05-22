@@ -8,6 +8,7 @@
     "codeClass": null,
     "userConfig": {
         "id": "usuariPanel",
+        "ui": "light",
         "modal": false,
         "designer|userClassName": "usuariPanel",
         "designer|userAlias": "usuaripanel"
@@ -15,7 +16,7 @@
     "customConfigs": [],
     "designerId": "788d0398-dc48-48ce-99bb-02ec4f4b32e3",
     "$viewOrder": 5,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen22129",
@@ -31,7 +32,7 @@
                 "title": "Processos"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen10700",
@@ -42,17 +43,34 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "border": 1,
+                        "border": null,
                         "bottom": null,
-                        "height": null,
+                        "height": 65,
                         "itemId": "etiquetesList",
-                        "modal": false,
+                        "layout": null,
                         "layout|flex": 1
                     },
                     "customConfigs": [],
                     "iconCls": "icon-linkedinstance",
                     "expanded": true,
                     "masterInstanceId": "ExtBox1-ext-gen7347"
+                },
+                {
+                    "id": "ExtBox1-ext-gen3387",
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "subetiquetesList",
+                        "layout|flex": 1
+                    },
+                    "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
+                    "expanded": true,
+                    "masterInstanceId": "ExtBox1-ext-gen2939"
                 }
             ]
         },

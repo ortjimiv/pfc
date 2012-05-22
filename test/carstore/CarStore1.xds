@@ -2,7 +2,6 @@
     "name": "CarStore1",
     "settings": {
         "urlPrefix": "http://localhost/CarStore",
-        "directAPI": "",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
         "exportPath": "",
@@ -18,7 +17,7 @@
         "cssPath": ""
     },
     "xdsVersion": "2.0.0",
-    "xdsBuild": "412",
+    "xdsBuild": 420,
     "framework": "ext40",
     "topInstanceFileMap": {
         "68697e69-adcd-40e9-b6f4-f5dcdb937fad": {

@@ -1,0 +1,30 @@
+{
+    "id": "ExtBox1-ext-gen2939",
+    "type": "list",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "subetiquetesList",
+        "style": "",
+        "styleHtmlCls": null,
+        "ui": "",
+        "layout": null,
+        "scrollable": "horizontal",
+        "inline": "{wrap:false}",
+        "itemTpl": "<div style=\"background-color:#FEAA99;height:40px;border:1px solid;\nborder-radius:25px;\n-moz-border-radius:15px;box-shadow: 5px 5px 5px #888888;padding:10px;\">\n{nom}\n</div>\n",
+        "store": "etiquetaJson",
+        "allowDeselect": true,
+        "disableSelection": false,
+        "mode": null,
+        "onItemDisclosure": false,
+        "designer|userClassName": "subetiquetesList",
+        "designer|userAlias": "subetiqueteslist"
+    },
+    "customConfigs": [],
+    "designerId": "beef2a4b-d5c0-4e6a-9acb-d4d93bd584b3",
+    "$viewOrder": 8,
+    "expanded": true
+}

@@ -9,7 +9,7 @@
     "userConfig": {
         "id": "detailPanel",
         "itemId": "detailPanel",
-        "tpl": "ID: {id}</br>\nNom: {nom}</br>\nDescripció: {descripcio}",
+        "tpl": "</br>\n<b>Nom:</b> {nom}</br>\n<b>Descripció:</b> {descripcio}",
         "ui": "",
         "layout": "card",
         "designer|userClassName": "detailPanel",

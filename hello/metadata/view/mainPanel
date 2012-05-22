@@ -15,7 +15,7 @@
     "customConfigs": [],
     "designerId": "639da149-d10c-490d-83de-7c8c9ab97314",
     "$viewOrder": 4,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen13952",
@@ -103,7 +103,7 @@
                 "designer|userClassName": "MyContainer3"
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen23557",
@@ -115,7 +115,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "docked": "top",
-                        "height": 150,
+                        "height": 170,
                         "itemId": "usuariPanel"
                     },
                     "customConfigs": [],

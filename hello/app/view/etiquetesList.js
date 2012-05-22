@@ -19,12 +19,9 @@ Ext.define('PFC.view.etiquetesList', {
 
     config: {
         id: 'etiquetesList',
-        style: '',
+        style: 'background-color:#FFEFD5;',
         ui: '',
-        layout: {
-            align: 'center',
-            type: 'hbox'
-        },
+        modal: false,
         scrollable: 'horizontal',
         store: 'etiquetaTipusJson',
         allowDeselect: true,
@@ -34,7 +31,7 @@ Ext.define('PFC.view.etiquetesList', {
             wrap: false
         },
         itemTpl: [
-            '<div style="background-color:#FE642E;height:40px;border:1px solid;',
+            '<div style="background-color:#A18F28;height:40px;border:1px solid;',
             'border-radius:25px;',
             '-moz-border-radius:15px;box-shadow: 5px 5px 5px #888888;padding:10px;">',
             '{nom}',

@@ -1,0 +1,98 @@
+{
+    "id": "ExtBox1-ext-gen6511",
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "usuari"
+    },
+    "customConfigs": [],
+    "designerId": "2aa25367-5882-480b-85e4-baa63f17db8d",
+    "$viewOrder": 1,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen6719",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "auto",
+                "designer|userClassName": "MyField3"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6879",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nom",
+                "type": "string",
+                "designer|userClassName": "MyField4"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen7045",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "username",
+                "type": "string",
+                "designer|userClassName": "MyField5"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen7214",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "password",
+                "type": "string",
+                "designer|userClassName": "MyField6"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen7387",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tipus",
+                "type": "int",
+                "designer|userClassName": "MyField7"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}
