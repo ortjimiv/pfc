@@ -36,7 +36,16 @@ Ext.define('PFC.controller.MyController', {
                 itemtap: 'onSubetiqueteslistTap'
             },
             "#usuariPanel": {
-                activeitemchange: 'onPanelActiveItemChange'
+                activeitemchange: 'onUsuariPanellActiveItemChange'
+            },
+            "#cerca": {
+                action: 'onCercaAction'
+            },
+            "#filtre1": {
+                change: 'onFiltre1Change'
+            },
+            "selectfield": {
+                change: 'onFiltre2Change'
             }
         }
     },
@@ -49,6 +58,8 @@ Ext.define('PFC.controller.MyController', {
         Ext.getCmp('usuariPanel').setHidden(true);
         Ext.getCmp('torna').setHidden(false);
 
+        Ext.getStore('instruccioJson').filter('proces_id',record.get('id'));
+
         if (detall) {
             detall.setData(record.data);
             Ext.getCmp('finestra').setActiveItem(detall);
@@ -57,7 +68,7 @@ Ext.define('PFC.controller.MyController', {
                 xclass: 'PFC.view.detailPanel'
             });
         }
-        Ext.getCmp('detailPanel').setData(record.data);
+        Ext.getCmp('procesPanel').setData(record.data);
         /*
         Ext.getCmp('mainPanel').push({
         xtype: 'detailpanel',
@@ -96,6 +107,7 @@ Ext.define('PFC.controller.MyController', {
         Ext.getCmp('loggedInUserName').setTitle("Processos de treball");
 
         Ext.getCmp('finestra').removeAt(2);
+        Ext.getStore('instruccioJson').clearFilter();
     },
 
     onLogoutTap: function(button, e, options) {
@@ -166,21 +178,90 @@ Ext.define('PFC.controller.MyController', {
         });
     },
 
-    onPanelActiveItemChange: function(container, value, oldValue, options) {
-        /*
-        var finestra=container.getActiveItem().getId().substr(-1)-2;
+    onUsuariPanellActiveItemChange: function(container, value, oldValue, options) {
+        Ext.getStore('procesJson').clearFilter();
+
+        var finestra=container.getActiveItem().getId().substr(-1);
 
 
-        if (finestra==1){
-        Ext.getCmp('usuariPanel').setHeight('170px');
-        }else if (finestra==2){
-        Ext.getCmp('usuariPanel').setHeight=('70px');
+        if (finestra==3){
+            container.setHeight(175);
+        }else if (finestra==4){
+            container.setHeight(100);
         }else{
-        Ext.getCmp('usuariPanel').setHeight=('150px');
+            container.setHeight(140);
         }
 
-        Ext.Msg.alert('Finestra',finestra + " tamany:" + Ext.getCmp('usuariPanel').getHeight() );
-        */
+        //Ext.Msg.alert('Finestra',finestra + " tamany:" + container.getHeight() );
+    },
+
+    onCercaAction: function(textfield, e, options) {
+        Ext.getStore('procesJson').clearFilter();
+
+        Ext.getStore('procesJson').filterBy(function(record) {
+            return (record.get('nom').search(textfield.getValue())!=-1);
+        });
+    },
+
+    onFiltre1Change: function(selectfield, newValue, oldValue, options) {
+        //Ext.Msg.alert('ID\'s',selectfield.getValue());
+
+        Ext.getCmp('subetiquetesList').deselectAll();
+        Ext.getCmp('procesosList').deselectAll();
+
+        Ext.getCmp('subetiquetesList').getStore().filter('etiquetaTipus_id',selectfield.getValue());
+
+        //desem els id's de les etiquetes
+        var j=[];
+        for (i=0;i<Ext.getStore('etiquetaJson').getCount();i++){
+            j[i]=Ext.getStore('etiquetaJson').getAt(i).get('id');
+        }
+
+        //cerquem aquelles etiquetes del tipus seleccionat
+        Ext.getStore('associatJson').clearFilter();
+        Ext.getStore('associatJson').filterBy(function(record) {
+            return (j.indexOf(record.get('etiqueta_id'))!=-1);
+        });
+
+        //cerquem a la taula associat les etiquetes segons el filtre principal
+        var k=[];
+        for (i=0;i<Ext.getStore('associatJson').getCount();i++){
+            k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');
+        }
+
+
+        //filtrem pels processos que compleixen el filtre
+        Ext.getStore('procesJson').clearFilter();
+        Ext.getStore('procesJson').filterBy(function(record) {
+            return (k.indexOf(record.get('id'))!=-1);
+        });
+    },
+
+    onFiltre2Change: function(selectfield, newValue, oldValue, options) {
+        Ext.getCmp('procesosList').deselectAll();
+
+        var j=[];
+        j[0]=selectfield.getValue();
+
+        //cerquem aquelles etiquetes del tipus seleccionat
+        Ext.getStore('associatJson').clearFilter();
+        Ext.getStore('associatJson').filterBy(function(record) {
+            return (j.indexOf(record.get('etiqueta_id'))!=-1);
+        });
+
+        //cerquem a la taula associat les etiquetes segons el filtre principal
+        var k=[];
+        for (i=0;i<Ext.getStore('associatJson').getCount();i++){
+            k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');
+        }
+
+        //Ext.Msg.alert('ID\'s',k);
+
+        //filtrem pels processos que compleixen el filtre
+        Ext.getStore('procesJson').clearFilter();
+        Ext.getStore('procesJson').filterBy(function(record) {
+            return (k.indexOf(record.get('id'))!=-1);
+        });
     }
 
 });

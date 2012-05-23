@@ -30,7 +30,8 @@ Ext.define('PFC.view.viewport', {
         items: [
             {
                 xtype: 'loginform',
-                itemId: 'loginForm'
+                itemId: 'loginForm',
+                styleHtmlContent: false
             },
             {
                 xtype: 'mainpanel',

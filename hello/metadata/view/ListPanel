@@ -8,13 +8,14 @@
     "codeClass": null,
     "userConfig": {
         "id": "listPanel",
+        "style": null,
         "layout": "fit",
         "designer|userClassName": "ListPanel",
         "designer|userAlias": "listpanel"
     },
     "customConfigs": [],
     "designerId": "bce333bd-18d6-44b1-88a3-a47cd6013f12",
-    "$viewOrder": 2,
+    "$viewOrder": 1,
     "expanded": false,
     "cn": [
         {
@@ -29,6 +30,7 @@
                 "docked": null,
                 "id": "procesosList",
                 "itemId": "",
+                "style": "background-color:#FFEFD5;",
                 "itemTpl": "<div class=\"nom\">{nom}</div>",
                 "store": "procesJson",
                 "onItemDisclosure": false,

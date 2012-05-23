@@ -114,7 +114,9 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "id": "cerca",
                                 "label": "Proces:",
+                                "autoCapitalize": false,
                                 "designer|userClassName": "MySearchField"
                             },
                             "customConfigs": [],
@@ -133,6 +135,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "style": "background-color:#FFEFD5;",
                 "designer|userClassName": "MyContainer2",
                 "title": "Filtre"
             },
@@ -148,10 +151,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "html": null,
                         "id": "filtre1",
+                        "style": null,
+                        "styleHtmlContent": null,
                         "label": "Filtre 1",
                         "value": "id",
-                        "store": "etiquetaJson",
+                        "placeHolder": null,
+                        "displayField": "nom",
+                        "store": "etiquetaTipusJson",
+                        "valueField": "id",
                         "designer|userClassName": "MySelectField"
                     },
                     "customConfigs": [],
@@ -166,7 +175,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "html": null,
+                        "id": "filtre2",
+                        "styleHtmlContent": null,
                         "label": "Filtre 2",
+                        "placeHolder": "Selecciona",
+                        "displayField": "nom",
+                        "store": "etiquetaJson",
+                        "valueField": "id",
                         "designer|userClassName": "MySelectField1"
                     },
                     "customConfigs": [],

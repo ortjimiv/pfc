@@ -1,0 +1,53 @@
+{
+    "id": "ExtBox1-ext-gen19095",
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "associat",
+        "storeId": "associatJson",
+        "designer|userClassName": "associatJson"
+    },
+    "customConfigs": [],
+    "designerId": "e8d86d1a-d092-48b6-a809-e540630a6f67",
+    "$viewOrder": 4,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen19102",
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "data/associat.json",
+                "designer|userClassName": "MyAjaxProxy4"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen19109",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data",
+                        "designer|userClassName": "MyJsonReader4"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

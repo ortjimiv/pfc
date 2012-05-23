@@ -1,0 +1,226 @@
+{
+    "id": "ExtBox1-ext-gen19978",
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": null,
+        "padding": 15,
+        "style": null,
+        "ui": "",
+        "layout": "vbox",
+        "url": null,
+        "designer|userClassName": "loginForm",
+        "designer|userAlias": "loginform",
+        "container|pack": "center"
+    },
+    "customConfigs": [],
+    "designerId": "d147aeef-2a26-4da7-bf4b-b0ebb1a9144b",
+    "$viewOrder": 3,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen19834",
+            "type": "titlebar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "style": "",
+                "scrollable": false,
+                "title": "Processos de treball",
+                "designer|userClassName": "MyTitleBar"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen18404",
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<center><h2>Gestió dels processos de treball</h2></center><br/>",
+                "itemId": "etiqueta0",
+                "designer|userClassName": "MyLabel"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen40683",
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": null,
+                "itemId": "etiqueta1",
+                "designer|userClassName": "MyLabel2"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen3328",
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "style": null,
+                "title": "Dades de registre:",
+                "designer|userClassName": "MyFieldSet"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen4959",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": null,
+                        "itemId": null,
+                        "padding": null,
+                        "label": "Usuari:",
+                        "name": "username",
+                        "required": true,
+                        "placeHolder": "Nom d'usuari",
+                        "designer|userClassName": "MyTextField"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen7020",
+                    "type": "passwordfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": null,
+                        "label": "Clau:",
+                        "name": "password",
+                        "required": true,
+                        "placeHolder": "Clau d'usuari",
+                        "designer|userClassName": "MyPasswordField"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
+            "id": "ExtBox1-ext-gen23412",
+            "type": "label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "<br/><hr/><center>Benvingut</center><br/>",
+                "id": null,
+                "itemId": "etiqueta2",
+                "designer|userClassName": "MyLabel1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8794",
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "id": null,
+                "itemId": "login",
+                "ui": "forward",
+                "iconCls": "action",
+                "iconMask": true,
+                "text": "Accedir",
+                "designer|userClassName": "MyButton"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen17630",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onLoginTap",
+                        "implHandler": [
+                            "button.up('formpanel').down('#etiqueta1').setHtml(\"\");\r",
+                            "var top = button.up('viewport');\r",
+                            "var msgError =\"<DIV style='color:red;font-size:12px;'>Necessita omplenar les dades de usuari.<br/>Els usuaris disponibles son ivan, usuari, admin i edit.</div>\";\r",
+                            "\r",
+                            "//desem l'usuari que ha accedit\r",
+                            "PFC.username = button.up('formpanel').getValues().username;\r",
+                            "\r",
+                            "button.up('formpanel').reset();\r",
+                            "\r",
+                            "if (PFC.username!==\"\"){\r",
+                            "    button.up('formpanel').down('#etiqueta1').setHtml(\"\");\r",
+                            "    var x = Ext.getStore('usuariJson').findRecord(\"username\",PFC.username,0,false,false,true);\r",
+                            "    if (x!==null){\r",
+                            "        //top.down('#loggedInUserName').setHtml(PFC.username);\r",
+                            "        top.down('#logout').setText(\"Sortir \"+PFC.username);\r",
+                            "        //Desem el tipus d'usuari que estem treballant\r",
+                            "        PFC.tipus= x.get('tipus');\r",
+                            "\r",
+                            "        top.setActiveItem(1);\r",
+                            "\r",
+                            "        if (PFC.tipus===0) {\r",
+                            "            top.down('#barraEditor').setHidden(true);\r",
+                            "        }else{\r",
+                            "            top.down('#barraEditor').setHidden(false);\r",
+                            "        }\r",
+                            "    }else{\r",
+                            "        Ext.Msg.alert('Usuari incorrecte', msgError, Ext.emptyFn);\r",
+                            "        button.up('formpanel').down('#etiqueta1').setHtml(msgError);\r",
+                            "    }\r",
+                            "}else{\r",
+                            "    Ext.Msg.alert('Usuari incorrecte', msgError, Ext.emptyFn);\r",
+                            "    button.up('formpanel').down('#etiqueta1').setHtml(msgError);\r",
+                            "}\r",
+                            ""
+                        ],
+                        "name": "tap",
+                        "designer|userClassName": "onLoginTap"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

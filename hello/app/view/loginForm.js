@@ -19,6 +19,7 @@ Ext.define('PFC.view.loginForm', {
 
     config: {
         padding: 15,
+        style: 'background-color:#FFEFD5;',
         ui: '',
         layout: {
             pack: 'center',
@@ -103,13 +104,18 @@ Ext.define('PFC.view.loginForm', {
                 //Desem el tipus d'usuari que estem treballant
                 PFC.tipus= x.get('tipus');
 
-                top.setActiveItem(1);
+                Ext.getStore('procesJson').clearFilter();
+                Ext.getStore('etiquetaJson').clearFilter();
+                Ext.getStore('etiquetaTipusJson').clearFilter();
 
                 if (PFC.tipus===0) {
                     top.down('#barraEditor').setHidden(true);
                 }else{
                     top.down('#barraEditor').setHidden(false);
                 }
+
+                top.setActiveItem(1);
+
             }else{
                 Ext.Msg.alert('Usuari incorrecte', msgError, Ext.emptyFn);
                 button.up('formpanel').down('#etiqueta1').setHtml(msgError);

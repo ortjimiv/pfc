@@ -1,7 +1,7 @@
 {
     subprocesos: [{
         id: 1,
-	descripcio: 'Posar en coneixement del cap immediat la teva voluntat de participar en la selecci&oacute; d\’aquesta pla\ça.',
+	descripcio: 'Posar en coneixement del cap immediat la teva voluntat de participar en la selecci&oacute; d’aquesta plaça.',
 	proces_id: 6
     }, {
         id: 2,

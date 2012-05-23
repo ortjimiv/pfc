@@ -76,14 +76,6 @@
             ],
             "className": "procesModel"
         },
-        "b7d747e1-ef06-49f5-b7de-e9d9856fb719": {
-            "paths": [
-                "metadata/view/detailPanel",
-                "app/view/override/detailPanel.js",
-                "app/view/detailPanel.js"
-            ],
-            "className": "detailPanel"
-        },
         "2f4f49f8-57a0-472c-a783-cf92b2b33ba2": {
             "paths": [
                 "metadata/controller/MyController",
@@ -179,6 +171,30 @@
                 "app/store/associatJson.js"
             ],
             "className": "associatJson"
+        },
+        "cb507a70-f651-49b4-af4a-eed906323707": {
+            "paths": [
+                "metadata/store/instruccioJson",
+                "app/store/override/instruccioJson.js",
+                "app/store/instruccioJson.js"
+            ],
+            "className": "instruccioJson"
+        },
+        "889d0c1b-1ed5-407d-b7ff-4c1ae566b32f": {
+            "paths": [
+                "metadata/model/instruccio",
+                "app/model/override/instruccio.js",
+                "app/model/instruccio.js"
+            ],
+            "className": "instruccio"
+        },
+        "cf02870b-854e-493b-bd32-4d6ddb05795f": {
+            "paths": [
+                "metadata/view/detailPanel",
+                "app/view/override/detailPanel.js",
+                "app/view/detailPanel.js"
+            ],
+            "className": "detailPanel"
         }
     },
     "expandedState": {

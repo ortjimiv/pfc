@@ -59,7 +59,9 @@ Ext.define('PFC.view.usuariPanel', {
                         items: [
                             {
                                 xtype: 'searchfield',
-                                label: 'Proces:'
+                                id: 'cerca',
+                                label: 'Proces:',
+                                autoCapitalize: false
                             }
                         ]
                     }
@@ -67,6 +69,7 @@ Ext.define('PFC.view.usuariPanel', {
             },
             {
                 xtype: 'container',
+                style: 'background-color:#FFEFD5;',
                 title: 'Filtre',
                 items: [
                     {
@@ -74,11 +77,18 @@ Ext.define('PFC.view.usuariPanel', {
                         id: 'filtre1',
                         label: 'Filtre 1',
                         value: 'id',
-                        store: 'etiquetaJson'
+                        displayField: 'nom',
+                        store: 'etiquetaTipusJson',
+                        valueField: 'id'
                     },
                     {
                         xtype: 'selectfield',
-                        label: 'Filtre 2'
+                        id: 'filtre2',
+                        label: 'Filtre 2',
+                        placeHolder: 'Selecciona',
+                        displayField: 'nom',
+                        store: 'etiquetaJson',
+                        valueField: 'id'
                     }
                 ]
             }

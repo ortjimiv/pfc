@@ -28,6 +28,9 @@ Ext.define('PFC.model.etiqueta', {
             {
                 name: 'etiquetaTipus_id',
                 type: 'int'
+            },
+            {
+                name: 'nomHTML'
             }
         ]
     }

@@ -45,6 +45,21 @@
             },
             "customConfigs": [],
             "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen4974",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nomHTML",
+                "designer|userClassName": "MyField16"
+            },
+            "customConfigs": [],
+            "expanded": true
         }
     ]
 }

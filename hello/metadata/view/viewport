@@ -12,9 +12,16 @@
         "layout": "card",
         "designer|userClassName": "viewport",
         "designer|userAlias": "viewport",
+        "title": null,
         "container|animation": "fade"
     },
-    "customConfigs": [],
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "title",
+            "type": "string"
+        }
+    ],
     "designerId": "f0444d2e-811d-488e-9192-ae02745aa41e",
     "$viewOrder": 6,
     "expanded": false,
@@ -29,7 +36,9 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "loginForm",
+                "style": null,
                 "styleHtmlCls": null,
+                "styleHtmlContent": false,
                 "layout": null
             },
             "customConfigs": [],

@@ -27,6 +27,7 @@ Ext.define('PFC.view.ListPanel', {
                 xtype: 'list',
                 id: 'procesosList',
                 itemId: '',
+                style: 'background-color:#FFEFD5;',
                 itemTpl: [
                     '<div class="nom">{nom}</div>'
                 ],

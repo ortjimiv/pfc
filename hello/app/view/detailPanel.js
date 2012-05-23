@@ -15,19 +15,51 @@
 
 Ext.define('PFC.view.detailPanel', {
     extend: 'Ext.Panel',
-    alias: 'widget.detailpanel',
 
     config: {
         id: 'detailPanel',
-        itemId: 'detailPanel',
-        ui: '',
         layout: {
-            type: 'card'
+            type: 'vbox'
         },
-        tpl: [
-            '</br>',
-            '<b>Nom:</b> {nom}</br>',
-            '<b>Descripció:</b> {descripcio}'
+        items: [
+            {
+                xtype: 'container',
+                id: 'procesPanel',
+                itemId: 'procesPanel',
+                style: 'background-color:#A18F28',
+                tpl: [
+                    '</br>',
+                    '<b>Nom:</b> {nom}</br>',
+                    '<b>Descripció:</b> {descripcio}'
+                ],
+                ui: '',
+                flex: 0
+            },
+            {
+                xtype: 'list',
+                id: 'instruccioList',
+                itemId: 'instruccioList',
+                style: 'background-color:#D7C663',
+                itemTpl: [
+                    '<div>{descripcio}</div>'
+                ],
+                store: 'instruccioJson',
+                flex: 2
+            },
+            {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                itemId: 'barraInstruccio',
+                items: [
+                    {
+                        xtype: 'button',
+                        id: 'novaInstruccio',
+                        ui: 'action-round',
+                        text: 'Nova Instrucció',
+                        flex: 1
+                    }
+                ]
+            }
         ]
     }
 

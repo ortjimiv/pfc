@@ -23,14 +23,16 @@ Ext.application({
         'usuari',
         'etiqueta',
         'tipusEtiqueta',
-        'associat'
+        'associat',
+        'instruccio'
     ],
     stores: [
         'procesJson',
         'usuariJson',
         'etiquetaJson',
         'etiquetaTipusJson',
-        'associatJson'
+        'associatJson',
+        'instruccioJson'
     ],
     views: [
         'usuariPanel',
@@ -38,10 +40,10 @@ Ext.application({
         'addProcesForm',
         'ListPanel',
         'viewport',
-        'detailPanel',
         'mainPanel',
         'etiquetesList',
-        'subetiquetesList'
+        'subetiquetesList',
+        'detailPanel'
     ],
     name: 'PFC',
     controllers: [
