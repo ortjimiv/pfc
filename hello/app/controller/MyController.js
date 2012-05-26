@@ -39,7 +39,7 @@ Ext.define('PFC.controller.MyController', {
                 activeitemchange: 'onUsuariPanellActiveItemChange'
             },
             "#cerca": {
-                action: 'onCercaAction'
+                keyup: 'onSearchfieldKeyup'
             },
             "#filtre1": {
                 change: 'onFiltre1Change'
@@ -51,7 +51,11 @@ Ext.define('PFC.controller.MyController', {
     },
 
     onListpanelTap: function(dataview, index, target, record, e, options) {
-        Ext.getCmp('loggedInUserName').setTitle("Procés "+record.get('nom'));
+        PFC.titol=record.get('nom');
+        //Auxiliar que ens servirà quan tornem de crear una nova instrucció
+        PFC.titolAux=record.get('nom');
+
+        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
         var detall = Ext.getCmp('detailPanel');
         Ext.getCmp('mainPanel').animateTo('left');
         Ext.getCmp('listPanel').setHidden(true);
@@ -68,13 +72,14 @@ Ext.define('PFC.controller.MyController', {
                 xclass: 'PFC.view.detailPanel'
             });
         }
+
+        if (PFC.tipus===0) {
+            Ext.getCmp('barraInstruccio').setHidden(true);
+        }else{
+            Ext.getCmp('barraInstruccio').setHidden(false);
+        }
+
         Ext.getCmp('procesPanel').setData(record.data);
-        /*
-        Ext.getCmp('mainPanel').push({
-        xtype: 'detailpanel',
-        data: record.getData()
-        });
-        */
     },
 
     onNouprocesTap: function(button, e, options) {
@@ -88,7 +93,8 @@ Ext.define('PFC.controller.MyController', {
         Ext.getCmp('listPanel').setHidden(true);
         Ext.getCmp('usuariPanel').setHidden(true);
         Ext.getCmp('torna').setHidden(false);
-        Ext.getCmp('loggedInUserName').setTitle("Nou procés");
+        PFC.titol="Nou procés";
+        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
 
         if (afegirProces) {
             Ext.getCmp('finestra').setActiveItem(afegirProces);
@@ -100,18 +106,33 @@ Ext.define('PFC.controller.MyController', {
     },
 
     onTornaTap: function(button, e, options) {
-        Ext.getCmp('mainPanel').animateTo('right');
-        Ext.getCmp('listPanel').setHidden(false);
-        Ext.getCmp('usuariPanel').setHidden(false);
-        Ext.getCmp('torna').setHidden(true);
-        Ext.getCmp('loggedInUserName').setTitle("Processos de treball");
+        if (PFC.titol=="Nova instrucció"){
+            PFC.titol=PFC.titolAux;
 
-        Ext.getCmp('finestra').removeAt(2);
-        Ext.getStore('instruccioJson').clearFilter();
+            Ext.getCmp('detailPanel').setHidden(false);
+
+            Ext.getCmp('finestra').remove(Ext.getCmp('addInstruccioForm'),true);
+
+        }else{
+            PFC.titol="Processos de treball";
+            Ext.getCmp('mainPanel').animateTo('right');
+            Ext.getCmp('listPanel').setHidden(false);
+            Ext.getCmp('usuariPanel').setHidden(false);
+            Ext.getCmp('torna').setHidden(true);
+
+            Ext.getCmp('finestra').removeAt(2);
+            Ext.getStore('instruccioJson').clearFilter();
+
+            PFC.titolAux="";
+        }
+
+        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
+
     },
 
     onLogoutTap: function(button, e, options) {
-        Ext.getCmp('loggedInUserName').setTitle("");
+        PFC.titol="";
+        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
         var top = Ext.getCmp('viewport');
         top.down('#loginForm').reset();
         top.down('#procesosList').deselectAll();
@@ -122,40 +143,67 @@ Ext.define('PFC.controller.MyController', {
         Ext.getCmp('subetiquetesList').deselectAll();
         Ext.getCmp('procesosList').deselectAll();
 
-        Ext.getCmp('subetiquetesList').getStore().filter('etiquetaTipus_id',record.get("id"));
+        //etiquetaId permet controlar si deseleccionem un element sense marcar un altre de la llista
+        if (PFC.etiquetaId==record.get("id")){
+            Ext.getStore('etiquetaJson').clearFilter();
+            Ext.getStore('associatJson').clearFilter();
+            Ext.getStore('procesJson').clearFilter();
+            PFC.etiquetaId=-1;
+        }else{
+            Ext.getCmp('subetiquetesList').getStore().filter('etiquetaTipus_id',record.get("id"));
 
-        //desem els id's de les etiquetes
-        var j=[];
-        for (i=0;i<Ext.getStore('etiquetaJson').getCount();i++){
-            j[i]=Ext.getStore('etiquetaJson').getAt(i).get('id');
+            //desem els id's de les etiquetes
+            var j=[];
+            for (i=0;i<Ext.getStore('etiquetaJson').getCount();i++){
+                j[i]=Ext.getStore('etiquetaJson').getAt(i).get('id');
+            }
+
+            //cerquem aquelles etiquetes del tipus seleccionat
+            Ext.getStore('associatJson').clearFilter();
+            Ext.getStore('associatJson').filterBy(function(record) {
+                return (j.indexOf(record.get('etiqueta_id'))!=-1);
+            });
+
+            //cerquem a la taula associat les etiquetes segons el filtre principal
+            var k=[];
+            for (i=0;i<Ext.getStore('associatJson').getCount();i++){
+                k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');
+            }
+
+            //Ext.Msg.alert('ID\'s',k);
+
+            //filtrem pels processos que compleixen el filtre
+            Ext.getStore('procesJson').clearFilter();
+            Ext.getStore('procesJson').filterBy(function(record) {
+                return (k.indexOf(record.get('id'))!=-1);
+            });
+
+            PFC.etiquetaId=record.get("id");
         }
-
-        //cerquem aquelles etiquetes del tipus seleccionat
-        Ext.getStore('associatJson').clearFilter();
-        Ext.getStore('associatJson').filterBy(function(record) {
-            return (j.indexOf(record.get('etiqueta_id'))!=-1);
-        });
-
-        //cerquem a la taula associat les etiquetes segons el filtre principal
-        var k=[];
-        for (i=0;i<Ext.getStore('associatJson').getCount();i++){
-            k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');
-        }
-
-        //Ext.Msg.alert('ID\'s',k);
-
-        //filtrem pels processos que compleixen el filtre
-        Ext.getStore('procesJson').clearFilter();
-        Ext.getStore('procesJson').filterBy(function(record) {
-            return (k.indexOf(record.get('id'))!=-1);
-        });
     },
 
     onSubetiqueteslistTap: function(dataview, index, target, record, e, options) {
         Ext.getCmp('procesosList').deselectAll();
 
-        var j=[];
-        j[0]=record.get("id");
+        if (PFC.subetiquetaId==record.get("id")){
+            //Ext.getStore('etiquetaJson').clearFilter();
+            Ext.getStore('associatJson').clearFilter();
+            Ext.getStore('procesJson').clearFilter();
+
+            //desem els id's de les etiquetes
+            var j=[];
+            for (i=0;i<Ext.getStore('etiquetaJson').getCount();i++){
+                j[i]=Ext.getStore('etiquetaJson').getAt(i).get('id');
+            }
+
+
+            PFC.subetiquetaId=-1;
+        }else{
+            var j=[];
+            j[0]=record.get("id");
+
+            PFC.subetiquetaId=record.get("id");
+        }
 
         //cerquem aquelles etiquetes del tipus seleccionat
         Ext.getStore('associatJson').clearFilter();
@@ -195,7 +243,7 @@ Ext.define('PFC.controller.MyController', {
         //Ext.Msg.alert('Finestra',finestra + " tamany:" + container.getHeight() );
     },
 
-    onCercaAction: function(textfield, e, options) {
+    onSearchfieldKeyup: function(textfield, e, options) {
         Ext.getStore('procesJson').clearFilter();
 
         Ext.getStore('procesJson').filterBy(function(record) {

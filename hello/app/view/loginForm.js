@@ -92,6 +92,7 @@ Ext.define('PFC.view.loginForm', {
 
         //desem l'usuari que ha accedit
         PFC.username = button.up('formpanel').getValues().username;
+        PFC.titol = "Processos de treball";
 
         button.up('formpanel').reset();
 
@@ -110,8 +111,10 @@ Ext.define('PFC.view.loginForm', {
 
                 if (PFC.tipus===0) {
                     top.down('#barraEditor').setHidden(true);
+                    //top.down('#barraInstruccio').setHidden(true);
                 }else{
                     top.down('#barraEditor').setHidden(false);
+                    //top.down('#barraInstruccio').setHidden(false);
                 }
 
                 top.setActiveItem(1);

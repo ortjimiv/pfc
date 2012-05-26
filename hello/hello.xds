@@ -195,6 +195,14 @@
                 "app/view/detailPanel.js"
             ],
             "className": "detailPanel"
+        },
+        "c89d529f-437b-46ba-be9b-6418a0439190": {
+            "paths": [
+                "metadata/view/addInstruccioForm",
+                "app/view/override/addInstruccioForm.js",
+                "app/view/addInstruccioForm.js"
+            ],
+            "className": "addInstruccioForm"
         }
     },
     "expandedState": {

@@ -43,7 +43,8 @@ Ext.application({
         'mainPanel',
         'etiquetesList',
         'subetiquetesList',
-        'detailPanel'
+        'detailPanel',
+        'addInstruccioForm'
     ],
     name: 'PFC',
     controllers: [

@@ -13,7 +13,7 @@
     },
     "customConfigs": [],
     "designerId": "cf02870b-854e-493b-bd32-4d6ddb05795f",
-    "$viewOrder": 2,
+    "$viewOrder": 3,
     "expanded": false,
     "cn": [
         {
@@ -68,6 +68,7 @@
             "codeClass": null,
             "userConfig": {
                 "docked": "bottom",
+                "id": "barraInstruccio",
                 "itemId": "barraInstruccio",
                 "designer|userClassName": "MyToolbar2",
                 "visibility": null
@@ -91,14 +92,45 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "novaInstruccio",
-                        "itemId": null,
+                        "itemId": "mybutton3",
                         "ui": "action-round",
                         "text": "Nova Instrucció",
                         "designer|userClassName": "MyButton5",
                         "layout|flex": 1
                     },
                     "customConfigs": [],
-                    "expanded": true
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen10584",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNovaInstruccioTap",
+                                "implHandler": [
+                                    "\r",
+                                    "Ext.getCmp('detailPanel').setHidden(true);\r",
+                                    "Ext.getCmp('torna').setHidden(false);\r",
+                                    "PFC.titol=\"Nova instrucció\";\r",
+                                    "Ext.getCmp('loggedInUserName').setTitle(PFC.titol);\r",
+                                    "\r",
+                                    "\r",
+                                    "Ext.getCmp('finestra').setActiveItem({\r",
+                                    "    xclass: 'PFC.view.addInstruccioForm'\r",
+                                    "});\r",
+                                    ""
+                                ],
+                                "name": "tap",
+                                "designer|userClassName": "onNovaInstruccioTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
                 }
             ]
         }

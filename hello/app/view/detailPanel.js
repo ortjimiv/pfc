@@ -49,18 +49,41 @@ Ext.define('PFC.view.detailPanel', {
             {
                 xtype: 'toolbar',
                 docked: 'bottom',
+                id: 'barraInstruccio',
                 itemId: 'barraInstruccio',
                 items: [
                     {
                         xtype: 'button',
                         id: 'novaInstruccio',
+                        itemId: 'mybutton3',
                         ui: 'action-round',
                         text: 'Nova Instrucció',
                         flex: 1
                     }
                 ]
             }
+        ],
+        listeners: [
+            {
+                fn: 'onNovaInstruccioTap',
+                event: 'tap',
+                delegate: '#novaInstruccio'
+            }
         ]
+    },
+
+    onNovaInstruccioTap: function(button, e, options) {
+
+        Ext.getCmp('detailPanel').setHidden(true);
+        Ext.getCmp('torna').setHidden(false);
+        PFC.titol="Nova instrucció";
+        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
+
+
+        Ext.getCmp('finestra').setActiveItem({
+            xclass: 'PFC.view.addInstruccioForm'
+        });
+
     }
 
 });

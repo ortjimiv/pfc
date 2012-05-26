@@ -1,5 +1,5 @@
 {
-    "id": "ExtBox1-ext-gen8930",
+    "id": "ExtBox1-ext-gen2843",
     "type": "formpanel",
     "reference": {
         "name": "items",
@@ -7,20 +7,20 @@
     },
     "codeClass": null,
     "userConfig": {
-        "itemId": "addProcesForm",
+        "id": "addInstruccioForm",
+        "itemId": "addInstruccioForm",
         "tpl": null,
         "layout": "vbox",
-        "designer|userClassName": "addProcesForm",
-        "designer|userAlias": "addprocesform",
+        "designer|userClassName": "addInstruccioForm",
         "container|pack": "center"
     },
     "customConfigs": [],
-    "designerId": "cfa52486-82e7-42b6-afd8-525d2ae1749c",
-    "$viewOrder": 0,
+    "designerId": "c89d529f-437b-46ba-be9b-6418a0439190",
+    "$viewOrder": 1,
     "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen9429",
+            "id": "ExtBox1-ext-gen2847",
             "type": "fieldset",
             "reference": {
                 "name": "items",
@@ -28,14 +28,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Afegir un nou procés",
+                "title": "Afegir instrucció",
                 "designer|userClassName": "MyFieldSet1"
             },
             "customConfigs": [],
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen9439",
+                    "id": "ExtBox1-ext-gen2852",
                     "type": "textfield",
                     "reference": {
                         "name": "items",
@@ -43,16 +43,19 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Nom",
-                        "name": "nom",
+                        "disabled": true,
+                        "id": "procesId",
+                        "label": "Proces Id",
+                        "name": "procesId",
                         "required": true,
+                        "readOnly": false,
                         "designer|userClassName": "MyTextField1"
                     },
                     "customConfigs": [],
                     "expanded": true
                 },
                 {
-                    "id": "ExtBox1-ext-gen9446",
+                    "id": "ExtBox1-ext-gen2857",
                     "type": "textareafield",
                     "reference": {
                         "name": "items",
@@ -62,6 +65,8 @@
                     "userConfig": {
                         "label": "Descripció",
                         "name": "descripcio",
+                        "autoCorrect": true,
+                        "placeHolder": "Introdueixi la descripció de la instrucció.",
                         "designer|userClassName": "MyTextArea"
                     },
                     "customConfigs": [],
@@ -70,7 +75,7 @@
             ]
         },
         {
-            "id": "ExtBox1-ext-gen3136",
+            "id": "ExtBox1-ext-gen2864",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -88,7 +93,7 @@
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen14535",
+                    "id": "ExtBox1-ext-gen2869",
                     "type": "basiceventbinding",
                     "reference": {
                         "name": "listeners",
@@ -133,8 +138,7 @@
                             "Ext.getCmp('listPanel').setHidden(false);\r",
                             "Ext.getCmp('usuariPanel').setHidden(false);\r",
                             "Ext.getCmp('torna').setHidden(true);\r",
-                            "PFC.titol = \"Processos de treball\";\r",
-                            "Ext.getCmp('loggedInUserName').setTitle(PFC.titol);\r",
+                            "Ext.getCmp('loggedInUserName').setTitle(\"Processos de treball\");\r",
                             "\r",
                             "Ext.getCmp('finestra').removeAt(2);\r",
                             "\r",
