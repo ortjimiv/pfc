@@ -45,6 +45,8 @@ Ext.define('PFC.view.addProcesForm', {
                 xtype: 'button',
                 itemId: 'submit',
                 ui: 'confirm-round',
+                iconCls: 'add',
+                iconMask: true,
                 text: 'Crea'
             }
         ],

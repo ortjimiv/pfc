@@ -1,0 +1,452 @@
+{
+    "id": "ExtBox1-ext-gen8432",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController"
+    },
+    "customConfigs": [],
+    "designerId": "2f4f49f8-57a0-472c-a783-cf92b2b33ba2",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen9270",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListpanelTap",
+                "implHandler": [
+                    "PFC.titol=record.get('nom');\r",
+                    "//Auxiliar que ens servirà quan tornem de crear una nova instrucció\r",
+                    "PFC.titolAux=record.get('nom');\r",
+                    "\r",
+                    "Ext.getCmp('loggedInUserName').setTitle(PFC.titol);\r",
+                    "var detall = Ext.getCmp('detailPanel');\r",
+                    "Ext.getCmp('mainPanel').animateTo('left');\r",
+                    "Ext.getCmp('listPanel').setHidden(true);\r",
+                    "Ext.getCmp('usuariPanel').setHidden(true);\r",
+                    "Ext.getCmp('torna').setHidden(false);\r",
+                    "\r",
+                    "Ext.getStore('instruccioJson').filter('proces_id',record.get('id'));\r",
+                    "\r",
+                    "if (detall) {\r",
+                    "    detall.setData(record.data);\r",
+                    "    Ext.getCmp('finestra').setActiveItem(detall);\r",
+                    "} else {\r",
+                    "    Ext.getCmp('finestra').setActiveItem({\r",
+                    "        xclass: 'PFC.view.detailPanel'\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "if (PFC.tipus===0) {\r",
+                    "    Ext.getCmp('barraInstruccio').setHidden(true);\r",
+                    "}else{\r",
+                    "    Ext.getCmp('barraInstruccio').setHidden(false);\r",
+                    "}\r",
+                    "\r",
+                    "Ext.getCmp('procesPanel').setData(record.data);\r",
+                    "PFC.procesId=record.get('id');"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "#procesosList",
+                "designer|userClassName": "onListpanelTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6402",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onNouprocesTap",
+                "implHandler": [
+                    "/*\r",
+                    "Ext.getCmp('mainPanel').push({\r",
+                    "xtype: 'addprocesform'\r",
+                    "});\r",
+                    "*/\r",
+                    "var afegirProces = Ext.getCmp('addprocesform');\r",
+                    "Ext.getCmp('mainPanel').animateTo('left');\r",
+                    "Ext.getCmp('listPanel').setHidden(true);\r",
+                    "Ext.getCmp('usuariPanel').setHidden(true);\r",
+                    "Ext.getCmp('torna').setHidden(false);\r",
+                    "PFC.titol=\"Nou procés\";\r",
+                    "Ext.getCmp('loggedInUserName').setTitle(PFC.titol);\r",
+                    "\r",
+                    "if (afegirProces) {\r",
+                    "    Ext.getCmp('finestra').setActiveItem(afegirProces);\r",
+                    "} else {\r",
+                    "    Ext.getCmp('finestra').setActiveItem({\r",
+                    "        xclass: 'PFC.view.addProcesForm'\r",
+                    "    });\r",
+                    "}"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "#nouProces",
+                "designer|userClassName": "onNouprocesTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen38509",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTornaTap",
+                "implHandler": [
+                    "if (PFC.titol==\"Nova instrucció\"){\r",
+                    "    PFC.titol=PFC.titolAux;\r",
+                    "\r",
+                    "    Ext.getCmp('detailPanel').setHidden(false);\r",
+                    "\r",
+                    "    Ext.getCmp('finestra').remove(Ext.getCmp('addInstruccioForm'),true);\r",
+                    "\r",
+                    "}else{\r",
+                    "    PFC.titol=\"Processos de treball\";\r",
+                    "    Ext.getCmp('mainPanel').animateTo('right');\r",
+                    "    Ext.getCmp('listPanel').setHidden(false);\r",
+                    "    Ext.getCmp('usuariPanel').setHidden(false);\r",
+                    "    Ext.getCmp('torna').setHidden(true);\r",
+                    "\r",
+                    "    Ext.getCmp('finestra').removeAt(2);\r",
+                    "    Ext.getStore('instruccioJson').clearFilter();\r",
+                    "\r",
+                    "    PFC.titolAux=\"\";\r",
+                    "    PFC.procesId=0;\r",
+                    "}\r",
+                    "\r",
+                    "Ext.getCmp('loggedInUserName').setTitle(PFC.titol);\r",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "#torna",
+                "designer|userClassName": "onTornaTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen40886",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogoutTap",
+                "implHandler": [
+                    "PFC.titol=\"\";\r",
+                    "Ext.getCmp('loggedInUserName').setTitle(PFC.titol);\r",
+                    "var top = Ext.getCmp('viewport');\r",
+                    "top.down('#loginForm').reset();\r",
+                    "top.down('#procesosList').deselectAll();\r",
+                    "top.setActiveItem(0);"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "#logout",
+                "designer|userClassName": "onLogoutTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen15106",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEtiqueteslistTap",
+                "implHandler": [
+                    "Ext.getCmp('subetiquetesList').deselectAll();\r",
+                    "Ext.getCmp('procesosList').deselectAll();\r",
+                    "\r",
+                    "//etiquetaId permet controlar si deseleccionem un element sense marcar un altre de la llista\r",
+                    "if (PFC.etiquetaId==record.get(\"id\")){\r",
+                    "    Ext.getStore('etiquetaJson').clearFilter();\r",
+                    "    Ext.getStore('associatJson').clearFilter();\r",
+                    "    Ext.getStore('procesJson').clearFilter();\r",
+                    "    PFC.etiquetaId=-1;\r",
+                    "}else{\r",
+                    "    Ext.getCmp('subetiquetesList').getStore().filter('etiquetaTipus_id',record.get(\"id\"));\r",
+                    "\r",
+                    "    //desem els id's de les etiquetes\r",
+                    "    var j=[];\r",
+                    "    for (i=0;i<Ext.getStore('etiquetaJson').getCount();i++){\r",
+                    "        j[i]=Ext.getStore('etiquetaJson').getAt(i).get('id');\r",
+                    "    }\r",
+                    "\r",
+                    "    //cerquem aquelles etiquetes del tipus seleccionat\r",
+                    "    Ext.getStore('associatJson').clearFilter();\r",
+                    "    Ext.getStore('associatJson').filterBy(function(record) {\r",
+                    "        return (j.indexOf(record.get('etiqueta_id'))!=-1);\r",
+                    "    });\r",
+                    "\r",
+                    "    //cerquem a la taula associat les etiquetes segons el filtre principal\r",
+                    "    var k=[];\r",
+                    "    for (i=0;i<Ext.getStore('associatJson').getCount();i++){\r",
+                    "        k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');\r",
+                    "    }\r",
+                    "\r",
+                    "    //Ext.Msg.alert('ID\\'s',k);\r",
+                    "\r",
+                    "    //filtrem pels processos que compleixen el filtre\r",
+                    "    Ext.getStore('procesJson').clearFilter();\r",
+                    "    Ext.getStore('procesJson').filterBy(function(record) {\r",
+                    "        return (k.indexOf(record.get('id'))!=-1);\r",
+                    "    });\r",
+                    "\r",
+                    "    PFC.etiquetaId=record.get(\"id\");\r",
+                    "}"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "#etiquetesList",
+                "designer|userClassName": "onEtiqueteslistTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen5399",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSubetiqueteslistTap",
+                "implHandler": [
+                    "Ext.getCmp('procesosList').deselectAll();\r",
+                    "\r",
+                    "if (PFC.subetiquetaId==record.get(\"id\")){\r",
+                    "    //Ext.getStore('etiquetaJson').clearFilter();\r",
+                    "    Ext.getStore('associatJson').clearFilter();\r",
+                    "    Ext.getStore('procesJson').clearFilter();\r",
+                    "    \r",
+                    "    //desem els id's de les etiquetes\r",
+                    "    var j=[];\r",
+                    "    for (i=0;i<Ext.getStore('etiquetaJson').getCount();i++){\r",
+                    "        j[i]=Ext.getStore('etiquetaJson').getAt(i).get('id');\r",
+                    "    }\r",
+                    "    \r",
+                    "    \r",
+                    "    PFC.subetiquetaId=-1;\r",
+                    "}else{\r",
+                    "    var j=[];\r",
+                    "    j[0]=record.get(\"id\");\r",
+                    "    \r",
+                    "    PFC.subetiquetaId=record.get(\"id\");\r",
+                    "}\r",
+                    "\r",
+                    "//cerquem aquelles etiquetes del tipus seleccionat\r",
+                    "Ext.getStore('associatJson').clearFilter();\r",
+                    "Ext.getStore('associatJson').filterBy(function(record) {\r",
+                    "    return (j.indexOf(record.get('etiqueta_id'))!=-1);\r",
+                    "});\r",
+                    "\r",
+                    "//cerquem a la taula associat les etiquetes segons el filtre principal\r",
+                    "var k=[];\r",
+                    "for (i=0;i<Ext.getStore('associatJson').getCount();i++){\r",
+                    "    k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');\r",
+                    "}\r",
+                    "\r",
+                    "//Ext.Msg.alert('ID\\'s',k);\r",
+                    "\r",
+                    "//filtrem pels processos que compleixen el filtre\r",
+                    "Ext.getStore('procesJson').clearFilter();\r",
+                    "Ext.getStore('procesJson').filterBy(function(record) {\r",
+                    "    return (k.indexOf(record.get('id'))!=-1);\r",
+                    "});"
+                ],
+                "name": "itemtap",
+                "designer|targetType": "Ext.dataview.List",
+                "designer|controlQuery": "#subetiquetesList",
+                "designer|userClassName": "onSubetiqueteslistTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen14613",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onUsuariPanellActiveItemChange",
+                "implHandler": [
+                    "Ext.getStore('procesJson').clearFilter();\r",
+                    "\r",
+                    "var finestra=container.getActiveItem().getId().substr(-1);\r",
+                    "\r",
+                    "\r",
+                    "if (finestra==3){\r",
+                    "    container.setHeight(175);\r",
+                    "}else if (finestra==4){\r",
+                    "    container.setHeight(100);\r",
+                    "}else{\r",
+                    "    container.setHeight(140);\r",
+                    "}\r",
+                    "\r",
+                    "//Ext.Msg.alert('Finestra',finestra + \" tamany:\" + container.getHeight() );"
+                ],
+                "name": "activeitemchange",
+                "designer|targetType": "Ext.Panel",
+                "designer|controlQuery": "#usuariPanel",
+                "designer|userClassName": "onUsuariPanellActiveItemChange"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6069",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSearchfieldKeyup",
+                "implHandler": [
+                    "Ext.getStore('procesJson').clearFilter();\r",
+                    "\r",
+                    "Ext.getStore('procesJson').filterBy(function(record) {\r",
+                    "    return (record.get('nom').search(textfield.getValue())!=-1);\r",
+                    "});"
+                ],
+                "name": "keyup",
+                "designer|targetType": "Ext.field.Search",
+                "designer|controlQuery": "#cerca",
+                "designer|userClassName": "onSearchfieldKeyup"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen9931",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFiltre1Change",
+                "implHandler": [
+                    "//Ext.Msg.alert('ID\\'s',selectfield.getValue());\r",
+                    "\r",
+                    "Ext.getCmp('subetiquetesList').deselectAll();\r",
+                    "Ext.getCmp('procesosList').deselectAll();\r",
+                    "\r",
+                    "Ext.getCmp('subetiquetesList').getStore().filter('etiquetaTipus_id',selectfield.getValue());\r",
+                    "\r",
+                    "//desem els id's de les etiquetes\r",
+                    "var j=[];\r",
+                    "for (i=0;i<Ext.getStore('etiquetaJson').getCount();i++){\r",
+                    "    j[i]=Ext.getStore('etiquetaJson').getAt(i).get('id');\r",
+                    "}\r",
+                    "\r",
+                    "//cerquem aquelles etiquetes del tipus seleccionat\r",
+                    "Ext.getStore('associatJson').clearFilter();\r",
+                    "Ext.getStore('associatJson').filterBy(function(record) {\r",
+                    "    return (j.indexOf(record.get('etiqueta_id'))!=-1);\r",
+                    "});\r",
+                    "\r",
+                    "//cerquem a la taula associat les etiquetes segons el filtre principal\r",
+                    "var k=[];\r",
+                    "for (i=0;i<Ext.getStore('associatJson').getCount();i++){\r",
+                    "    k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "//filtrem pels processos que compleixen el filtre\r",
+                    "Ext.getStore('procesJson').clearFilter();\r",
+                    "Ext.getStore('procesJson').filterBy(function(record) {\r",
+                    "    return (k.indexOf(record.get('id'))!=-1);\r",
+                    "});"
+                ],
+                "name": "change",
+                "designer|targetType": "Ext.field.Select",
+                "designer|controlQuery": "#filtre1",
+                "designer|userClassName": "onFiltre1Change"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen10947",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFiltre2Change",
+                "implHandler": [
+                    "Ext.getCmp('procesosList').deselectAll();\r",
+                    "\r",
+                    "var j=[];\r",
+                    "j[0]=selectfield.getValue();\r",
+                    "\r",
+                    "//cerquem aquelles etiquetes del tipus seleccionat\r",
+                    "Ext.getStore('associatJson').clearFilter();\r",
+                    "Ext.getStore('associatJson').filterBy(function(record) {\r",
+                    "    return (j.indexOf(record.get('etiqueta_id'))!=-1);\r",
+                    "});\r",
+                    "\r",
+                    "//cerquem a la taula associat les etiquetes segons el filtre principal\r",
+                    "var k=[];\r",
+                    "for (i=0;i<Ext.getStore('associatJson').getCount();i++){\r",
+                    "    k[i]=Ext.getStore('associatJson').getAt(i).get('proces_id');\r",
+                    "}\r",
+                    "\r",
+                    "//Ext.Msg.alert('ID\\'s',k);\r",
+                    "\r",
+                    "//filtrem pels processos que compleixen el filtre\r",
+                    "Ext.getStore('procesJson').clearFilter();\r",
+                    "Ext.getStore('procesJson').filterBy(function(record) {\r",
+                    "    return (k.indexOf(record.get('id'))!=-1);\r",
+                    "});"
+                ],
+                "name": "change",
+                "designer|targetType": "Ext.field.Select",
+                "designer|controlQuery": "selectfield",
+                "designer|userClassName": "onFiltre2Change"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

@@ -41,7 +41,12 @@ Ext.define('PFC.view.detailPanel', {
                 itemId: 'instruccioList',
                 style: 'background-color:#D7C663',
                 itemTpl: [
-                    '<div>{descripcio}</div>'
+                    '<table width=\'100%\'>',
+                    '<tr>',
+                    '<td>{descripcio}</td>',
+                    '<td width=\'50px\'><img id=\'img{id}\' src=\'resources/imatge.png\' width=\'50px\' height=\'50px\'/></td>',
+                    '</tr>',
+                    '</table>'
                 ],
                 store: 'instruccioJson',
                 flex: 2
@@ -57,7 +62,19 @@ Ext.define('PFC.view.detailPanel', {
                         id: 'novaInstruccio',
                         itemId: 'mybutton3',
                         ui: 'action-round',
+                        iconCls: 'add',
+                        iconMask: true,
                         text: 'Nova Instrucció',
+                        flex: 1
+                    },
+                    {
+                        xtype: 'button',
+                        id: 'borraProces',
+                        itemId: 'borraProces',
+                        ui: 'decline-round',
+                        iconCls: 'delete',
+                        iconMask: true,
+                        text: 'Esborra Procés',
                         flex: 1
                     }
                 ]
@@ -68,6 +85,11 @@ Ext.define('PFC.view.detailPanel', {
                 fn: 'onNovaInstruccioTap',
                 event: 'tap',
                 delegate: '#novaInstruccio'
+            },
+            {
+                fn: 'onBorraProcesTap',
+                event: 'tap',
+                delegate: '#borraProces'
             }
         ]
     },
@@ -84,6 +106,30 @@ Ext.define('PFC.view.detailPanel', {
             xclass: 'PFC.view.addInstruccioForm'
         });
 
+        Ext.getCmp('proces_id').setValue(PFC.procesId);
+    },
+
+    onBorraProcesTap: function(button, e, options) {
+        Ext.Msg.confirm(
+        "Confirmació d'esborrat de Procés", "Esteu segurs que voleu esborrar aquest procés?", 
+        function ( answer ) { 
+            if ( answer == 'yes') { 
+                Ext.getStore('procesJson').removeAt(Ext.getStore('procesJson').find('id',PFC.procesId)); 
+
+                PFC.titol="Processos de treball";
+                Ext.getCmp('mainPanel').animateTo('right');
+                Ext.getCmp('listPanel').setHidden(false);
+                Ext.getCmp('usuariPanel').setHidden(false);
+                Ext.getCmp('torna').setHidden(true);
+
+                Ext.getCmp('finestra').removeAt(2);
+                Ext.getStore('instruccioJson').clearFilter();
+
+                PFC.titolAux="";
+                PFC.procesId=0;
+            } 
+        }
+        );
     }
 
 });

@@ -80,6 +80,8 @@
             "userConfig": {
                 "itemId": "submit",
                 "ui": "confirm-round",
+                "iconCls": "add",
+                "iconMask": true,
                 "text": "Crea",
                 "designer|userClassName": "MyButton2",
                 "layout|flex": null

@@ -74,6 +74,8 @@
                         "id": "nouProces",
                         "itemId": null,
                         "ui": "action-round",
+                        "iconCls": "add",
+                        "iconMask": true,
                         "text": "Nou procés",
                         "designer|userClassName": "MyButton5",
                         "layout|flex": 1

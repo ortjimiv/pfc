@@ -1,0 +1,215 @@
+{
+    "name": "hello",
+    "settings": {
+        "urlPrefix": "http://localhost/",
+        "spacesToIndent": 4,
+        "codeGenFormat": "Class",
+        "exportPath": "C:/Users/casa/pfc/hello",
+        "extPath": "http://extjs.cachefly.net/touch/sencha-touch-2.0.1/",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "lineEnding": "CRLF",
+        "instantiateStore": true,
+        "genTimestamps": false,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "cssPath": ""
+    },
+    "xdsVersion": "2.0.0",
+    "xdsBuild": "442",
+    "framework": "touch20",
+    "topInstanceFileMap": {
+        "788d0398-dc48-48ce-99bb-02ec4f4b32e3": {
+            "paths": [
+                "metadata/view/usuariPanel",
+                "app/view/override/usuariPanel.js",
+                "app/view/usuariPanel.js"
+            ],
+            "className": "usuariPanel"
+        },
+        "d147aeef-2a26-4da7-bf4b-b0ebb1a9144b": {
+            "paths": [
+                "metadata/view/loginForm",
+                "app/view/override/loginForm.js",
+                "app/view/loginForm.js"
+            ],
+            "className": "loginForm"
+        },
+        "cfa52486-82e7-42b6-afd8-525d2ae1749c": {
+            "paths": [
+                "metadata/view/addProcesForm",
+                "app/view/override/addProcesForm.js",
+                "app/view/addProcesForm.js"
+            ],
+            "className": "addProcesForm"
+        },
+        "bce333bd-18d6-44b1-88a3-a47cd6013f12": {
+            "paths": [
+                "metadata/view/ListPanel",
+                "app/view/override/ListPanel.js",
+                "app/view/ListPanel.js"
+            ],
+            "className": "ListPanel"
+        },
+        "f0444d2e-811d-488e-9192-ae02745aa41e": {
+            "paths": [
+                "metadata/view/viewport",
+                "app/view/override/viewport.js",
+                "app/view/viewport.js"
+            ],
+            "className": "viewport"
+        },
+        "2faacd5e-dbff-4290-967e-8bf98062a706": {
+            "paths": [
+                "metadata/store/procesJson",
+                "app/store/override/procesJson.js",
+                "app/store/procesJson.js"
+            ],
+            "className": "procesJson"
+        },
+        "54995b40-2914-4e29-8f02-e169cbd14cf3": {
+            "paths": [
+                "metadata/model/procesModel",
+                "app/model/override/procesModel.js",
+                "app/model/procesModel.js"
+            ],
+            "className": "procesModel"
+        },
+        "2f4f49f8-57a0-472c-a783-cf92b2b33ba2": {
+            "paths": [
+                "metadata/controller/MyController",
+                "app/controller/override/MyController.js",
+                "app/controller/MyController.js"
+            ],
+            "className": "MyController"
+        },
+        "e5de5532-a011-4c90-89c9-b32387fa61e1": {
+            "paths": [
+                "metadata/store/usuariJson",
+                "app/store/override/usuariJson.js",
+                "app/store/usuariJson.js"
+            ],
+            "className": "usuariJson"
+        },
+        "2aa25367-5882-480b-85e4-baa63f17db8d": {
+            "paths": [
+                "metadata/model/usuari",
+                "app/model/override/usuari.js",
+                "app/model/usuari.js"
+            ],
+            "className": "usuari"
+        },
+        "1c54af96-b74c-40a4-a880-59f6cbb84d1b": {
+            "paths": [
+                "metadata/store/etiquetaJson",
+                "app/store/override/etiquetaJson.js",
+                "app/store/etiquetaJson.js"
+            ],
+            "className": "etiquetaJson"
+        },
+        "00fc0064-eeba-49d1-b587-fa74690bf4e8": {
+            "paths": [
+                "metadata/model/etiqueta",
+                "app/model/override/etiqueta.js",
+                "app/model/etiqueta.js"
+            ],
+            "className": "etiqueta"
+        },
+        "b64be57a-7538-40aa-bdc2-a6236089f205": {
+            "paths": [
+                "metadata/model/tipusEtiqueta",
+                "app/model/override/tipusEtiqueta.js",
+                "app/model/tipusEtiqueta.js"
+            ],
+            "className": "tipusEtiqueta"
+        },
+        "3ecff406-d76f-4937-8ea5-b79ea01c5096": {
+            "paths": [
+                "metadata/model/associat",
+                "app/model/override/associat.js",
+                "app/model/associat.js"
+            ],
+            "className": "associat"
+        },
+        "639da149-d10c-490d-83de-7c8c9ab97314": {
+            "paths": [
+                "metadata/view/mainPanel",
+                "app/view/override/mainPanel.js",
+                "app/view/mainPanel.js"
+            ],
+            "className": "mainPanel"
+        },
+        "673f84d7-6915-45b3-b4bc-af22eea4279d": {
+            "paths": [
+                "metadata/view/etiquetesList",
+                "app/view/override/etiquetesList.js",
+                "app/view/etiquetesList.js"
+            ],
+            "className": "etiquetesList"
+        },
+        "3c11e03e-fdc8-40cc-be38-0eb83c244e30": {
+            "paths": [
+                "metadata/store/etiquetaTipusJson",
+                "app/store/override/etiquetaTipusJson.js",
+                "app/store/etiquetaTipusJson.js"
+            ],
+            "className": "etiquetaTipusJson"
+        },
+        "beef2a4b-d5c0-4e6a-9acb-d4d93bd584b3": {
+            "paths": [
+                "metadata/view/subetiquetesList",
+                "app/view/override/subetiquetesList.js",
+                "app/view/subetiquetesList.js"
+            ],
+            "className": "subetiquetesList"
+        },
+        "e8d86d1a-d092-48b6-a809-e540630a6f67": {
+            "paths": [
+                "metadata/store/associatJson",
+                "app/store/override/associatJson.js",
+                "app/store/associatJson.js"
+            ],
+            "className": "associatJson"
+        },
+        "cb507a70-f651-49b4-af4a-eed906323707": {
+            "paths": [
+                "metadata/store/instruccioJson",
+                "app/store/override/instruccioJson.js",
+                "app/store/instruccioJson.js"
+            ],
+            "className": "instruccioJson"
+        },
+        "889d0c1b-1ed5-407d-b7ff-4c1ae566b32f": {
+            "paths": [
+                "metadata/model/instruccio",
+                "app/model/override/instruccio.js",
+                "app/model/instruccio.js"
+            ],
+            "className": "instruccio"
+        },
+        "cf02870b-854e-493b-bd32-4d6ddb05795f": {
+            "paths": [
+                "metadata/view/detailPanel",
+                "app/view/override/detailPanel.js",
+                "app/view/detailPanel.js"
+            ],
+            "className": "detailPanel"
+        },
+        "c89d529f-437b-46ba-be9b-6418a0439190": {
+            "paths": [
+                "metadata/view/addInstruccioForm",
+                "app/view/override/addInstruccioForm.js",
+                "app/view/addInstruccioForm.js"
+            ],
+            "className": "addInstruccioForm"
+        }
+    },
+    "expandedState": {
+        "data": false,
+        "model": false,
+        "component": true,
+        "controller": true,
+        "resource": false
+    }
+}

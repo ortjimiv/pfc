@@ -14,10 +14,17 @@
  */
 
 Ext.Loader.setConfig({
-    enabled: true
+    enabled: true,
+    paths: {
+        'Ext.device': 'device/'
+    }
 });
 
 Ext.application({
+    requires: [
+        'Ext.device.Camera'
+    ],
+
     models: [
         'procesModel',
         'usuari',
@@ -44,7 +51,8 @@ Ext.application({
         'etiquetesList',
         'subetiquetesList',
         'detailPanel',
-        'addInstruccioForm'
+        'addInstruccioForm',
+        'Picture'
     ],
     name: 'PFC',
     controllers: [
@@ -52,7 +60,7 @@ Ext.application({
     ],
 
     launch: function() {
-
+        Ext.require('Ext.device.*');
         Ext.create('PFC.view.viewport', {fullscreen: true});
     }
 

@@ -203,11 +203,19 @@
                 "app/view/addInstruccioForm.js"
             ],
             "className": "addInstruccioForm"
+        },
+        "38c7c8b4-738e-41b3-8226-61b038140a1a": {
+            "paths": [
+                "metadata/view/Picture",
+                "app/view/override/Picture.js",
+                "app/view/Picture.js"
+            ],
+            "className": "Picture"
         }
     },
     "expandedState": {
-        "data": true,
-        "model": true,
+        "data": false,
+        "model": false,
         "component": true,
         "controller": true,
         "resource": false

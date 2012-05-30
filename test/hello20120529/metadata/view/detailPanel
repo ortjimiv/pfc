@@ -1,0 +1,202 @@
+{
+    "id": "ExtBox1-ext-gen15991",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "detailPanel",
+        "layout": "vbox",
+        "designer|userClassName": "detailPanel"
+    },
+    "customConfigs": [],
+    "designerId": "cf02870b-854e-493b-bd32-4d6ddb05795f",
+    "$viewOrder": 3,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen15794",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "procesPanel",
+                "itemId": "procesPanel",
+                "style": "background-color:#A18F28",
+                "tpl": "</br>\n<b>Nom:</b> {nom}</br>\n<b>Descripció:</b> {descripcio}",
+                "ui": "",
+                "designer|userClassName": "detailPanel",
+                "designer|userAlias": "detailpanel",
+                "layout|flex": 0
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen13947",
+            "type": "list",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "instruccioList",
+                "itemId": "instruccioList",
+                "style": "background-color:#D7C663",
+                "itemTpl": "<div>{descripcio}</div>",
+                "store": "instruccioJson",
+                "designer|userClassName": "instruccioList",
+                "designer|userAlias": "instrucciolist",
+                "layout|flex": 2
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen16000",
+            "type": "toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom",
+                "id": "barraInstruccio",
+                "itemId": "barraInstruccio",
+                "designer|userClassName": "MyToolbar2",
+                "visibility": null
+            },
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "visibility",
+                    "type": "string"
+                }
+            ],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen16004",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "novaInstruccio",
+                        "itemId": "mybutton3",
+                        "ui": "action-round",
+                        "iconCls": "add",
+                        "iconMask": true,
+                        "text": "Nova Instrucció",
+                        "designer|userClassName": "MyButton5",
+                        "layout|flex": 1
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen10584",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNovaInstruccioTap",
+                                "implHandler": [
+                                    "\r",
+                                    "Ext.getCmp('detailPanel').setHidden(true);\r",
+                                    "Ext.getCmp('torna').setHidden(false);\r",
+                                    "PFC.titol=\"Nova instrucció\";\r",
+                                    "Ext.getCmp('loggedInUserName').setTitle(PFC.titol);\r",
+                                    "\r",
+                                    "\r",
+                                    "Ext.getCmp('finestra').setActiveItem({\r",
+                                    "    xclass: 'PFC.view.addInstruccioForm'\r",
+                                    "});\r",
+                                    "\r",
+                                    "Ext.getCmp('proces_id').setValue(PFC.procesId);"
+                                ],
+                                "name": "tap",
+                                "designer|userClassName": "onNovaInstruccioTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen4002",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "borraProces",
+                        "itemId": "borraProces",
+                        "ui": "decline-round",
+                        "iconCls": "delete",
+                        "iconMask": true,
+                        "text": "Esborra Procés",
+                        "designer|userClassName": "MyButton7",
+                        "layout|flex": 1
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen5300",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBorraProcesTap",
+                                "implHandler": [
+                                    "Ext.Msg.confirm(\r",
+                                    "    \"Confirmació d'esborrat de Procés\", \"Esteu segurs que voleu esborrar aquest procés?\", \r",
+                                    "    function ( answer ) { \r",
+                                    "        if ( answer == 'yes') { \r",
+                                    "            Ext.getStore('procesJson').removeAt(Ext.getStore('procesJson').find('id',PFC.procesId)); \r",
+                                    "            \r",
+                                    "            PFC.titol=\"Processos de treball\";\r",
+                                    "            Ext.getCmp('mainPanel').animateTo('right');\r",
+                                    "            Ext.getCmp('listPanel').setHidden(false);\r",
+                                    "            Ext.getCmp('usuariPanel').setHidden(false);\r",
+                                    "            Ext.getCmp('torna').setHidden(true);\r",
+                                    "            \r",
+                                    "            Ext.getCmp('finestra').removeAt(2);\r",
+                                    "            Ext.getStore('instruccioJson').clearFilter();\r",
+                                    "            \r",
+                                    "            PFC.titolAux=\"\";\r",
+                                    "            PFC.procesId=0;\r",
+                                    "        } \r",
+                                    "    }\r",
+                                    "    );"
+                                ],
+                                "name": "tap",
+                                "designer|userClassName": "onBorraProcesTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

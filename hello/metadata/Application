@@ -33,16 +33,58 @@
             "etiquetesList",
             "subetiquetesList",
             "detailPanel",
-            "addInstruccioForm"
+            "addInstruccioForm",
+            "Picture"
         ],
         "name": "PFC",
         "controllers": [
             "MyController"
+        ],
+        "designer|requires": [
+            "Ext.device.Camera"
         ]
     },
     "customConfigs": [],
     "designerId": "application",
     "$viewOrder": 0,
     "iconCls": "icon-application",
-    "expanded": true
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen16982",
+            "type": "loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "enabled": true,
+                "paths": "{\"Ext.device\":\"device/\"}",
+                "designer|userClassName": "Loader"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-loader",
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen17171",
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.require('Ext.device.*');"
+                ],
+                "designer|userClassName": "launch"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-basic-function",
+            "expanded": true
+        }
+    ]
 }

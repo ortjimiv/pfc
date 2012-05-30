@@ -43,6 +43,8 @@ Ext.define('PFC.view.ListPanel', {
                         xtype: 'button',
                         id: 'nouProces',
                         ui: 'action-round',
+                        iconCls: 'add',
+                        iconMask: true,
                         text: 'Nou procés',
                         flex: 1
                     }

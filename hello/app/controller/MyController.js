@@ -46,6 +46,9 @@ Ext.define('PFC.controller.MyController', {
             },
             "selectfield": {
                 change: 'onFiltre2Change'
+            },
+            "#instruccioList": {
+                itemtap: 'onInstruccioTap'
             }
         }
     },
@@ -80,6 +83,7 @@ Ext.define('PFC.controller.MyController', {
         }
 
         Ext.getCmp('procesPanel').setData(record.data);
+        PFC.procesId=record.get('id');
     },
 
     onNouprocesTap: function(button, e, options) {
@@ -108,11 +112,12 @@ Ext.define('PFC.controller.MyController', {
     onTornaTap: function(button, e, options) {
         if (PFC.titol=="Nova instrucció"){
             PFC.titol=PFC.titolAux;
-
             Ext.getCmp('detailPanel').setHidden(false);
-
             Ext.getCmp('finestra').remove(Ext.getCmp('addInstruccioForm'),true);
-
+        }else if(PFC.titol.substr(0,6)=="Imatge"){
+            PFC.titol=PFC.titolAux;
+            Ext.getCmp('detailPanel').setHidden(false);
+            Ext.getCmp('finestra').remove(Ext.getCmp('imatge'),true);
         }else{
             PFC.titol="Processos de treball";
             Ext.getCmp('mainPanel').animateTo('right');
@@ -124,6 +129,7 @@ Ext.define('PFC.controller.MyController', {
             Ext.getStore('instruccioJson').clearFilter();
 
             PFC.titolAux="";
+            PFC.procesId=0;
         }
 
         Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
@@ -310,6 +316,46 @@ Ext.define('PFC.controller.MyController', {
         Ext.getStore('procesJson').filterBy(function(record) {
             return (k.indexOf(record.get('id'))!=-1);
         });
+    },
+
+    onInstruccioTap: function(dataview, index, target, record, e, options) {
+        Ext.getCmp('detailPanel').setHidden(true);
+        Ext.getCmp('torna').setHidden(false);
+        PFC.titol="Imatge id:"+record.get('id');
+        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
+        /*
+        var foto = Ext.getCmp('Picture');
+        if (foto) {
+        Ext.getCmp('finestra').setActiveItem(foto);
+        } else {
+        Ext.getCmp('finestra').setActiveItem({
+        xclass: 'PFC.view.Picture'
+        });
+        }
+        */
+        var foto = Ext.create('Ext.Panel', {
+            fullscreen: true,
+            layout: 'vbox',
+            id:'imatge',
+            style:'background-color:#FFEFD5;',
+            items: [
+            {
+                xtype: 'image',
+                src: 'resources/imatge.png',
+                flex: 1
+            },{
+                xtype: 'panel',
+                flex: 2,
+                html: record.get('descripcio')
+            }
+            ]
+        });
+
+        //foto.addItem('Picture');
+
+        Ext.getCmp('finestra').setActiveItem(foto);
+
+        //Ext.getCmp('proces_id').setValue(PFC.procesId);
     }
 
 });
