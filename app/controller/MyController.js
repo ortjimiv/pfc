@@ -323,39 +323,16 @@ Ext.define('PFC.controller.MyController', {
         Ext.getCmp('torna').setHidden(false);
         PFC.titol="Imatge id:"+record.get('id');
         Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
-        /*
+
         var foto = Ext.getCmp('Picture');
+
         if (foto) {
-        Ext.getCmp('finestra').setActiveItem(foto);
+            Ext.getCmp('finestra').setActiveItem(foto);
         } else {
-        Ext.getCmp('finestra').setActiveItem({
-        xclass: 'PFC.view.Picture'
-        });
+            Ext.getCmp('finestra').setActiveItem({xclass: 'PFC.view.Picture'});
         }
-        */
-        var foto = Ext.create('Ext.Panel', {
-            fullscreen: true,
-            layout: 'vbox',
-            id:'imatge',
-            style:'background-color:#FFEFD5;',
-            items: [
-            {
-                xtype: 'image',
-                src: 'resources/imatge.png',
-                flex: 1
-            },{
-                xtype: 'panel',
-                flex: 2,
-                html: record.get('descripcio')
-            }
-            ]
-        });
 
-        //foto.addItem('Picture');
-
-        Ext.getCmp('finestra').setActiveItem(foto);
-
-        //Ext.getCmp('proces_id').setValue(PFC.procesId);
+        Ext.getCmp('Picture').setRecord(record);
     }
 
 });

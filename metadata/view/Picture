@@ -1,5 +1,5 @@
 {
-    "id": "ExtBox1-ext-gen3069",
+    "id": "ExtBox1-ext-gen8514",
     "type": "container",
     "reference": {
         "name": "items",
@@ -9,10 +9,11 @@
     "userConfig": {
         "height": 120,
         "html": null,
-        "id": null,
+        "id": "Picture",
+        "itemId": "Picture",
         "minHeight": 100,
-        "style": "overflow: hidden",
-        "tpl": "<img src=\"{picture}\" width=\"160\" />",
+        "style": "overflow: hidden;background-color:#FFEFD5;",
+        "tpl": "<div>{descripcio}</div><div><img src=\"{picture}\" width=\"160\" /></div",
         "ui": "",
         "layout": "vbox",
         "masked": null,
@@ -29,12 +30,12 @@
             "type": "string"
         }
     ],
-    "designerId": "38c7c8b4-738e-41b3-8226-61b038140a1a",
+    "designerId": "47a2e391-f9c8-49d4-83f9-d040f3491006",
     "$viewOrder": 10,
     "expanded": true,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen3073",
+            "id": "ExtBox1-ext-gen8518",
             "type": "component",
             "reference": {
                 "name": "items",
@@ -50,7 +51,7 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen3078",
+            "id": "ExtBox1-ext-gen8523",
             "type": "button",
             "reference": {
                 "name": "items",
@@ -73,7 +74,7 @@
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen3083",
+                    "id": "ExtBox1-ext-gen8528",
                     "type": "basiceventbinding",
                     "reference": {
                         "name": "listeners",
@@ -83,18 +84,33 @@
                     "userConfig": {
                         "fn": "onMybuttonTap",
                         "implHandler": [
-                            "Ext.device.Camera.capture({",
-                            "    source: 'camera',",
-                            "    destination: 'file',",
-                            "",
-                            "    success: function(url) {",
-                            "        this.fireEvent('change', this, url);",
-                            "    },",
-                            "    failure: function() {",
-                            "        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');",
-                            "    },",
-                            "    scope: this",
-                            "});"
+                            "Ext.device.Camera.capture({\r",
+                            "    source: 'camera',\r",
+                            "    destination: 'file',\r",
+                            "\r",
+                            "    success: function(url) {\r",
+                            "        //show the newly captured image in a full screen Ext.Img component:\r",
+                            "        Ext.create('Ext.Img', {\r",
+                            "            src: url,\r",
+                            "            fullscreen: true\r",
+                            "        });\r",
+                            "    }\r",
+                            "});\r",
+                            "alert (\"hola\");\r",
+                            "/*\r",
+                            "Ext.device.Camera.capture({\r",
+                            "    source: 'camera',\r",
+                            "    destination: 'file',\r",
+                            "\r",
+                            "    success: function(url) {\r",
+                            "        this.fireEvent('change', this, url);\r",
+                            "    },\r",
+                            "    failure: function() {\r",
+                            "        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\r",
+                            "    },\r",
+                            "    scope: this\r",
+                            "});\r",
+                            "*/"
                         ],
                         "name": "tap",
                         "designer|userClassName": "onMybuttonTap"

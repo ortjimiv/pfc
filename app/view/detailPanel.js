@@ -26,7 +26,7 @@ Ext.define('PFC.view.detailPanel', {
                 xtype: 'container',
                 id: 'procesPanel',
                 itemId: 'procesPanel',
-                style: 'background-color:#A18F28',
+                style: 'background-color:#D7C663',
                 tpl: [
                     '</br>',
                     '<b>Nom:</b> {nom}</br>',
@@ -39,7 +39,7 @@ Ext.define('PFC.view.detailPanel', {
                 xtype: 'list',
                 id: 'instruccioList',
                 itemId: 'instruccioList',
-                style: 'background-color:#D7C663',
+                style: 'background-color:#FFEFD5',
                 itemTpl: [
                     '<table width=\'100%\'>',
                     '<tr>',

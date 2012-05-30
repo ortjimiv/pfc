@@ -18,8 +18,10 @@ Ext.define('PFC.view.Picture', {
 
     config: {
         height: 120,
+        id: 'Picture',
+        itemId: 'Picture',
         minHeight: 100,
-        style: 'overflow: hidden',
+        style: 'overflow: hidden;background-color:#FFEFD5;',
         ui: '',
         layout: {
             align: 'center',
@@ -27,7 +29,7 @@ Ext.define('PFC.view.Picture', {
         },
         overflow: 'hidden',
         tpl: [
-            '<img src="{picture}" width="160" />'
+            '<div>{descripcio}</div><div><img src="{picture}" width="160" /></div'
         ],
         items: [
             {
@@ -58,13 +60,28 @@ Ext.define('PFC.view.Picture', {
             destination: 'file',
 
             success: function(url) {
-                this.fireEvent('change', this, url);
-            },
-            failure: function() {
-                Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');
-            },
-            scope: this
+                //show the newly captured image in a full screen Ext.Img component:
+                Ext.create('Ext.Img', {
+                    src: url,
+                    fullscreen: true
+                });
+            }
         });
+        alert ("hola");
+        /*
+        Ext.device.Camera.capture({
+        source: 'camera',
+        destination: 'file',
+
+        success: function(url) {
+        this.fireEvent('change', this, url);
+        },
+        failure: function() {
+        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');
+        },
+        scope: this
+        });
+        */
     }
 
 });
