@@ -122,7 +122,7 @@
                     "}else if(PFC.titol.substr(0,6)==\"Imatge\"){\r",
                     "    PFC.titol=PFC.titolAux;\r",
                     "    Ext.getCmp('detailPanel').setHidden(false);\r",
-                    "    Ext.getCmp('finestra').remove(Ext.getCmp('imatge'),true);\r",
+                    "    Ext.getCmp('finestra').remove(Ext.getCmp('Picture'),true);\r",
                     "}else{\r",
                     "    PFC.titol=\"Processos de treball\";\r",
                     "    Ext.getCmp('mainPanel').animateTo('right');\r",

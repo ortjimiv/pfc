@@ -117,7 +117,7 @@ Ext.define('PFC.controller.MyController', {
         }else if(PFC.titol.substr(0,6)=="Imatge"){
             PFC.titol=PFC.titolAux;
             Ext.getCmp('detailPanel').setHidden(false);
-            Ext.getCmp('finestra').remove(Ext.getCmp('imatge'),true);
+            Ext.getCmp('finestra').remove(Ext.getCmp('Picture'),true);
         }else{
             PFC.titol="Processos de treball";
             Ext.getCmp('mainPanel').animateTo('right');

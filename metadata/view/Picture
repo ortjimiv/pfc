@@ -96,7 +96,6 @@
                             "        });\r",
                             "    }\r",
                             "});\r",
-                            "alert (\"hola\");\r",
                             "/*\r",
                             "Ext.device.Camera.capture({\r",
                             "    source: 'camera',\r",

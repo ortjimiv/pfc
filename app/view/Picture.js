@@ -67,7 +67,6 @@ Ext.define('PFC.view.Picture', {
                 });
             }
         });
-        alert ("hola");
         /*
         Ext.device.Camera.capture({
         source: 'camera',
