@@ -77,7 +77,7 @@ Ext.define('PFC.view.usuariPanel', {
                         id: 'filtre1',
                         label: 'Filtre 1',
                         value: 'id',
-                        displayField: 'nomHTML',
+                        displayField: 'nom',
                         store: 'etiquetaTipusJson',
                         valueField: 'id'
                     },

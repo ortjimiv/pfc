@@ -60,7 +60,7 @@ Ext.application({
     ],
 
     launch: function() {
-        Ext.require('Ext.device.*');
+
         Ext.create('PFC.view.viewport', {fullscreen: true});
     }
 

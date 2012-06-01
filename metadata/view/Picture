@@ -13,7 +13,7 @@
         "itemId": "Picture",
         "minHeight": 100,
         "style": "overflow: hidden;background-color:#FFEFD5;",
-        "tpl": "<div>{descripcio}</div><div><img src=\"{picture}\" width=\"160\" /></div",
+        "tpl": "<div>{descripcio}</div><div><img src=\"{picture}\" width=\"160\" /></div>",
         "ui": "",
         "layout": "vbox",
         "masked": null,
@@ -21,7 +21,7 @@
         "scrollable": null,
         "designer|userClassName": "Picture",
         "overflow": "hidden",
-        "container|align": "center"
+        "container|align": "start"
     },
     "customConfigs": [
         {
@@ -44,7 +44,10 @@
             "codeClass": null,
             "userConfig": {
                 "html": "",
+                "id": "componente",
+                "itemId": "componente",
                 "style": null,
+                "tpl": "",
                 "designer|userClassName": "MyComponent2"
             },
             "customConfigs": [],

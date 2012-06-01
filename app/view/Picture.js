@@ -24,17 +24,22 @@ Ext.define('PFC.view.Picture', {
         style: 'overflow: hidden;background-color:#FFEFD5;',
         ui: '',
         layout: {
-            align: 'center',
+            align: 'start',
             type: 'vbox'
         },
         overflow: 'hidden',
         tpl: [
-            '<div>{descripcio}</div><div><img src="{picture}" width="160" /></div'
+            '<div>{descripcio}</div><div><img src="{picture}" width="160" /></div>'
         ],
         items: [
             {
                 xtype: 'component',
-                html: ''
+                html: '',
+                id: 'componente',
+                itemId: 'componente',
+                tpl: [
+                    ''
+                ]
             },
             {
                 xtype: 'button',

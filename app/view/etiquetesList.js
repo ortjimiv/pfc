@@ -34,7 +34,7 @@ Ext.define('PFC.view.etiquetesList', {
             '<div style="background-color:#A18F28;height:40px;border:1px solid;',
             'border-radius:25px;',
             '-moz-border-radius:15px;box-shadow: 5px 5px 5px #888888;padding:10px;">',
-            '{nomHTML}',
+            '{nom}',
             '</div>'
         ]
     }
