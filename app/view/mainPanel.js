@@ -85,7 +85,7 @@ Ext.define('PFC.view.mainPanel', {
 
     animateTo: function(dir) {
         Ext.getCmp('viewport').getLayout().setAnimation({
-            duration: 1000,
+            duration: 750,
             easing: 'ease-in-out',
             type: 'slide',
             direction: dir

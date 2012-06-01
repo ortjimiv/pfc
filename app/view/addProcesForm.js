@@ -26,6 +26,7 @@ Ext.define('PFC.view.addProcesForm', {
         items: [
             {
                 xtype: 'fieldset',
+                id: 'formulariProces',
                 title: 'Afegir un nou procés',
                 items: [
                     {
@@ -55,6 +56,10 @@ Ext.define('PFC.view.addProcesForm', {
                 fn: 'onSubmitTap',
                 event: 'tap',
                 delegate: '#submit'
+            },
+            {
+                fn: 'onAddProcesFormInitialize',
+                event: 'initialize'
             }
         ]
     },
@@ -66,51 +71,68 @@ Ext.define('PFC.view.addProcesForm', {
         //ts = new Date(),
         procesRecord = form.getValues();
 
-        // Add additional data
-        //procesRecord.username = PFC.username;
-        //proces.timestamp = ts;
+        //Store to local storage and sync to remote syncstorage
+        store.add(procesRecord);
+        //----store.sync();
 
-        // Send message to the queue - no relation to the store
-        /*Ext.io.send('queue/proces', { 
-        'type': 'newproces',
-        'storeid': 'procesDB',
-        //'username': procesRecord.username,
-        'nom': procesRecord.nom,
-        'descripcio': procesRecord.descripcio
-        //'timestamp': Ext.Date.format(ts, 'Y-m-d g.i')
-    });
-    */
+        //Associem el nou procés a les etiquetes seleccionades
+        //var tAssociat = Ext.getStore('associatJson');
 
-    //Store to local storage and sync to remote syncstorage
-    store.add(procesRecord);
-    //----store.sync();
 
-    //Confirmation
-    //alert ("Procés afegit satisfactoriament");
-    form.reset();
-    Ext.getCmp('procesosList').deselectAll();
-    //mainPanel.pop();
+        form.reset();
+        Ext.getCmp('procesosList').deselectAll();
 
-    Ext.getCmp('mainPanel').animateTo('right');
-    Ext.getCmp('listPanel').setHidden(false);
-    Ext.getCmp('usuariPanel').setHidden(false);
-    Ext.getCmp('torna').setHidden(true);
-    PFC.titol = "Processos de treball";
-    Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
+        Ext.getCmp('mainPanel').animateTo('right');
+        Ext.getCmp('listPanel').setHidden(false);
+        Ext.getCmp('usuariPanel').setHidden(false);
+        Ext.getCmp('torna').setHidden(true);
+        PFC.titol = "Processos de treball";
+        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
 
-    Ext.getCmp('finestra').removeAt(2);
+        Ext.getCmp('finestra').removeAt(2);
 
 
 
-    //mainPanel.setActiveItem(0);
 
-    /*
-    Ext.Msg.alert(null, "Procés afegit satisfactoriament", function() {
-    //Back to list
-    form.reset();
-    mainPanel.setActiveItem(0);
-        });
-        */
+    },
+
+    onAddProcesFormInitialize: function(component, options) {
+        //Cerquem les diferents etiquetes 
+        var myPanel = Ext.create('Ext.Label', {html: '<br/>Etiquetes:<hr/>', style:'background-color:#FFEFD5'});
+        Ext.getCmp('formulariProces').add([myPanel]);
+
+
+        var tEtiqueta = Ext.getStore('etiquetaJson');
+        var tTipusEtiqueta = Ext.getStore('etiquetaTipusJson');
+
+        var aux = 0;
+        for (i===0;i<tTipusEtiqueta.getCount();i++){
+            if (i==aux){
+                var etiquetaV = Ext.create('Ext.Label', {html: tTipusEtiqueta.getAt(i).get('nom'),style:'background-color:#FFEFD5'});
+                Ext.getCmp('formulariProces').add([etiquetaV]);
+
+                //Filtrem els tipus d'etiqueta
+
+                tEtiqueta.filter('etiquetaTipus_id',tTipusEtiqueta.getAt(i).get('id'));
+
+                var j=0;
+                for (j===0;j<tEtiqueta.getCount();j++){
+                    var etiquetaV2 = Ext.create('Ext.field.Checkbox', {
+                        xtype: 'checkboxfield',
+                        label: tEtiqueta.getAt(j).get('nom'),
+                        labelWrap:true,
+                        id:"Etiqueta_"+tTipusEtiqueta.getAt(i).get('id')+"_"+tEtiqueta.getAt(j).get('id'),
+                        value:tEtiqueta.getAt(j).get('id')
+                    });
+                    Ext.getCmp('formulariProces').add([etiquetaV2]);
+
+                }
+                //Esborrem el filtre per a que continui creant checkbox
+                tEtiqueta.clearFilter();
+            }
+            aux=aux+1;
+        }
+
     }
 
 });

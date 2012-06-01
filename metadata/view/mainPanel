@@ -159,7 +159,7 @@
                 ],
                 "implHandler": [
                     "Ext.getCmp('viewport').getLayout().setAnimation({\r",
-                    "    duration: 1000,\r",
+                    "    duration: 750,\r",
                     "    easing: 'ease-in-out',\r",
                     "    type: 'slide',\r",
                     "    direction: dir\r",
