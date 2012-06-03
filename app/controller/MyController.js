@@ -127,6 +127,7 @@ Ext.define('PFC.controller.MyController', {
 
             Ext.getCmp('finestra').removeAt(2);
             Ext.getStore('instruccioJson').clearFilter();
+            Ext.getStore('procesJson').clearFilter();
 
             PFC.titolAux="";
             PFC.procesId=0;
@@ -155,6 +156,7 @@ Ext.define('PFC.controller.MyController', {
             Ext.getStore('associatJson').clearFilter();
             Ext.getStore('procesJson').clearFilter();
             PFC.etiquetaId=-1;
+            PFC.subetiquetaId=-1;
         }else{
             Ext.getCmp('subetiquetesList').getStore().filter('etiquetaTipus_id',record.get("id"));
 
@@ -185,6 +187,7 @@ Ext.define('PFC.controller.MyController', {
             });
 
             PFC.etiquetaId=record.get("id");
+            PFC.subetiquetaId=-1;
         }
     },
 
@@ -192,7 +195,7 @@ Ext.define('PFC.controller.MyController', {
         Ext.getCmp('procesosList').deselectAll();
 
         if (PFC.subetiquetaId==record.get("id")){
-            //Ext.getStore('etiquetaJson').clearFilter();
+            if (PFC.etiqueta || PFC.etiqueta==-1) Ext.getStore('etiquetaJson').clearFilter();
             Ext.getStore('associatJson').clearFilter();
             Ext.getStore('procesJson').clearFilter();
 

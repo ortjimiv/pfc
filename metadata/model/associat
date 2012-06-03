@@ -24,6 +24,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "proces_id",
+                "type": "int",
                 "designer|userClassName": "MyField14"
             },
             "customConfigs": [],
@@ -39,6 +40,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "etiqueta_id",
+                "type": "int",
                 "designer|userClassName": "MyField15"
             },
             "customConfigs": [],

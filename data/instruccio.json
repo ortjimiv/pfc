@@ -1,7 +1,7 @@
-{
+ï»¿{
     subprocesos: [{
         id: 1,
-	descripcio: 'Posar en coneixement del cap immediat la teva voluntat de participar en la selecci&oacute; d’aquesta plaça.',
+	descripcio: 'Posar en coneixement del cap immediat la teva voluntat de participar en la selecci&oacute; dâ€™aquesta plaÃ§a.',
 	proces_id: 6
     }, {
         id: 2,
@@ -11,5 +11,29 @@
         id: 3,
 	descripcio: 'Enviar el teu curr&iacute;culum actualitzat indicant a quina selecci&oacute; vols participar a borsadetreball@empresa.com',
 	proces_id: 6
+    }, {
+        id: 4,
+	descripcio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla, ligula at ornare pretium, elit augue suscipit leo, at aliquet urna nisi sed nulla. Aenean elit ipsum, mollis eget vestibulum rhoncus, placerat ac sem. Morbi pellentesque tempor felis, nec luctus nunc laoreet quis.',
+	proces_id: 1
+    }, {
+        id: 5,
+	descripcio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla, ligula at ornare pretium, elit augue suscipit leo, at aliquet urna nisi sed nulla. Aenean elit ipsum, mollis eget vestibulum rhoncus, placerat ac sem. Morbi pellentesque tempor felis, nec luctus nunc laoreet quis.',
+	proces_id: 2
+    }, {
+        id: 6,
+	descripcio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla, ligula at ornare pretium, elit augue suscipit leo, at aliquet urna nisi sed nulla. Aenean elit ipsum, mollis eget vestibulum rhoncus, placerat ac sem. Morbi pellentesque tempor felis, nec luctus nunc laoreet quis.',
+	proces_id: 3
+    }, {
+        id: 7,
+	descripcio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla, ligula at ornare pretium, elit augue suscipit leo, at aliquet urna nisi sed nulla. Aenean elit ipsum, mollis eget vestibulum rhoncus, placerat ac sem. Morbi pellentesque tempor felis, nec luctus nunc laoreet quis.',
+	proces_id: 4
+    }, {
+        id: 8,
+	descripcio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla, ligula at ornare pretium, elit augue suscipit leo, at aliquet urna nisi sed nulla. Aenean elit ipsum, mollis eget vestibulum rhoncus, placerat ac sem. Morbi pellentesque tempor felis, nec luctus nunc laoreet quis.',
+	proces_id: 5
+    }, {
+        id: 9,
+	descripcio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fringilla, ligula at ornare pretium, elit augue suscipit leo, at aliquet urna nisi sed nulla. Aenean elit ipsum, mollis eget vestibulum rhoncus, placerat ac sem. Morbi pellentesque tempor felis, nec luctus nunc laoreet quis.',
+	proces_id: 5
     }]
 }

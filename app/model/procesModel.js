@@ -34,6 +34,7 @@ Ext.define('PFC.model.procesModel', {
             }
         ],
         hasMany: {
+            associationKey: 'proces_id',
             model: 'PFC.model.associat'
         }
     }

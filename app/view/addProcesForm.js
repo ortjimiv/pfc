@@ -27,6 +27,7 @@ Ext.define('PFC.view.addProcesForm', {
             {
                 xtype: 'fieldset',
                 id: 'formulariProces',
+                itemId: 'myfieldset1',
                 title: 'Afegir un nou procés',
                 items: [
                     {
@@ -65,33 +66,67 @@ Ext.define('PFC.view.addProcesForm', {
     },
 
     onSubmitTap: function(button, e, options) {
+        Ext.getStore('procesJson').clearFilter();
         var form = button.up('addprocesform'),
         mainPanel = form.up('#mainPanel'),
         store = mainPanel.down('#procesosList').getStore(),
-        //ts = new Date(),
         procesRecord = form.getValues();
 
-        //Store to local storage and sync to remote syncstorage
-        store.add(procesRecord);
-        //----store.sync();
+        if (!PFC.novaId){
+            PFC.novaId=Ext.getStore('procesJson').max('id')+1;
+        }else{
+            PFC.novaId=PFC.novaId+1;
+        }
 
-        //Associem el nou procés a les etiquetes seleccionades
-        //var tAssociat = Ext.getStore('associatJson');
+        alert (PFC.novaId);
+
+        if (procesRecord.nom!==""){
+            if (procesRecord.Etiqueta!==null){
+                var etiquetes = [];
+                var i=0, aux;
+                for (i===0;i<procesRecord.Etiqueta.length;i++){
+                    if (procesRecord.Etiqueta[i]!==null) etiquetes.push(procesRecord.Etiqueta[i]);
+                }
+
+                //Store to local storage and sync to remote syncstorage
+                procesRecord.id=PFC.novaId;
+                store.add(procesRecord);
+                //store.last.id=PFC.novaId;
+                //-------store.sync();
+
+                //Associem el nou procés a les etiquetes seleccionades
+                Ext.getStore('associatJson').clearFilter();
+                i=0;
+                for (i===0;i<etiquetes.length;i++){
+                    aux =Ext.create('PFC.model.associat',{
+                        proces_id: PFC.novaId, 
+                        etiqueta_id: etiquetes[i]
+                    });
+                    Ext.getStore('associatJson').add(aux);
+                }
 
 
-        form.reset();
-        Ext.getCmp('procesosList').deselectAll();
+                form.reset();
+                Ext.getCmp('procesosList').deselectAll();
 
-        Ext.getCmp('mainPanel').animateTo('right');
-        Ext.getCmp('listPanel').setHidden(false);
-        Ext.getCmp('usuariPanel').setHidden(false);
-        Ext.getCmp('torna').setHidden(true);
-        PFC.titol = "Processos de treball";
-        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
+                Ext.getCmp('mainPanel').animateTo('right');
+                Ext.getCmp('listPanel').setHidden(false);
+                Ext.getCmp('usuariPanel').setHidden(false);
+                Ext.getCmp('torna').setHidden(true);
+                PFC.titol = "Processos de treball";
+                Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
+                Ext.getStore('procesJson').clearFilter();
+                Ext.getStore('etiquetaJson').clearFilter();
+                Ext.getStore('etiquetaTipusJson').clearFilter();
+                Ext.getStore('associatJson').clearFilter();
 
-        Ext.getCmp('finestra').removeAt(2);
-
-
+                Ext.getCmp('finestra').removeAt(2);
+            }else{
+                Ext.Msg.alert('Atenció!!',"Ha de seleccionar com a mínim una etiqueta per al nou procés.");
+            }
+        }else{
+            Ext.Msg.alert('Atenció!!',"Ha d'omplenar el nom del procés.");
+        }
 
 
     },
@@ -101,38 +136,36 @@ Ext.define('PFC.view.addProcesForm', {
         var myPanel = Ext.create('Ext.Label', {html: '<br/>Etiquetes:<hr/>', style:'background-color:#FFEFD5'});
         Ext.getCmp('formulariProces').add([myPanel]);
 
+        Ext.getStore('etiquetaJson').clearFilter();
+        Ext.getStore('etiquetaTipusJson').clearFilter();
 
-        var tEtiqueta = Ext.getStore('etiquetaJson');
-        var tTipusEtiqueta = Ext.getStore('etiquetaTipusJson');
+        var i = 0;
+        for (i===0;i<Ext.getStore('etiquetaTipusJson').getCount();i++){
+            var etiquetaV = Ext.create('Ext.Label', {
+                html: Ext.getStore('etiquetaTipusJson').getAt(i).get('nom'),
+                style:'background-color:#FFEFD5'
+            });
+            Ext.getCmp('formulariProces').add([etiquetaV]);
 
-        var aux = 0;
-        for (i===0;i<tTipusEtiqueta.getCount();i++){
-            if (i==aux){
-                var etiquetaV = Ext.create('Ext.Label', {html: tTipusEtiqueta.getAt(i).get('nom'),style:'background-color:#FFEFD5'});
-                Ext.getCmp('formulariProces').add([etiquetaV]);
+            //Filtrem els tipus d'etiqueta
 
-                //Filtrem els tipus d'etiqueta
+            Ext.getStore('etiquetaJson').filter('etiquetaTipus_id',Ext.getStore('etiquetaTipusJson').getAt(i).get('id'));
 
-                tEtiqueta.filter('etiquetaTipus_id',tTipusEtiqueta.getAt(i).get('id'));
+            var j=0;
+            for (j===0;j<Ext.getStore('etiquetaJson').getCount();j++){
+                var etiquetaV2 = Ext.create('Ext.field.Checkbox', {
+                    xtype: 'checkboxfield',
+                    label: Ext.getStore('etiquetaJson').getAt(j).get('nom'),
+                    labelWrap:true,
+                    name:"Etiqueta",
+                    value:Ext.getStore('etiquetaJson').getAt(j).get('id')
+                });
+                Ext.getCmp('formulariProces').add([etiquetaV2]);
 
-                var j=0;
-                for (j===0;j<tEtiqueta.getCount();j++){
-                    var etiquetaV2 = Ext.create('Ext.field.Checkbox', {
-                        xtype: 'checkboxfield',
-                        label: tEtiqueta.getAt(j).get('nom'),
-                        labelWrap:true,
-                        id:"Etiqueta_"+tTipusEtiqueta.getAt(i).get('id')+"_"+tEtiqueta.getAt(j).get('id'),
-                        value:tEtiqueta.getAt(j).get('id')
-                    });
-                    Ext.getCmp('formulariProces').add([etiquetaV2]);
-
-                }
-                //Esborrem el filtre per a que continui creant checkbox
-                tEtiqueta.clearFilter();
             }
-            aux=aux+1;
+            //Esborrem el filtre per a que continui creant checkbox
+            Ext.getStore('etiquetaJson').clearFilter();
         }
-
     }
 
 });

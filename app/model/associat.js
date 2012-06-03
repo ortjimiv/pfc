@@ -18,10 +18,12 @@ Ext.define('PFC.model.associat', {
     config: {
         fields: [
             {
-                name: 'proces_id'
+                name: 'proces_id',
+                type: 'int'
             },
             {
-                name: 'etiqueta_id'
+                name: 'etiqueta_id',
+                type: 'int'
             }
         ]
     }

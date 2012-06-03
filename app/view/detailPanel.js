@@ -113,7 +113,13 @@ Ext.define('PFC.view.detailPanel', {
         Ext.Msg.confirm(
         "Confirmació d'esborrat de Procés", "Esteu segurs que voleu esborrar aquest procés?", 
         function ( answer ) { 
-            if ( answer == 'yes') { 
+            if ( answer == 'yes') {           
+                //Esborrem l'associació d'etiquetes del JSON
+                do{
+                    Ext.getStore('associatJson').removeAt(Ext.getStore('associatJson').find('proces_id',PFC.procesId)); 
+                }while (Ext.getStore('associatJson').find('proces_id',PFC.procesId)!=-1);
+
+                //Esborrem el procés del JSON
                 Ext.getStore('procesJson').removeAt(Ext.getStore('procesJson').find('id',PFC.procesId)); 
 
                 PFC.titol="Processos de treball";

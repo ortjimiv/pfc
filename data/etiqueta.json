@@ -1,42 +1,42 @@
-{
+ï»¿{
     etiqueta: [{
         id: 1,
-	nom: 'Procés Gestió pressupost',
+	nom: 'ProcÃ©s GestiÃ³ pressupost',
 	nomHTML: 'Proc&eacute;s Gesti&oacute; pressupost',
 	etiquetaTipus_id: 1
     }, {
         id: 2,
-	nom: 'Procés Control de Gestió',
+	nom: 'ProcÃ©s Control de GestiÃ³',
 	nomHTML: 'Proc&eacute;s Control de Gesti&oacute;',
 	etiquetaTipus_id: 1
     }, {
         id: 3,
-	nom: 'Procés de ofertes i comandes',
+	nom: 'ProcÃ©s de ofertes i comandes',
 	nomHTML: 'Proc&eacute;s de ofertes i comandes',
 	etiquetaTipus_id: 2
     }, {
         id: 4,
-	nom: 'Procés Planificació de la producció',
+	nom: 'ProcÃ©s PlanificaciÃ³ de la producciÃ³',
 	nomHTML: 'Proc&eacute;s Planificaci&oacute; de la producci&oacute;',
 	etiquetaTipus_id: 2
     }, {
         id: 5,
-	nom: 'Procés Operacions',
+	nom: 'ProcÃ©s Operacions',
 	nomHTML: 'Proc&eacute;s Operacions',
 	etiquetaTipus_id: 2
     }, {
         id: 6,
-	nom: 'Procés Logística',
+	nom: 'ProcÃ©s LogÃ­stica',
 	nomHTML: 'Proc&eacute;s Log&iacute;stica',
 	etiquetaTipus_id: 2
     }, {
         id: 7,
-	nom: 'Procés Compres',
+	nom: 'ProcÃ©s Compres',
 	nomHTML: 'Proc&eacute;s Compres',
 	etiquetaTipus_id: 3
     }, {
         id: 8,
-	nom: 'Procés Gestió de RRHH',
+	nom: 'ProcÃ©s GestiÃ³ de RRHH',
 	nomHTML: 'Proc&eacute;s Gesti&oacute; de RRHH',
 	etiquetaTipus_id: 3
     }]
