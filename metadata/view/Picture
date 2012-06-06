@@ -7,13 +7,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 120,
+        "height": null,
         "html": null,
         "id": "Picture",
         "itemId": "Picture",
         "minHeight": 100,
         "style": "overflow: hidden;background-color:#FFEFD5;",
-        "tpl": "<div>{descripcio}</div><div><img src=\"{picture}\" width=\"160\" /></div>",
+        "tpl": "",
         "ui": "",
         "layout": "vbox",
         "masked": null,
@@ -35,6 +35,63 @@
     "expanded": false,
     "cn": [
         {
+            "id": "ExtBox1-ext-gen13230",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "pictureDetall",
+                "tpl": "<div>{descripcio}</div>\n<!-- \n<div><img src=\"{picture}\" width=\"160\" /></div>\n-->",
+                "layout": null,
+                "designer|userClassName": "MyContainer8",
+                "layout|flex": 0
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen12245",
+            "type": "container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "ui": "",
+                "width": null,
+                "designer|userClassName": "MyContainer7",
+                "layout|flex": 0
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen11643",
+                    "type": "image",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 200,
+                        "id": "imatgeInstruccio",
+                        "ui": "",
+                        "width": 200,
+                        "src": "touch/resources/images/logo.png",
+                        "designer|userClassName": "MyImage"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
             "id": "ExtBox1-ext-gen8518",
             "type": "component",
             "reference": {
@@ -54,71 +111,160 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen8523",
-            "type": "button",
+            "id": "ExtBox1-ext-gen3014",
+            "type": "toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "bottom": 5,
-                "docked": null,
-                "id": null,
-                "itemId": "mybutton",
-                "right": 5,
-                "width": null,
-                "iconCls": "add",
-                "iconMask": true,
-                "text": null,
-                "designer|userClassName": "MyButton1"
+                "docked": "bottom",
+                "hidden": true,
+                "id": "barraSubinstruccio",
+                "designer|userClassName": "MyToolbar4"
             },
             "customConfigs": [],
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen8528",
-                    "type": "basiceventbinding",
+                    "id": "ExtBox1-ext-gen8523",
+                    "type": "button",
                     "reference": {
-                        "name": "listeners",
+                        "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onMybuttonTap",
-                        "implHandler": [
-                            "Ext.device.Camera.capture({\r",
-                            "    source: 'camera',\r",
-                            "    destination: 'file',\r",
-                            "\r",
-                            "    success: function(url) {\r",
-                            "        //show the newly captured image in a full screen Ext.Img component:\r",
-                            "        Ext.create('Ext.Img', {\r",
-                            "            src: url,\r",
-                            "            fullscreen: true\r",
-                            "        });\r",
-                            "    }\r",
-                            "});\r",
-                            "/*\r",
-                            "Ext.device.Camera.capture({\r",
-                            "    source: 'camera',\r",
-                            "    destination: 'file',\r",
-                            "\r",
-                            "    success: function(url) {\r",
-                            "        this.fireEvent('change', this, url);\r",
-                            "    },\r",
-                            "    failure: function() {\r",
-                            "        Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\r",
-                            "    },\r",
-                            "    scope: this\r",
-                            "});\r",
-                            "*/"
-                        ],
-                        "name": "tap",
-                        "designer|userClassName": "onMybuttonTap"
+                        "bottom": 5,
+                        "docked": null,
+                        "hidden": true,
+                        "id": null,
+                        "itemId": "mybutton",
+                        "right": 5,
+                        "width": null,
+                        "iconCls": "add",
+                        "iconMask": true,
+                        "text": null,
+                        "designer|userClassName": "MyButton1"
                     },
                     "customConfigs": [],
-                    "expanded": true
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen8528",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybuttonTap",
+                                "implHandler": [
+                                    "/*\r",
+                                    "Ext.device.Camera.capture({\r",
+                                    "source: 'camera',\r",
+                                    "destination: 'file',\r",
+                                    "\r",
+                                    "success: function(url) {\r",
+                                    "//show the newly captured image in a full screen Ext.Img component:\r",
+                                    "Ext.create('Ext.Img', {\r",
+                                    "    src: url,\r",
+                                    "    fullscreen: true\r",
+                                    "});\r",
+                                    "}\r",
+                                    "});\r",
+                                    "\r",
+                                    "\r",
+                                    "Ext.device.Camera.capture({\r",
+                                    "source: 'camera',\r",
+                                    "destination: 'file',\r",
+                                    "\r",
+                                    "success: function(url) {\r",
+                                    "this.fireEvent('change', this, url);\r",
+                                    "},\r",
+                                    "failure: function() {\r",
+                                    "Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');\r",
+                                    "},\r",
+                                    "scope: this\r",
+                                    "});\r",
+                                    "*/\r",
+                                    "\r",
+                                    "\r",
+                                    "Ext.device.Camera.capture({\r",
+                                    "success: function(url) {\r",
+                                    "Ext.getCmp('imatgeInstruccio').setSrc(url);\r",
+                                    "},\r",
+                                    "scope: this,\r",
+                                    "source: 'camera',\r",
+                                    "destination: 'file'\r",
+                                    "});\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "tap",
+                                "designer|userClassName": "onMybuttonTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                },
+                {
+                    "id": "ExtBox1-ext-gen3805",
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "borraInstruccio",
+                        "itemId": null,
+                        "ui": "decline-round",
+                        "iconCls": "delete",
+                        "iconMask": true,
+                        "text": "Esborra Instrucció",
+                        "designer|userClassName": "MyButton7",
+                        "layout|flex": 1
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen3810",
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBorraInstruccioTap",
+                                "implHandler": [
+                                    "Ext.Msg.confirm(\r",
+                                    "\"Confirmació d'esborrat de Instrucció\", \"Esteu segurs que voleu esborrar aquesta instrucció?\", \r",
+                                    "function ( answer ) { \r",
+                                    "    if ( answer == 'yes') {           \r",
+                                    "        //Esborrem la instrucció del JSON\r",
+                                    "        Ext.getStore('instruccioJson').removeAt(Ext.getStore('instruccioJson').find('id',PFC.instruccio)); \r",
+                                    "\r",
+                                    "        PFC.titol=PFC.titolAux;\r",
+                                    "        Ext.getCmp('detailPanel').setHidden(false);\r",
+                                    "        Ext.getCmp('finestra').remove(Ext.getCmp('Picture'),true);\r",
+                                    "        PFC.instruccio=-1;\r",
+                                    "    } \r",
+                                    "}\r",
+                                    ");"
+                                ],
+                                "name": "tap",
+                                "designer|userClassName": "onBorraInstruccioTap"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
                 }
             ]
         }

@@ -2,14 +2,11 @@
     etiquetaTipus: [{
         id: 1,
 	nom: 'Processos estratégics',
-	nomHTML: 'Processos estrat&egrave;gics'
     }, {
         id: 2,
 	nom: 'Processos principal',
-	nomHTML: 'Processos principal'
     }, {
         id: 3,
 	nom: 'Processos de suport',
-	nomHTML: 'Processos de suport'
     }]
 }

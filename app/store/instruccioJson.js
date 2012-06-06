@@ -30,6 +30,12 @@ Ext.define('PFC.store.instruccioJson', {
                 type: 'json',
                 rootProperty: 'subprocesos'
             }
-        }
+        },
+        fields: [
+            {
+                name: 'picture',
+                type: 'string'
+            }
+        ]
     }
 });

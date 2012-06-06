@@ -48,6 +48,22 @@
                     "expanded": true
                 }
             ]
+        },
+        {
+            "id": "ExtBox1-ext-gen8556",
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "picture",
+                "type": "string",
+                "designer|userClassName": "MyField20"
+            },
+            "customConfigs": [],
+            "expanded": true
         }
     ]
 }

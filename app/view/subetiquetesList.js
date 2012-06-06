@@ -31,7 +31,7 @@ Ext.define('PFC.view.subetiquetesList', {
         },
         itemTpl: [
             '<div style="background-color:#D7C663;height:40px;border:1px solid;',
-            'border-radius:25px;',
+            'border-radius:15px;',
             '-moz-border-radius:15px;box-shadow: 5px 5px 5px #888888;padding:10px;">',
             '{nom}',
             '</div>'

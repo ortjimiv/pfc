@@ -27,6 +27,9 @@ Ext.define('PFC.view.viewport', {
             animation: 'fade',
             type: 'card'
         },
+        cls: [
+            'styledContent'
+        ],
         items: [
             {
                 xtype: 'loginform',

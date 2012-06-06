@@ -8,6 +8,9 @@
     "codeClass": null,
     "userConfig": {
         "designer|initialView": true,
+        "cls": [
+            "styledContent"
+        ],
         "id": "viewport",
         "layout": "card",
         "designer|userClassName": "viewport",

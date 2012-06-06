@@ -14,7 +14,7 @@
     "customConfigs": [],
     "designerId": "cf02870b-854e-493b-bd32-4d6ddb05795f",
     "$viewOrder": 3,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen15794",
@@ -49,14 +49,53 @@
                 "id": "instruccioList",
                 "itemId": "instruccioList",
                 "style": "background-color:#FFEFD5",
-                "itemTpl": "<table width='100%'>\n<tr>\n<td>{descripcio}</td>\n<td width='50px'><img id='img{id}' src='resources/imatge.png' width='50px' height='50px'/></td>\n</tr>\n</table>",
+                "itemTpl": "<table width='100%'>\n<tr>\n<td>{descripcio}</td>\n<td width='50px'><img id='img{id}' src='touch/resources/images/imatge.png' width='50px' height='50px'/></td>\n</tr>\n</table>",
                 "store": "instruccioJson",
                 "designer|userClassName": "instruccioList",
                 "designer|userAlias": "instrucciolist",
                 "layout|flex": 2
             },
             "customConfigs": [],
-            "expanded": true
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen3399",
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onInstruccioListItemTap",
+                        "implHandler": [
+                            "Ext.getCmp('detailPanel').setHidden(true);\r",
+                            "Ext.getCmp('torna').setHidden(false);\r",
+                            "PFC.titol=\"Imatge id:\"+record.get('id');\r",
+                            "Ext.getCmp('loggedInUserName').setTitle(PFC.titol);\r",
+                            "\r",
+                            "var foto = Ext.getCmp('Picture');\r",
+                            "\r",
+                            "if (foto) {\r",
+                            "    Ext.getCmp('finestra').setActiveItem(foto);\r",
+                            "} else {\r",
+                            "    Ext.getCmp('finestra').setActiveItem({xclass: 'PFC.view.Picture'});\r",
+                            "}\r",
+                            "\r",
+                            "Ext.getCmp('pictureDetall').setRecord(record);\r",
+                            "PFC.instruccio=record.get(\"id\");\r",
+                            "\r",
+                            "if (PFC.tipus) {\r",
+                            "    Ext.getCmp('barraSubinstruccio').setHidden(false);\r",
+                            "}"
+                        ],
+                        "name": "itemtap",
+                        "designer|userClassName": "onInstruccioListItemTap"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
         },
         {
             "id": "ExtBox1-ext-gen16000",
@@ -80,7 +119,7 @@
                     "type": "string"
                 }
             ],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen16004",
@@ -175,7 +214,7 @@
                                     "        do{\r",
                                     "            Ext.getStore('associatJson').removeAt(Ext.getStore('associatJson').find('proces_id',PFC.procesId)); \r",
                                     "        }while (Ext.getStore('associatJson').find('proces_id',PFC.procesId)!=-1);\r",
-                                    "        \r",
+                                    "\r",
                                     "        //Esborrem el procés del JSON\r",
                                     "        Ext.getStore('procesJson').removeAt(Ext.getStore('procesJson').find('id',PFC.procesId)); \r",
                                     "\r",

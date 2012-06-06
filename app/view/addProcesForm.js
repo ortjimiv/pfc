@@ -18,11 +18,13 @@ Ext.define('PFC.view.addProcesForm', {
     alias: 'widget.addprocesform',
 
     config: {
+        id: 'addProcesForm',
         itemId: 'addProcesForm',
         layout: {
             pack: 'center',
             type: 'vbox'
         },
+        scrollable: 'vertical',
         items: [
             {
                 xtype: 'fieldset',
@@ -78,8 +80,6 @@ Ext.define('PFC.view.addProcesForm', {
             PFC.novaId=PFC.novaId+1;
         }
 
-        alert (PFC.novaId);
-
         if (procesRecord.nom!==""){
             if (procesRecord.Etiqueta!==null){
                 var etiquetes = [];
@@ -133,7 +133,7 @@ Ext.define('PFC.view.addProcesForm', {
 
     onAddProcesFormInitialize: function(component, options) {
         //Cerquem les diferents etiquetes 
-        var myPanel = Ext.create('Ext.Label', {html: '<br/>Etiquetes:<hr/>', style:'background-color:#FFEFD5'});
+        var myPanel = Ext.create('Ext.Label', {html: '<br/><b>Etiquetes:</b><br/><br/>', style:'background-color:#FFEFD5'});
         Ext.getCmp('formulariProces').add([myPanel]);
 
         Ext.getStore('etiquetaJson').clearFilter();
@@ -158,7 +158,8 @@ Ext.define('PFC.view.addProcesForm', {
                     label: Ext.getStore('etiquetaJson').getAt(j).get('nom'),
                     labelWrap:true,
                     name:"Etiqueta",
-                    value:Ext.getStore('etiquetaJson').getAt(j).get('id')
+                    value:Ext.getStore('etiquetaJson').getAt(j).get('id'),
+                    labelWidth:'80%'
                 });
                 Ext.getCmp('formulariProces').add([etiquetaV2]);
 

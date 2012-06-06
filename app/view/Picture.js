@@ -17,7 +17,6 @@ Ext.define('PFC.view.Picture', {
     extend: 'Ext.Container',
 
     config: {
-        height: 120,
         id: 'Picture',
         itemId: 'Picture',
         minHeight: 100,
@@ -29,9 +28,35 @@ Ext.define('PFC.view.Picture', {
         },
         overflow: 'hidden',
         tpl: [
-            '<div>{descripcio}</div><div><img src="{picture}" width="160" /></div>'
+            ''
         ],
         items: [
+            {
+                xtype: 'container',
+                id: 'pictureDetall',
+                tpl: [
+                    '<div>{descripcio}</div>',
+                    '<!-- ',
+                    '<div><img src="{picture}" width="160" /></div>',
+                    '-->'
+                ],
+                flex: 0
+            },
+            {
+                xtype: 'container',
+                ui: '',
+                flex: 0,
+                items: [
+                    {
+                        xtype: 'image',
+                        height: 200,
+                        id: 'imatgeInstruccio',
+                        ui: '',
+                        width: 200,
+                        src: 'touch/resources/images/logo.png'
+                    }
+                ]
+            },
             {
                 xtype: 'component',
                 html: '',
@@ -42,12 +67,30 @@ Ext.define('PFC.view.Picture', {
                 ]
             },
             {
-                xtype: 'button',
-                bottom: 5,
-                itemId: 'mybutton',
-                right: 5,
-                iconCls: 'add',
-                iconMask: true
+                xtype: 'toolbar',
+                docked: 'bottom',
+                hidden: true,
+                id: 'barraSubinstruccio',
+                items: [
+                    {
+                        xtype: 'button',
+                        bottom: 5,
+                        hidden: true,
+                        itemId: 'mybutton',
+                        right: 5,
+                        iconCls: 'add',
+                        iconMask: true
+                    },
+                    {
+                        xtype: 'button',
+                        id: 'borraInstruccio',
+                        ui: 'decline-round',
+                        iconCls: 'delete',
+                        iconMask: true,
+                        text: 'Esborra Instrucció',
+                        flex: 1
+                    }
+                ]
             }
         ],
         listeners: [
@@ -55,37 +98,73 @@ Ext.define('PFC.view.Picture', {
                 fn: 'onMybuttonTap',
                 event: 'tap',
                 delegate: '#mybutton'
+            },
+            {
+                fn: 'onBorraInstruccioTap',
+                event: 'tap',
+                delegate: '#borraInstruccio'
             }
         ]
     },
 
     onMybuttonTap: function(button, e, options) {
-        Ext.device.Camera.capture({
-            source: 'camera',
-            destination: 'file',
-
-            success: function(url) {
-                //show the newly captured image in a full screen Ext.Img component:
-                Ext.create('Ext.Img', {
-                    src: url,
-                    fullscreen: true
-                });
-            }
-        });
         /*
         Ext.device.Camera.capture({
         source: 'camera',
         destination: 'file',
 
         success: function(url) {
+        //show the newly captured image in a full screen Ext.Img component:
+        Ext.create('Ext.Img', {
+            src: url,
+            fullscreen: true
+        });
+    }
+        });
+
+
+        Ext.device.Camera.capture({
+    source: 'camera',
+    destination: 'file',
+
+    success: function(url) {
         this.fireEvent('change', this, url);
-        },
-        failure: function() {
+    },
+    failure: function() {
         Ext.Msg.alert('Error', 'There was an error when acquiring the picture.');
-        },
-        scope: this
+    },
+    scope: this
         });
         */
+
+
+        Ext.device.Camera.capture({
+    success: function(url) {
+        Ext.getCmp('imatgeInstruccio').setSrc(url);
+    },
+    scope: this,
+    source: 'camera',
+    destination: 'file'
+        });
+
+
+    },
+
+    onBorraInstruccioTap: function(button, e, options) {
+        Ext.Msg.confirm(
+        "Confirmació d'esborrat de Instrucció", "Esteu segurs que voleu esborrar aquesta instrucció?", 
+        function ( answer ) { 
+            if ( answer == 'yes') {           
+                //Esborrem la instrucció del JSON
+                Ext.getStore('instruccioJson').removeAt(Ext.getStore('instruccioJson').find('id',PFC.instruccio)); 
+
+                PFC.titol=PFC.titolAux;
+                Ext.getCmp('detailPanel').setHidden(false);
+                Ext.getCmp('finestra').remove(Ext.getCmp('Picture'),true);
+                PFC.instruccio=-1;
+            } 
+        }
+        );
     }
 
 });

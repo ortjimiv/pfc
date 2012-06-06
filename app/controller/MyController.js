@@ -46,9 +46,6 @@ Ext.define('PFC.controller.MyController', {
             },
             "selectfield": {
                 change: 'onFiltre2Change'
-            },
-            "#instruccioList": {
-                itemtap: 'onInstruccioTap'
             }
         }
     },
@@ -139,11 +136,46 @@ Ext.define('PFC.controller.MyController', {
 
     onLogoutTap: function(button, e, options) {
         PFC.titol="";
+
+        Ext.getCmp('mainPanel').animateTo('right');
+
         Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
         var top = Ext.getCmp('viewport');
         top.down('#loginForm').reset();
         top.down('#procesosList').deselectAll();
         top.setActiveItem(0);
+        PFC.procesId=0;
+        PFC.etiquetaId=-1;
+        PFC.subetiquetaId=-1;
+
+        Ext.getStore('instruccioJson').clearFilter();
+        Ext.getStore('etiquetaJson').clearFilter();
+        Ext.getStore('etiquetaTipusJson').clearFilter();
+        Ext.getStore('procesJson').clearFilter();
+
+        Ext.getCmp('detailPanel').setHidden(false);
+        Ext.getCmp('torna').setHidden(true);
+        Ext.getCmp('listPanel').setHidden(false);
+        Ext.getCmp('usuariPanel').setHidden(false);
+
+
+        if (Ext.getCmp('addInstruccioForm')){
+            Ext.getCmp('finestra').remove(Ext.getCmp('addInstruccioForm'),true);
+        }
+
+        if(Ext.getCmp('Picture')){
+            Ext.getCmp('finestra').remove(Ext.getCmp('Picture'),true);
+        }
+
+        if (Ext.getCmp('addprocesform')){
+            Ext.getCmp('finestra').remove(Ext.getCmp('addprocesform'),true);
+        }
+
+        if (Ext.getCmp('finestra').getAt(2)){
+            Ext.getCmp('finestra').removeAt(2);
+        }
+
+        Ext.getCmp('mainPanel').animateTo('left');
     },
 
     onEtiqueteslistTap: function(dataview, index, target, record, e, options) {
@@ -319,23 +351,6 @@ Ext.define('PFC.controller.MyController', {
         Ext.getStore('procesJson').filterBy(function(record) {
             return (k.indexOf(record.get('id'))!=-1);
         });
-    },
-
-    onInstruccioTap: function(dataview, index, target, record, e, options) {
-        Ext.getCmp('detailPanel').setHidden(true);
-        Ext.getCmp('torna').setHidden(false);
-        PFC.titol="Imatge id:"+record.get('id');
-        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
-
-        var foto = Ext.getCmp('Picture');
-
-        if (foto) {
-            Ext.getCmp('finestra').setActiveItem(foto);
-        } else {
-            Ext.getCmp('finestra').setActiveItem({xclass: 'PFC.view.Picture'});
-        }
-
-        Ext.getCmp('Picture').setRecord(record);
     }
 
 });

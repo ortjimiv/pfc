@@ -31,8 +31,8 @@ Ext.define('PFC.view.etiquetesList', {
             wrap: false
         },
         itemTpl: [
-            '<div style="background-color:#A18F28;height:40px;border:1px solid;',
-            'border-radius:25px;',
+            '<div style="background-color:#949A53;height:40px;border:1px solid;',
+            'border-radius:10px;',
             '-moz-border-radius:15px;box-shadow: 5px 5px 5px #888888;padding:10px;">',
             '{nom}',
             '</div>'

@@ -107,8 +107,8 @@
                         "fn": "onSubmitTap",
                         "implHandler": [
                             "var form = Ext.getCmp('addInstruccioForm'),\r",
-                            "    store = Ext.getCmp('instruccioList').getStore(),\r",
-                            "    instruccioRecord = form.getValues();\r",
+                            "store = Ext.getCmp('instruccioList').getStore(),\r",
+                            "instruccioRecord = form.getValues();\r",
                             "\r",
                             "//Store to local storage and sync to remote syncstorage\r",
                             "store.add(instruccioRecord);\r",

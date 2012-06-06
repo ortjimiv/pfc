@@ -44,7 +44,7 @@ Ext.define('PFC.view.detailPanel', {
                     '<table width=\'100%\'>',
                     '<tr>',
                     '<td>{descripcio}</td>',
-                    '<td width=\'50px\'><img id=\'img{id}\' src=\'resources/imatge.png\' width=\'50px\' height=\'50px\'/></td>',
+                    '<td width=\'50px\'><img id=\'img{id}\' src=\'touch/resources/images/imatge.png\' width=\'50px\' height=\'50px\'/></td>',
                     '</tr>',
                     '</table>'
                 ],
@@ -82,6 +82,11 @@ Ext.define('PFC.view.detailPanel', {
         ],
         listeners: [
             {
+                fn: 'onInstruccioListItemTap',
+                event: 'itemtap',
+                delegate: '#instruccioList'
+            },
+            {
                 fn: 'onNovaInstruccioTap',
                 event: 'tap',
                 delegate: '#novaInstruccio'
@@ -92,6 +97,28 @@ Ext.define('PFC.view.detailPanel', {
                 delegate: '#borraProces'
             }
         ]
+    },
+
+    onInstruccioListItemTap: function(dataview, index, target, record, e, options) {
+        Ext.getCmp('detailPanel').setHidden(true);
+        Ext.getCmp('torna').setHidden(false);
+        PFC.titol="Imatge id:"+record.get('id');
+        Ext.getCmp('loggedInUserName').setTitle(PFC.titol);
+
+        var foto = Ext.getCmp('Picture');
+
+        if (foto) {
+            Ext.getCmp('finestra').setActiveItem(foto);
+        } else {
+            Ext.getCmp('finestra').setActiveItem({xclass: 'PFC.view.Picture'});
+        }
+
+        Ext.getCmp('pictureDetall').setRecord(record);
+        PFC.instruccio=record.get("id");
+
+        if (PFC.tipus) {
+            Ext.getCmp('barraSubinstruccio').setHidden(false);
+        }
     },
 
     onNovaInstruccioTap: function(button, e, options) {
