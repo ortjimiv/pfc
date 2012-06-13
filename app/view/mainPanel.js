@@ -26,6 +26,7 @@ Ext.define('PFC.view.mainPanel', {
         layout: {
             type: 'hbox'
         },
+        scrollable: false,
         items: [
             {
                 xtype: 'toolbar',

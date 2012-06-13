@@ -153,7 +153,7 @@ Ext.define('PFC.controller.MyController', {
         Ext.getStore('etiquetaTipusJson').clearFilter();
         Ext.getStore('procesJson').clearFilter();
 
-        Ext.getCmp('detailPanel').setHidden(false);
+        if (Ext.getCmp('detailPanel')) Ext.getCmp('detailPanel').setHidden(false);
         Ext.getCmp('torna').setHidden(true);
         Ext.getCmp('listPanel').setHidden(false);
         Ext.getCmp('usuariPanel').setHidden(false);

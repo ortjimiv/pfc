@@ -9,13 +9,14 @@
     "userConfig": {
         "id": "mainPanel",
         "layout": "hbox",
+        "scrollable": false,
         "designer|userClassName": "mainPanel",
         "designer|userAlias": "mainpanel"
     },
     "customConfigs": [],
     "designerId": "639da149-d10c-490d-83de-7c8c9ab97314",
     "$viewOrder": 5,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen13952",
@@ -40,7 +41,7 @@
                 "designer|userClassName": "MyToolbar2"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen37401",
@@ -103,7 +104,7 @@
                 "designer|userClassName": "MyContainer3"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen23557",

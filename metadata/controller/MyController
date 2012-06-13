@@ -178,7 +178,7 @@
                     "Ext.getStore('etiquetaTipusJson').clearFilter();\r",
                     "Ext.getStore('procesJson').clearFilter();\r",
                     "\r",
-                    "Ext.getCmp('detailPanel').setHidden(false);\r",
+                    "if (Ext.getCmp('detailPanel')) Ext.getCmp('detailPanel').setHidden(false);\r",
                     "Ext.getCmp('torna').setHidden(true);\r",
                     "Ext.getCmp('listPanel').setHidden(false);\r",
                     "Ext.getCmp('usuariPanel').setHidden(false);\r",
